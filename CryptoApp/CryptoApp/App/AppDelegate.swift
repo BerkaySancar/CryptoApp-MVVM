@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appCoordinator?.start()
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        
+        FirebaseApp.configure()
+        
         return true
     }
     
