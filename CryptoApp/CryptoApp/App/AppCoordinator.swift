@@ -35,7 +35,8 @@ final class AppCoordinator: Coordinator {
     
     func login() {
         let login = LoginViewController.instantiateFromStoryboard("Authentication")
-        login.coordinator = self
+        let viewModel = LoginViewModel(coordinator: self, view: login)
+        login.viewModel = viewModel
         self.navigationController.setViewControllers([login], animated: true)
     }
     

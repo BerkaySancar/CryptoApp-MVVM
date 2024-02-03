@@ -43,8 +43,10 @@ final class OnboardingViewController: UIViewController {
  
     //MARK: Actions
     @IBAction private func skipButtonTapped(_ sender: Any) {
+        guard let viewModel else { return }
         onboardingCollectionView.isPagingEnabled = false
-        onboardingCollectionView.scrollToItem(at: IndexPath(item: (viewModel?.numberOfItemsInSection() ?? 0) - 1, section: 0), at: .centeredHorizontally, animated: true)
+        setButtonVisibility(currentPage: viewModel.numberOfItemsInSection() - 1)
+        onboardingCollectionView.scrollToItem(at: IndexPath(item: viewModel.numberOfItemsInSection() - 1, section: 0), at: .centeredHorizontally, animated: true)
         onboardingCollectionView.isPagingEnabled = true
     }
     
