@@ -35,13 +35,15 @@ final class AppCoordinator: Coordinator {
     
     func login() {
         let login = LoginViewController.instantiateFromStoryboard("Authentication")
-        let viewModel = LoginViewModel(coordinator: self, view: login)
+        let viewModel = LoginViewModel(coordinator: self, view: login, authManager: AuthManager.shared)
         login.viewModel = viewModel
         self.navigationController.setViewControllers([login], animated: true)
     }
     
     func signUp() {
         let signUp = SignUpViewController.instantiateFromStoryboard("Authentication")
+        let viewModel = SignUpViewModel(coordinator: self, view: signUp, authManager: AuthManager.shared)
+        signUp.viewModel = viewModel
         self.navigationController.setViewControllers([signUp], animated: true)
     }
 }

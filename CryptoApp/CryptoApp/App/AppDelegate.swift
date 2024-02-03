@@ -7,6 +7,19 @@
 
 import UIKit
 import FirebaseCore
+import IQKeyboardManagerSwift
+
+//Global
+var keyWindow: UIWindow? {
+    let allScenes = UIApplication.shared.connectedScenes
+    for scene in allScenes {
+      guard let windowScene = scene as? UIWindowScene else { continue }
+      for window in windowScene.windows where window.isKeyWindow {
+         return window
+       }
+     }
+      return nil
+}
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         FirebaseApp.configure()
+        IQKeyboardManager.shared.enable = true
         
         return true
     }

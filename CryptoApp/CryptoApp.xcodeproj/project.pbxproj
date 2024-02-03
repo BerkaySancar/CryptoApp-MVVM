@@ -49,6 +49,17 @@
 		B137DCFD2B6E6CA1007413AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B137DCFC2B6E6CA1007413AD /* FirebaseStorage */; };
 		B137DCFF2B6E6CA1007413AD /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B137DCFE2B6E6CA1007413AD /* FirebaseStorageCombine-Community */; };
 		B137DD012B6E6CB0007413AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B137DD002B6E6CB0007413AD /* GoogleService-Info.plist */; };
+		B137DD032B6E6DBD007413AD /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD022B6E6DBD007413AD /* AuthManager.swift */; };
+		B137DD062B6E6E29007413AD /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD052B6E6E29007413AD /* FirebaseError.swift */; };
+		B137DD082B6E6FEA007413AD /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD072B6E6FEA007413AD /* ActivityIndicatorManager.swift */; };
+		B137DD0A2B6E762F007413AD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD092B6E762F007413AD /* String+Extension.swift */; };
+		B137DD0C2B6E7EB1007413AD /* GeneralError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD0B2B6E7EB1007413AD /* GeneralError.swift */; };
+		B137DD102B6E8521007413AD /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD0F2B6E8521007413AD /* SignUpViewModel.swift */; };
+		B137DD122B6EACCC007413AD /* CustomNibViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD112B6EACCC007413AD /* CustomNibViewProtocol.swift */; };
+		B137DD172B6EAD41007413AD /* AppAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B137DD162B6EAD41007413AD /* AppAlertView.xib */; };
+		B137DD192B6EAD52007413AD /* AppAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD182B6EAD52007413AD /* AppAlertView.swift */; };
+		B137DD1B2B6EB14D007413AD /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD1A2B6EB14D007413AD /* AlertManager.swift */; };
+		B137DD1E2B6EC83E007413AD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B137DD1D2B6EC83E007413AD /* IQKeyboardManagerSwift */; };
 		B18E6C392B6E2F2E009F3B18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E6C382B6E2F2E009F3B18 /* LoginViewModel.swift */; };
 		B1E458052B6DE31500D780CA /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E458042B6DE31500D780CA /* OnboardModel.swift */; };
 		B1E458072B6DE7E200D780CA /* OnboardingCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E458062B6DE7E200D780CA /* OnboardingCellVM.swift */; };
@@ -73,6 +84,16 @@
 		B13055932B6DBE3400E89745 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		B13055942B6DBE3400E89745 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		B137DD002B6E6CB0007413AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B137DD022B6E6DBD007413AD /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		B137DD052B6E6E29007413AD /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
+		B137DD072B6E6FEA007413AD /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		B137DD092B6E762F007413AD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B137DD0B2B6E7EB1007413AD /* GeneralError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralError.swift; sourceTree = "<group>"; };
+		B137DD0F2B6E8521007413AD /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		B137DD112B6EACCC007413AD /* CustomNibViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNibViewProtocol.swift; sourceTree = "<group>"; };
+		B137DD162B6EAD41007413AD /* AppAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppAlertView.xib; sourceTree = "<group>"; };
+		B137DD182B6EAD52007413AD /* AppAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertView.swift; sourceTree = "<group>"; };
+		B137DD1A2B6EB14D007413AD /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		B18E6C382B6E2F2E009F3B18 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B1E458042B6DE31500D780CA /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
 		B1E458062B6DE7E200D780CA /* OnboardingCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCellVM.swift; sourceTree = "<group>"; };
@@ -105,6 +126,7 @@
 				B137DCD52B6E6CA1007413AD /* FirebaseAppDistribution-Beta in Frameworks */,
 				B137DCD92B6E6CA1007413AD /* FirebaseAuthCombine-Community in Frameworks */,
 				B137DCF72B6E6CA1007413AD /* FirebasePerformance in Frameworks */,
+				B137DD1E2B6EC83E007413AD /* IQKeyboardManagerSwift in Frameworks */,
 				B137DCEF2B6E6CA1007413AD /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				B137DCFD2B6E6CA1007413AD /* FirebaseStorage in Frameworks */,
 				B137DCE12B6E6CA1007413AD /* FirebaseDynamicLinks in Frameworks */,
@@ -141,6 +163,7 @@
 				B130555A2B6D962E00E89745 /* Resources */,
 				B13055872B6DA00500E89745 /* Utilities */,
 				B13055582B6D962000E89745 /* Managers */,
+				B137DD132B6EAD1A007413AD /* CustomViews */,
 				B130555C2B6D968000E89745 /* Storyboards */,
 				B130555B2B6D963600E89745 /* Modules */,
 			);
@@ -168,6 +191,9 @@
 		B13055582B6D962000E89745 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B137DD022B6E6DBD007413AD /* AuthManager.swift */,
+				B137DD072B6E6FEA007413AD /* ActivityIndicatorManager.swift */,
+				B137DD1A2B6EB14D007413AD /* AlertManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -177,6 +203,7 @@
 			children = (
 				B130558B2B6DB42B00E89745 /* UIViewController+Extension.swift */,
 				B13055912B6DBA0400E89745 /* UIColor+Extension.swift */,
+				B137DD092B6E762F007413AD /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,8 +240,6 @@
 		B130557D2B6D98AB00E89745 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B18E6C352B6E2EF2009F3B18 /* Model */,
-				B18E6C342B6E2EEC009F3B18 /* Views */,
 				B18E6C372B6E2F05009F3B18 /* ViewModel */,
 				B18E6C362B6E2F00009F3B18 /* Controller */,
 			);
@@ -224,7 +249,8 @@
 		B130557E2B6D98C100E89745 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				B130558D2B6DB48D00E89745 /* SignUpViewController.swift */,
+				B137DD0D2B6E850D007413AD /* ViewModel */,
+				B137DD0E2B6E8512007413AD /* Controller */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -250,6 +276,7 @@
 		B13055872B6DA00500E89745 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B137DD042B6E6E22007413AD /* Enums */,
 				B1E458092B6DE97800D780CA /* Helpers */,
 				B13055592B6D962400E89745 /* Extensions */,
 			);
@@ -264,18 +291,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B18E6C342B6E2EEC009F3B18 /* Views */ = {
+		B137DD042B6E6E22007413AD /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				B137DD052B6E6E29007413AD /* FirebaseError.swift */,
+				B137DD0B2B6E7EB1007413AD /* GeneralError.swift */,
 			);
-			path = Views;
+			path = Enums;
 			sourceTree = "<group>";
 		};
-		B18E6C352B6E2EF2009F3B18 /* Model */ = {
+		B137DD0D2B6E850D007413AD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B137DD0F2B6E8521007413AD /* SignUpViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B137DD0E2B6E8512007413AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B130558D2B6DB48D00E89745 /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B137DD132B6EAD1A007413AD /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				B137DD162B6EAD41007413AD /* AppAlertView.xib */,
+				B137DD182B6EAD52007413AD /* AppAlertView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		B18E6C362B6E2F00009F3B18 /* Controller */ = {
@@ -316,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E4580A2B6DE97F00D780CA /* BaseCellVM.swift */,
+				B137DD112B6EACCC007413AD /* CustomNibViewProtocol.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -380,6 +428,7 @@
 				B137DCFA2B6E6CA1007413AD /* FirebaseRemoteConfigSwift */,
 				B137DCFC2B6E6CA1007413AD /* FirebaseStorage */,
 				B137DCFE2B6E6CA1007413AD /* FirebaseStorageCombine-Community */,
+				B137DD1D2B6EC83E007413AD /* IQKeyboardManagerSwift */,
 			);
 			productName = CryptoApp;
 			productReference = B130553F2B6D946C00E89745 /* CryptoApp.app */;
@@ -411,6 +460,7 @@
 			mainGroup = B13055362B6D946C00E89745;
 			packageReferences = (
 				B137DCC92B6E6CA1007413AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B137DD1C2B6EC83E007413AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = B13055402B6D946C00E89745 /* Products */;
 			projectDirPath = "";
@@ -430,6 +480,7 @@
 				B130554C2B6D946D00E89745 /* Assets.xcassets in Resources */,
 				B130554A2B6D946C00E89745 /* Authentication.storyboard in Resources */,
 				B13055962B6DBE3400E89745 /* OnboardingCell.xib in Resources */,
+				B137DD172B6EAD41007413AD /* AppAlertView.xib in Resources */,
 				B13055842B6D9C6100E89745 /* Onboarding.storyboard in Resources */,
 				B137DD012B6E6CB0007413AD /* GoogleService-Info.plist in Resources */,
 			);
@@ -443,18 +494,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				B130558E2B6DB48D00E89745 /* SignUpViewController.swift in Sources */,
+				B137DD032B6E6DBD007413AD /* AuthManager.swift in Sources */,
 				B1E458052B6DE31500D780CA /* OnboardModel.swift in Sources */,
 				B13055822B6D99FE00E89745 /* AppCoordinator.swift in Sources */,
 				B13055472B6D946C00E89745 /* LoginViewController.swift in Sources */,
+				B137DD102B6E8521007413AD /* SignUpViewModel.swift in Sources */,
 				B13055432B6D946C00E89745 /* AppDelegate.swift in Sources */,
 				B1E458072B6DE7E200D780CA /* OnboardingCellVM.swift in Sources */,
 				B130558C2B6DB42B00E89745 /* UIViewController+Extension.swift in Sources */,
+				B137DD0A2B6E762F007413AD /* String+Extension.swift in Sources */,
 				B13055952B6DBE3400E89745 /* OnboardingCell.swift in Sources */,
+				B137DD062B6E6E29007413AD /* FirebaseError.swift in Sources */,
+				B137DD1B2B6EB14D007413AD /* AlertManager.swift in Sources */,
 				B18E6C392B6E2F2E009F3B18 /* LoginViewModel.swift in Sources */,
 				B13055902B6DB6B300E89745 /* OnboardingViewModel.swift in Sources */,
 				B1E4580B2B6DE97F00D780CA /* BaseCellVM.swift in Sources */,
 				B13055862B6D9C8500E89745 /* OnboardingViewController.swift in Sources */,
+				B137DD082B6E6FEA007413AD /* ActivityIndicatorManager.swift in Sources */,
 				B13055922B6DBA0400E89745 /* UIColor+Extension.swift in Sources */,
+				B137DD192B6EAD52007413AD /* AppAlertView.swift in Sources */,
+				B137DD0C2B6E7EB1007413AD /* GeneralError.swift in Sources */,
+				B137DD122B6EACCC007413AD /* CustomNibViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +755,14 @@
 				minimumVersion = 10.20.0;
 			};
 		};
+		B137DD1C2B6EC83E007413AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -832,6 +900,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B137DCC92B6E6CA1007413AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		B137DD1D2B6EC83E007413AD /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B137DD1C2B6EC83E007413AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
