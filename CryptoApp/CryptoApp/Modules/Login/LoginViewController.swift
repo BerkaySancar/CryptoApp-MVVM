@@ -7,13 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
+    
+    weak var coordinator: AppCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "login"
     }
 
-
+    @IBAction func signUpTapped(_ sender: Any) {
+        coordinator?.signUp()
+    }
 }
 

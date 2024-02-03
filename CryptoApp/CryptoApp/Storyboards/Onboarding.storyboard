@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingViewController" id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="CryptoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdb-KL-sl6">
+                                <rect key="frame" x="335" y="728" width="42" height="42"/>
+                                <color key="backgroundColor" name="AppYellow"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="2pN-gj-6gJ"/>
+                                    <constraint firstAttribute="height" constant="42" id="l2U-aR-z25"/>
+                                </constraints>
+                                <color key="tintColor" name="AppBackground"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KMl-lu-mdX"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-CR-Ge2">
+                                <rect key="frame" x="0.0" y="736" width="116" height="26"/>
+                            </pageControl>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfH-Hx-zTV">
+                                <rect key="frame" x="16" y="728" width="168" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="168" id="1yc-aP-JcT"/>
+                                    <constraint firstAttribute="height" constant="53" id="reb-bS-ihf"/>
+                                </constraints>
+                                <color key="tintColor" name="AppYellow"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
+                                <connections>
+                                    <action selector="signUpTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="k6v-6r-Hdu"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACW-W9-l8G">
+                                <rect key="frame" x="209" y="728" width="168" height="53"/>
+                                <color key="backgroundColor" name="AppYellow"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="1f6-m4-36p"/>
+                                    <constraint firstAttribute="width" constant="168" id="TC2-mO-ndI"/>
+                                </constraints>
+                                <color key="tintColor" name="AppBackground"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Apg-HZ-UGo"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GRw-X1-6NE">
+                                <rect key="frame" x="16" y="102" width="361" height="614"/>
+                                <color key="backgroundColor" name="AppBackground"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y6t-x7-zre">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="6GC-ls-Qw7"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="zf4-bz-Tlu"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ii6-nk-8nd">
+                                <rect key="frame" x="320" y="59" width="57" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Skip">
+                                    <color key="baseForegroundColor" name="AppYellow"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="skipButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="v0J-f5-xXe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="ii6-nk-8nd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1lM-Ro-5HU"/>
+                            <constraint firstItem="GRw-X1-6NE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="2DP-ob-zpV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GRw-X1-6NE" secondAttribute="trailing" constant="16" id="5cx-i9-Ilh"/>
+                            <constraint firstItem="GRw-X1-6NE" firstAttribute="top" secondItem="ii6-nk-8nd" secondAttribute="bottom" constant="8" id="MGQ-Nc-dsL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Wdb-KL-sl6" secondAttribute="trailing" constant="16" id="Mej-hB-TfL"/>
+                            <constraint firstItem="D8m-CR-Ge2" firstAttribute="centerY" secondItem="Wdb-KL-sl6" secondAttribute="centerY" id="Xoy-gS-obw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ii6-nk-8nd" secondAttribute="trailing" constant="16" id="Y9N-76-pFA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Wdb-KL-sl6" secondAttribute="bottom" constant="48" id="Yea-dv-zoG"/>
+                            <constraint firstItem="ACW-W9-l8G" firstAttribute="top" secondItem="GRw-X1-6NE" secondAttribute="bottom" constant="12" id="bJv-Ja-lMH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ACW-W9-l8G" secondAttribute="trailing" constant="16" id="nL5-Ba-nhF"/>
+                            <constraint firstItem="OfH-Hx-zTV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="o05-dL-NI8"/>
+                            <constraint firstItem="D8m-CR-Ge2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pl4-BQ-D5d"/>
+                            <constraint firstItem="OfH-Hx-zTV" firstAttribute="top" secondItem="GRw-X1-6NE" secondAttribute="bottom" constant="12" id="uYN-wI-7by"/>
+                            <constraint firstItem="Wdb-KL-sl6" firstAttribute="top" secondItem="GRw-X1-6NE" secondAttribute="bottom" constant="12" id="zUf-0h-YhO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="ACW-W9-l8G" id="moI-zx-0U1"/>
+                        <outlet property="nextButton" destination="Wdb-KL-sl6" id="Us5-fP-HAL"/>
+                        <outlet property="onboardingCollectionView" destination="GRw-X1-6NE" id="RAi-Je-9Dx"/>
+                        <outlet property="pageControl" destination="D8m-CR-Ge2" id="VUb-XY-cpo"/>
+                        <outlet property="signUpButton" destination="OfH-Hx-zTV" id="YXy-sF-gOB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <namedColor name="AppBackground">
+            <color red="0.086274509803921567" green="0.090196078431372548" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppYellow">
+            <color red="0.96078431372549022" green="0.76078431372549016" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
