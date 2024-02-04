@@ -10,7 +10,7 @@ import UIKit.UIViewController
 
 extension UIViewController {
     
-    static func instantiateFromStoryboard(_ name: String = "Main") -> Self {
+    static func instantiateFromStoryboard(_ name: String) -> Self {
         return instantiateFromStoryboardHelper(name)
     }
     

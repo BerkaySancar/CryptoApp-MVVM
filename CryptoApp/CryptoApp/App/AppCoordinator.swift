@@ -23,7 +23,7 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        onboarding()
+        home()
     }
     
     func onboarding() {
@@ -45,6 +45,13 @@ final class AppCoordinator: Coordinator {
         let viewModel = SignUpViewModel(coordinator: self, view: signUp, authManager: AuthManager.shared)
         signUp.viewModel = viewModel
         self.navigationController.setViewControllers([signUp], animated: true)
+    }
+    
+    func home() {
+        let home = HomeViewController.instantiateFromStoryboard("Main")
+        let viewModel = HomeViewModel(coordinator: self, view: home)
+        home.viewModel = viewModel
+        self.navigationController.setViewControllers([home], animated: true)
     }
 }
 

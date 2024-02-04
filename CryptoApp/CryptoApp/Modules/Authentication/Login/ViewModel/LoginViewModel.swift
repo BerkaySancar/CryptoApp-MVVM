@@ -38,10 +38,11 @@ final class LoginViewModel: LoginViewModelProtocol {
     
     func loginTapped(email: String, password: String) {
         if email != "" && password != "" {
-            authManager?.login(email: email, password: password, completion: { results in
+            authManager?.login(email: email, password: password, completion: { [weak self] results in
+                guard let self else { return }
                 switch results {
                 case .success(_):
-                    print("to home...")
+                    self.coordinator?.home()
                 case .failure(let error):
                     AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error.", message: error.localizedDescription))
                 }
