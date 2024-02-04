@@ -38,11 +38,10 @@ final class SignUpViewController: UIViewController {
     }
     
     @IBAction private func signUpButtonTapped(_ sender: Any) {
-        if let email = emailTextField.text,
-           let password = passwordTextField.text,
-           self.acceptButton.isSelected {
-            viewModel?.signUpButtonTapped(email: email, password: password)
-        }
+            if let email = emailTextField.text,
+               let password = passwordTextField.text {
+                viewModel?.signUpButtonTapped(email: email, password: password, termsStatus: acceptButton.isSelected)
+            }
     }
     
     @IBAction private func loginButtonTapped(_ sender: Any) {

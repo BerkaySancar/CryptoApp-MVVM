@@ -14,7 +14,7 @@ protocol SignUpViewModelOutputs: AnyObject {
 //MARK: ViewModel Responsibilities
 protocol SignUpViewModelProtocol {
     func viewDidLoad()
-    func signUpButtonTapped(email: String, password: String)
+    func signUpButtonTapped(email: String, password: String, termsStatus: Bool)
     func toLoginTapped()
 }
 
@@ -35,18 +35,22 @@ final class SignUpViewModel: SignUpViewModelProtocol {
         view?.prepareHidePassButton()
     }
     
-    func signUpButtonTapped(email: String, password: String) {
-        if email.isValidEmail() && password.isPasswordValid() {
-            authManager?.signUp(email: email, password: password, completion: { [weak self] results in
-                switch results {
-                case .success:
-                    self?.coordinator?.login()
-                case .failure(let error):
-                    AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error!", message: error.localizedDescription))
-                }
-            })
+    func signUpButtonTapped(email: String, password: String, termsStatus: Bool) {
+        if termsStatus {
+            if email.isValidEmail() && password.isPasswordValid() {
+                authManager?.signUp(email: email, password: password, completion: { [weak self] results in
+                    switch results {
+                    case .success:
+                        self?.coordinator?.login()
+                    case .failure(let error):
+                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error!", message: error.localizedDescription))
+                    }
+                })
+            } else {
+                AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error", message: GeneralError.invalidEmailOrPassword.localizedDescription))
+            }
         } else {
-            AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error", message: GeneralError.invalidEmailOrPassword.localizedDescription))
+            AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Opps!", message: "Please accept Terms of Use & Privacy Policy."))
         }
     }
     

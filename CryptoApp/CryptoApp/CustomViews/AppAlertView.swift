@@ -43,18 +43,14 @@ final class AppAlertView: UIView, CustomViewProtocol {
             self.backView.alpha = 0
             self.contentView.alpha = 0
         } completion: { _ in
-            if !self.alertTextField.isHidden, self.alertTextField.text!.count > 3 {
-                AuthManager.shared.resetPassword(with: self.alertTextField.text!) { results in
+            if let text = self.alertTextField.text, text.count > 5 {
+                AlertManager.shared.removeFromSuperview()
+                AuthManager.shared.resetPassword(with: text) { results in
                     switch results {
                     case .success:
-                        DispatchQueue.main.async {
-                            AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Done.", message: "Password reset mail was sent."))
-                        }
+                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Done.", message: "Password reset mail was sent."))
                     case .failure(let error):
-                        AlertManager.shared.removeFromSuperview()
-                        DispatchQueue.main.async {
-                            AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Fail.", message: error.localizedDescription))
-                        }
+                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Fail.", message: error.localizedDescription))
                     }
                 }
             } else {
