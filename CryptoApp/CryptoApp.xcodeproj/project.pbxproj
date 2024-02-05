@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -73,6 +73,7 @@
 		B19713512B6FFED800AA59E7 /* TopCoinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B197134F2B6FFED800AA59E7 /* TopCoinCell.xib */; };
 		B197135D2B701EAD00AA59E7 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197135B2B701EAD00AA59E7 /* ArticleCell.swift */; };
 		B197135E2B701EAD00AA59E7 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B197135C2B701EAD00AA59E7 /* ArticleCell.xib */; };
+		B1D56CB82B70DD5D00AE104D /* APIService in Frameworks */ = {isa = PBXBuildFile; productRef = B1D56CB72B70DD5D00AE104D /* APIService */; };
 		B1E458052B6DE31500D780CA /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E458042B6DE31500D780CA /* OnboardModel.swift */; };
 		B1E458072B6DE7E200D780CA /* OnboardingCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E458062B6DE7E200D780CA /* OnboardingCellVM.swift */; };
 		B1E4580B2B6DE97F00D780CA /* BaseCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4580A2B6DE97F00D780CA /* BaseCellVM.swift */; };
@@ -119,6 +120,7 @@
 		B197134F2B6FFED800AA59E7 /* TopCoinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCoinCell.xib; sourceTree = "<group>"; };
 		B197135B2B701EAD00AA59E7 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		B197135C2B701EAD00AA59E7 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		B1D56CB52B70DA7100AE104D /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = APIService; path = ../APIService; sourceTree = "<group>"; };
 		B1E458042B6DE31500D780CA /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
 		B1E458062B6DE7E200D780CA /* OnboardingCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCellVM.swift; sourceTree = "<group>"; };
 		B1E4580A2B6DE97F00D780CA /* BaseCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellVM.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				B137DD1E2B6EC83E007413AD /* IQKeyboardManagerSwift in Frameworks */,
 				B137DCEF2B6E6CA1007413AD /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				B137DCFD2B6E6CA1007413AD /* FirebaseStorage in Frameworks */,
+				B1D56CB82B70DD5D00AE104D /* APIService in Frameworks */,
 				B137DCE12B6E6CA1007413AD /* FirebaseDynamicLinks in Frameworks */,
 				B137DCE52B6E6CA1007413AD /* FirebaseFirestoreCombine-Community in Frameworks */,
 				B137DCF52B6E6CA1007413AD /* FirebaseMessaging in Frameworks */,
@@ -166,6 +169,7 @@
 		B13055362B6D946C00E89745 = {
 			isa = PBXGroup;
 			children = (
+				B1D56CB52B70DA7100AE104D /* APIService */,
 				B13055412B6D946C00E89745 /* CryptoApp */,
 				B13055402B6D946C00E89745 /* Products */,
 			);
@@ -601,6 +605,7 @@
 				B137DCFC2B6E6CA1007413AD /* FirebaseStorage */,
 				B137DCFE2B6E6CA1007413AD /* FirebaseStorageCombine-Community */,
 				B137DD1D2B6EC83E007413AD /* IQKeyboardManagerSwift */,
+				B1D56CB72B70DD5D00AE104D /* APIService */,
 			);
 			productName = CryptoApp;
 			productReference = B130553F2B6D946C00E89745 /* CryptoApp.app */;
@@ -633,6 +638,7 @@
 			packageReferences = (
 				B137DCC92B6E6CA1007413AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B137DD1C2B6EC83E007413AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				B1D56CB62B70DD5D00AE104D /* XCLocalSwiftPackageReference "../APIService" */,
 			);
 			productRefGroup = B13055402B6D946C00E89745 /* Products */;
 			projectDirPath = "";
@@ -930,6 +936,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		B1D56CB62B70DD5D00AE104D /* XCLocalSwiftPackageReference "../APIService" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../APIService;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		B137DCC92B6E6CA1007413AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1089,6 +1102,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B137DD1C2B6EC83E007413AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		B1D56CB72B70DD5D00AE104D /* APIService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = APIService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
