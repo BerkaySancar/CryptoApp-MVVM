@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import UIKit.UITableViewCell
-import UIKit.UICollectionViewCell
 
 protocol BaseCellVM { }
 

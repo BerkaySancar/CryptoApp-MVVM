@@ -9,7 +9,7 @@ import UIKit
 import FirebaseCore
 import IQKeyboardManagerSwift
 
-//Global
+//Global keyWindow variable
 var keyWindow: UIWindow? {
     let allScenes = UIApplication.shared.connectedScenes
     for scene in allScenes {
@@ -27,13 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appCoordinator: Coordinator?
     
-    override init() {
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-    }
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        //Window settings
         window = UIWindow(frame: UIScreen.main.bounds)
         let navController = UINavigationController()
         appCoordinator = AppCoordinator(navigationController: navController)
@@ -41,8 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
+        //Dependencies
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
+        
+        //Configuration
+        configureNavBarAppearance()
         
         return true
     }
@@ -63,6 +63,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         window.rootViewController = viewController
+    }
+    
+    private func configureNavBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .appBackground.withAlphaComponent(0.5)
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
     }
 }
 

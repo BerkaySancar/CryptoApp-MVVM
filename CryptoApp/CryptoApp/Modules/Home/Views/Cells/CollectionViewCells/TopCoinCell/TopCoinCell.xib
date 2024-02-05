@@ -82,6 +82,7 @@
             <connections>
                 <outlet property="currencyNameLabel" destination="E2C-bE-r7U" id="9OD-uy-Szh"/>
                 <outlet property="currencyPriceLabel" destination="qxk-p3-8nq" id="xVc-dF-CfQ"/>
+                <outlet property="pricePercantageLabel" destination="oDg-ei-SZ9" id="9zc-r8-DsM"/>
                 <outlet property="symbolImageView" destination="oUq-zo-3HU" id="1w4-wG-RjX"/>
             </connections>
             <point key="canvasLocation" x="41.984732824427482" y="1.4084507042253522"/>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1151A712B7104E6007601EC /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A702B7104E6007601EC /* NewsCellViewModel.swift */; };
+		B1151A732B7107DA007601EC /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A722B7107DA007601EC /* ArticleModel.swift */; };
+		B1151A752B710F0A007601EC /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A742B710F0A007601EC /* CoinModel.swift */; };
+		B1151A772B711A25007601EC /* ArticleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A762B711A25007601EC /* ArticleCellViewModel.swift */; };
+		B1151A792B712C8C007601EC /* TopCoinsCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A782B712C8C007601EC /* TopCoinsCellVM.swift */; };
+		B1151A7B2B712F92007601EC /* TopCoinCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A7A2B712F92007601EC /* TopCoinCellVM.swift */; };
+		B1151A7E2B7132B1007601EC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1151A7D2B7132B1007601EC /* Kingfisher */; };
 		B13055432B6D946C00E89745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13055422B6D946C00E89745 /* AppDelegate.swift */; };
 		B13055472B6D946C00E89745 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13055462B6D946C00E89745 /* LoginViewController.swift */; };
 		B130554A2B6D946C00E89745 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13055482B6D946C00E89745 /* Authentication.storyboard */; };
@@ -80,6 +87,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1151A702B7104E6007601EC /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
+		B1151A722B7107DA007601EC /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		B1151A742B710F0A007601EC /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		B1151A762B711A25007601EC /* ArticleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModel.swift; sourceTree = "<group>"; };
+		B1151A782B712C8C007601EC /* TopCoinsCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinsCellVM.swift; sourceTree = "<group>"; };
+		B1151A7A2B712F92007601EC /* TopCoinCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinCellVM.swift; sourceTree = "<group>"; };
 		B130553F2B6D946C00E89745 /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13055422B6D946C00E89745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13055462B6D946C00E89745 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +168,7 @@
 				B137DD1E2B6EC83E007413AD /* IQKeyboardManagerSwift in Frameworks */,
 				B137DCEF2B6E6CA1007413AD /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				B137DCFD2B6E6CA1007413AD /* FirebaseStorage in Frameworks */,
+				B1151A7E2B7132B1007601EC /* Kingfisher in Frameworks */,
 				B1D56CB82B70DD5D00AE104D /* APIService in Frameworks */,
 				B137DCE12B6E6CA1007413AD /* FirebaseDynamicLinks in Frameworks */,
 				B137DCE52B6E6CA1007413AD /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -384,6 +398,8 @@
 		B197132C2B6FB5B100AA59E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B1151A722B7107DA007601EC /* ArticleModel.swift */,
+				B1151A742B710F0A007601EC /* CoinModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				B19713392B6FD8E400AA59E7 /* TopCoinsCell.swift */,
+				B1151A782B712C8C007601EC /* TopCoinsCellVM.swift */,
 			);
 			path = TopCoinsCell;
 			sourceTree = "<group>";
@@ -451,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				B197133B2B6FD8FF00AA59E7 /* NewsCell.swift */,
+				B1151A702B7104E6007601EC /* NewsCellViewModel.swift */,
 			);
 			path = NewsCell;
 			sourceTree = "<group>";
@@ -504,6 +522,7 @@
 			children = (
 				B197134E2B6FFED800AA59E7 /* TopCoinCell.swift */,
 				B197134F2B6FFED800AA59E7 /* TopCoinCell.xib */,
+				B1151A7A2B712F92007601EC /* TopCoinCellVM.swift */,
 			);
 			path = TopCoinCell;
 			sourceTree = "<group>";
@@ -513,6 +532,7 @@
 			children = (
 				B197135B2B701EAD00AA59E7 /* ArticleCell.swift */,
 				B197135C2B701EAD00AA59E7 /* ArticleCell.xib */,
+				B1151A762B711A25007601EC /* ArticleCellViewModel.swift */,
 			);
 			path = ArticleCell;
 			sourceTree = "<group>";
@@ -606,6 +626,7 @@
 				B137DCFE2B6E6CA1007413AD /* FirebaseStorageCombine-Community */,
 				B137DD1D2B6EC83E007413AD /* IQKeyboardManagerSwift */,
 				B1D56CB72B70DD5D00AE104D /* APIService */,
+				B1151A7D2B7132B1007601EC /* Kingfisher */,
 			);
 			productName = CryptoApp;
 			productReference = B130553F2B6D946C00E89745 /* CryptoApp.app */;
@@ -639,6 +660,7 @@
 				B137DCC92B6E6CA1007413AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B137DD1C2B6EC83E007413AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				B1D56CB62B70DD5D00AE104D /* XCLocalSwiftPackageReference "../APIService" */,
+				B1151A7C2B7132B1007601EC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B13055402B6D946C00E89745 /* Products */;
 			projectDirPath = "";
@@ -679,19 +701,24 @@
 				B197133C2B6FD8FF00AA59E7 /* NewsCell.swift in Sources */,
 				B137DD032B6E6DBD007413AD /* AuthManager.swift in Sources */,
 				B1E458052B6DE31500D780CA /* OnboardModel.swift in Sources */,
+				B1151A752B710F0A007601EC /* CoinModel.swift in Sources */,
 				B13055822B6D99FE00E89745 /* AppCoordinator.swift in Sources */,
 				B13055472B6D946C00E89745 /* LoginViewController.swift in Sources */,
 				B137DD102B6E8521007413AD /* SignUpViewModel.swift in Sources */,
 				B197132A2B6FB54F00AA59E7 /* HomeViewController.swift in Sources */,
+				B1151A7B2B712F92007601EC /* TopCoinCellVM.swift in Sources */,
+				B1151A772B711A25007601EC /* ArticleCellViewModel.swift in Sources */,
 				B197135D2B701EAD00AA59E7 /* ArticleCell.swift in Sources */,
 				B13055432B6D946C00E89745 /* AppDelegate.swift in Sources */,
 				B1E458072B6DE7E200D780CA /* OnboardingCellVM.swift in Sources */,
 				B19713402B6FDAF000AA59E7 /* TotalBalanceView.swift in Sources */,
+				B1151A732B7107DA007601EC /* ArticleModel.swift in Sources */,
 				B130558C2B6DB42B00E89745 /* UIViewController+Extension.swift in Sources */,
 				B137DD0A2B6E762F007413AD /* String+Extension.swift in Sources */,
 				B13055952B6DBE3400E89745 /* OnboardingCell.swift in Sources */,
 				B137DD062B6E6E29007413AD /* FirebaseError.swift in Sources */,
 				B137DD1B2B6EB14D007413AD /* AlertManager.swift in Sources */,
+				B1151A792B712C8C007601EC /* TopCoinsCellVM.swift in Sources */,
 				B18E6C392B6E2F2E009F3B18 /* LoginViewModel.swift in Sources */,
 				B13055902B6DB6B300E89745 /* OnboardingViewModel.swift in Sources */,
 				B1E4580B2B6DE97F00D780CA /* BaseCellVM.swift in Sources */,
@@ -700,6 +727,7 @@
 				B197132F2B6FB5C900AA59E7 /* HomeViewModel.swift in Sources */,
 				B13055922B6DBA0400E89745 /* UIColor+Extension.swift in Sources */,
 				B137DD192B6EAD52007413AD /* AppAlertView.swift in Sources */,
+				B1151A712B7104E6007601EC /* NewsCellViewModel.swift in Sources */,
 				B19713382B6FD8D900AA59E7 /* TotalBalanceCell.swift in Sources */,
 				B137DD0C2B6E7EB1007413AD /* GeneralError.swift in Sources */,
 				B19713502B6FFED800AA59E7 /* TopCoinCell.swift in Sources */,
@@ -944,6 +972,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B1151A7C2B7132B1007601EC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 		B137DCC92B6E6CA1007413AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -963,6 +999,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B1151A7D2B7132B1007601EC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1151A7C2B7132B1007601EC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		B137DCCA2B6E6CA1007413AD /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B137DCC92B6E6CA1007413AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -8,18 +8,18 @@
 import Foundation
 
 public struct CoinDTO: Codable {
-    let id, symbol, name: String
-    let image: String
-    let currentPrice: Double
-    let marketCap, marketCapRank, fullyDilutedValuation, totalVolume: Int
-    let high24H, low24H, priceChange24H, priceChangePercentage24H: Double
-    let marketCapChange24H, marketCapChangePercentage24H, circulatingSupply, totalSupply: Double
-    let maxSupply: Int?
-    let ath, athChangePercentage: Double
-    let athDate: String
-    let atl, atlChangePercentage: Double
-    let atlDate: String
-    let lastUpdated: String
+    public let id, symbol, name: String
+    public let image: String
+    public let currentPrice: Double
+    public let marketCap, marketCapRank, fullyDilutedValuation, totalVolume: Int
+    public let high24H, low24H, priceChange24H, priceChangePercentage24H: Double
+    public let marketCapChange24H, marketCapChangePercentage24H, circulatingSupply, totalSupply: Double
+    public let maxSupply: Int?
+    public let ath, athChangePercentage: Double
+    public let athDate: String
+    public let atl, atlChangePercentage: Double
+    public let atlDate: String
+    public let lastUpdated: String
 
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, image

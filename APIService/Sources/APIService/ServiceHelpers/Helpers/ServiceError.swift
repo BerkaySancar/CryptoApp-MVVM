@@ -15,20 +15,20 @@ public enum ServiceError: Error {
     case noConnection
     case unauthorized
     
-    var localizedDescription: String {
+    public var localizedDescription: String {
         switch self {
         case .invalidURL:
-            return NSLocalizedString("Invalid URL.", comment: "")
+            return "Something went wrong. Try again."
         case .invalidResponse:
-            return NSLocalizedString("Invalid response.", comment: "")
+            return "Something went wrong. Try again."
         case .requestFailed:
-            return NSLocalizedString("Request failed.", comment: "")
+            return "Request failed. Try again."
         case .invalidURLRequest:
-            return NSLocalizedString("Invalid URL Request.", comment: "")
+            return "Something went wrong. Try again."
         case .noConnection:
-            return NSLocalizedString("No internet connection.", comment: "")
+            return "No internet connection."
         case .unauthorized:
-            return NSLocalizedString("Unauthorized request.", comment: "")
+           return "Unauthorized request."
         }
     }
 }

@@ -20,12 +20,16 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Home"
+        viewModel.viewDidLoad()
+//        self.navigationItem.rightBarButtonItem = .init(systemItem: .add)
     }
 }
 
 // MARK: View Model Outputs
 extension HomeViewController: HomeViewModelOutputs {
-    
+    func dataRefreshed() {
+        self.homeTableView.reloadData()
+    }
 }
 
 //MARK: Table View Delegate & Data Source
@@ -42,9 +46,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .topCoins:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopCoinsCell", for: indexPath) as! TopCoinsCell
+            cell.viewModel = viewModel.getCellVM(indexPath: indexPath) as? TopCoinsCellVM
             return cell
         case .news:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+            cell.viewModel = viewModel.getCellVM(indexPath: indexPath) as? NewsCellViewModel
             return cell
         }
     }

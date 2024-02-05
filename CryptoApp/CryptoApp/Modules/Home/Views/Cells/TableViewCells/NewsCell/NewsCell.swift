@@ -11,6 +11,12 @@ final class NewsCell: UITableViewCell {
 
     @IBOutlet private weak var newsCollectionView: UICollectionView!
     
+    var viewModel: NewsCellViewModel! {
+        didSet {
+            newsCollectionView.reloadData()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -25,23 +31,24 @@ final class NewsCell: UITableViewCell {
     }
 
     @IBAction private func seeAllButtonTapped(_ sender: Any) {
-        print("Tapped")
+        
     }
 }
 
 extension NewsCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        viewModel.numberOfRowsInSection(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        let cell = newsCollectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        cell.viewModel = viewModel.getCellVM(indexPath: indexPath) as? ArticleCellViewModel
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: UIScreen.main.bounds.width / 1.15, height: 140)
+        viewModel.sizeForItemAt(indexPath: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

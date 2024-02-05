@@ -6,17 +6,22 @@
 //
 
 import Foundation
+import APIService
 
+//MARK: ViewModel Outputs
 protocol HomeViewModelOutputs: AnyObject {
-    
+    func dataRefreshed()
 }
 
+//MARK: ViewModel Resposibilities
 protocol HomeViewModelProtocol {
     func viewDidLoad()
     func numberOfRowsInSection(section: Int) -> Int
     func heightForRowAt(indexPath: IndexPath) -> CGFloat
+    func getCellVM(indexPath: IndexPath) -> BaseCellVM?
 }
 
+//MARK: Cell Types
 enum HomeViewCellType: CaseIterable {
     case totalBalance
     case topCoins
@@ -31,16 +36,92 @@ enum HomeViewCellType: CaseIterable {
     }
 }
 
+//MARK: View Model
 final class HomeViewModel {
-    weak var coordinator: AppCoordinator?
-    weak var view: HomeViewModelOutputs?
+    private weak var coordinator: AppCoordinator?
+    private weak var view: HomeViewModelOutputs?
+    private let cryptoService: CryptoServiceProtocol?
+    private let newsService: NewsServiceProtocol?
+    private var dispatchGroup: DispatchGroup?
     
-    init(coordinator: AppCoordinator, view: HomeViewModelOutputs) {
+    private var coins: [CoinModel]?
+    private var articles: [ArticleModel]?
+    
+    private var serviceErrorMessage: String?
+    
+    init(coordinator: AppCoordinator, view: HomeViewModelOutputs, cryptoService: CryptoServiceProtocol?, newsService: NewsServiceProtocol?, dispatchGroup: DispatchGroup = .init()) {
         self.coordinator = coordinator
         self.view = view
+        self.cryptoService = cryptoService
+        self.newsService = newsService
+        self.dispatchGroup = dispatchGroup
+        Task {
+            await getData()
+        }
+    }
+    
+    private func getData() async {
+        ActivityIndicatorManager.shared.startActivity()
+        self.serviceErrorMessage = ""
+        
+        self.dispatchGroup?.enter()
+        await cryptoService?.getCoins(currency: "usd", perPage: 10, page: 1) { [weak self] results in
+            guard let self else { return }
+            self.dispatchGroup?.leave()
+            switch results {
+            case .success(let data):
+                if let data {
+                    self.coins = data.map {
+                        CoinModel(
+                            id: $0.id,
+                            name: $0.name,
+                            image: $0.image,
+                            currentPrice: $0.currentPrice,
+                            priceChangeCPercentage24h: $0.priceChangePercentage24H
+                        )
+                    }
+                }
+            case .failure(let error):
+                self.serviceErrorMessage = "\nCoins are not loaded. \n\n\(error.localizedDescription)"
+            }
+        }
+        
+        self.dispatchGroup?.enter()
+        await newsService?.getCryptoNews { [weak self] results in
+            guard let self else { return }
+            self.dispatchGroup?.leave()
+            switch results {
+            case .success(let data):
+                if let data {
+                    self.articles = data.map {
+                        ArticleModel(
+                            title: $0.title,
+                            url: $0.url,
+                            urlToImage: $0.urlToImage,
+                            author: $0.author
+                        )
+                    }
+                }
+                break
+            case .failure(let error):
+                self.serviceErrorMessage?.append("\nNews are not loaded.\n\n \(error.localizedDescription)")
+            }
+        }
+        
+        dispatchGroup?.notify(queue: .main) { [weak self] in
+            guard let self else { return }
+            ActivityIndicatorManager.shared.endActivity()
+            
+            if serviceErrorMessage != "" {
+                AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error", message: self.serviceErrorMessage ?? ""))
+            }
+            
+            self.view?.dataRefreshed()
+        }
     }
 }
 
+//MARK: ViewModelProtocol
 extension HomeViewModel: HomeViewModelProtocol {
     
     func viewDidLoad() {
@@ -62,4 +143,14 @@ extension HomeViewModel: HomeViewModelProtocol {
         }
     }
     
+    func getCellVM(indexPath: IndexPath) -> BaseCellVM? {
+        switch HomeViewCellType.getType(index: indexPath.row) {
+        case .totalBalance:
+            return nil
+        case .topCoins:
+            return TopCoinsCellVM(coins: self.coins)
+        case .news:
+            return NewsCellViewModel(articles: self.articles)
+        }
+    }
 }

@@ -8,17 +8,17 @@
 import Foundation
 
 public struct NewsDTO: Codable {
-    let status: String
-    let totalResults: Int
-    let articles: [Article]
+    public let status: String
+    public let totalResults: Int
+    public let articles: [ArticleDTO]
 }
 
-public struct Article: Codable {
-    let author: String?
-    let title: String?
-    let description: String?
-    let url: String?
-    let urlToImage: String?
-    let publishedAt: String?
-    let content: String?
+public struct ArticleDTO: Codable {
+    public let author: String?
+    public let title: String?
+    public let description: String?
+    public let url: String?
+    public let urlToImage: String?
+    public let publishedAt: String?
+    public let content: String?
 }

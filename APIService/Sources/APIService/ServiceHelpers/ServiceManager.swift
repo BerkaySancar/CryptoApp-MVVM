@@ -32,7 +32,7 @@ final class ServiceManager {
     func request<T: Codable>(_ request: URLRequestConvertible, type: T.Type, completion: @escaping (Result<T?, ServiceError>) -> Void) async {
         if isReachable {
             if #available(iOS 15.0, *) {
-                guard let (data, response) = try? await URLSession.shared.data(for: request.urlRequest()) else 
+                guard let (data, response) = try? await URLSession.shared.data(for: request.urlRequest()) else
                 {  completion(.failure(ServiceError.invalidURL))
                     return
                 }

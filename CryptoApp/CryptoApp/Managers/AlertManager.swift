@@ -49,8 +49,9 @@ final class AlertManager {
             alertView?.actionButton.setTitle("Login", for: .normal)
         }
         
-        if let keyWindow {
-            keyWindow.addSubview(alertView!)
+        if let keyWindow,
+           let alertView {
+            keyWindow.addSubview(alertView)
         }
     }
     

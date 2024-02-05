@@ -12,6 +12,12 @@ final class TopCoinsCell: UITableViewCell {
     //MARK: Outlets
     @IBOutlet private weak var topCoinsCollectionView: UICollectionView!
     
+    var viewModel: TopCoinsCellVM! {
+        didSet {
+            topCoinsCollectionView.reloadData()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -33,16 +39,17 @@ final class TopCoinsCell: UITableViewCell {
 extension TopCoinsCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        viewModel.numberOfItemsInSection(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopCoinCell", for: indexPath) as! TopCoinCell
+        cell.viewModel = viewModel.getCellVM(indexPath: indexPath) as? TopCoinCellVM
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 160, height: 170)
+        viewModel.sizeForItemAt(indexPath: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

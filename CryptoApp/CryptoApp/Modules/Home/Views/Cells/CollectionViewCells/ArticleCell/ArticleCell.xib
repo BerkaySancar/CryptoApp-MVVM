@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,9 +21,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJ9-g3-qUS" userLabel="ContentView">
                         <rect key="frame" x="0.0" y="0.0" width="417" height="170"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btcLogo" translatesAutoresizingMaskIntoConstraints="NO" id="M42-kN-wHN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btcLogo" translatesAutoresizingMaskIntoConstraints="NO" id="M42-kN-wHN">
                                 <rect key="frame" x="16" y="25" width="120" height="120"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="7ay-bf-peI"/>
                                     <constraint firstAttribute="height" constant="120" id="ebg-Ds-4D2"/>
@@ -35,29 +33,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kripto bu sene boğa mı yaşayacak..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpf-kx-OhW">
-                                <rect key="frame" x="152" y="25" width="281" height="43"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deneme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIS-iz-75P">
-                                <rect key="frame" x="152" y="98" width="249" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIS-iz-75P">
+                                <rect key="frame" x="152" y="134.66666666666666" width="249" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kripto bu sene boğa mı yaşayacak...as dasda sdas dasd asd asd asd asd asd asd asd asd asd  asd asd asd as das dasd asd a" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpf-kx-OhW">
+                                <rect key="frame" x="152" y="20" width="249" height="81.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="CellBackground"/>
                         <constraints>
                             <constraint firstItem="hpf-kx-OhW" firstAttribute="leading" secondItem="M42-kN-wHN" secondAttribute="trailing" constant="16" id="0wZ-ZD-Ibs"/>
-                            <constraint firstItem="gIS-iz-75P" firstAttribute="top" secondItem="hpf-kx-OhW" secondAttribute="bottom" constant="30" id="Ip7-OB-Fl3"/>
                             <constraint firstItem="M42-kN-wHN" firstAttribute="leading" secondItem="wJ9-g3-qUS" secondAttribute="leading" constant="16" id="K95-kE-nky"/>
                             <constraint firstItem="M42-kN-wHN" firstAttribute="centerY" secondItem="wJ9-g3-qUS" secondAttribute="centerY" id="OMC-OY-9Hg"/>
-                            <constraint firstItem="hpf-kx-OhW" firstAttribute="top" secondItem="wJ9-g3-qUS" secondAttribute="top" constant="25" id="R2G-DP-aS1"/>
                             <constraint firstAttribute="trailing" secondItem="gIS-iz-75P" secondAttribute="trailing" constant="16" id="RgW-Wm-IWP"/>
                             <constraint firstItem="gIS-iz-75P" firstAttribute="leading" secondItem="M42-kN-wHN" secondAttribute="trailing" constant="16" id="Xfv-Do-dqp"/>
-                            <constraint firstAttribute="trailing" secondItem="hpf-kx-OhW" secondAttribute="trailing" constant="-16" id="lww-lx-h3d"/>
+                            <constraint firstItem="hpf-kx-OhW" firstAttribute="top" secondItem="wJ9-g3-qUS" secondAttribute="top" constant="20" id="a92-Xi-GfC"/>
+                            <constraint firstAttribute="bottom" secondItem="gIS-iz-75P" secondAttribute="bottom" constant="16" id="fkC-VO-apz"/>
+                            <constraint firstAttribute="trailing" secondItem="hpf-kx-OhW" secondAttribute="trailing" constant="16" id="lww-lx-h3d"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -73,6 +71,7 @@
             <connections>
                 <outlet property="articleImageView" destination="M42-kN-wHN" id="Cld-RV-x6p"/>
                 <outlet property="articleTitleLabel" destination="hpf-kx-OhW" id="C4w-zd-bkd"/>
+                <outlet property="dateLabel" destination="gIS-iz-75P" id="LOv-9j-VLM"/>
             </connections>
             <point key="canvasLocation" x="232.82442748091603" y="19.014084507042256"/>
         </collectionViewCell>
@@ -82,8 +81,5 @@
         <namedColor name="CellBackground">
             <color red="0.15686274509803921" green="0.16862745098039217" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
