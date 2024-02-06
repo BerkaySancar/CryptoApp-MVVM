@@ -67,6 +67,8 @@
 		B137DD192B6EAD52007413AD /* AppAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD182B6EAD52007413AD /* AppAlertView.swift */; };
 		B137DD1B2B6EB14D007413AD /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD1A2B6EB14D007413AD /* AlertManager.swift */; };
 		B137DD1E2B6EC83E007413AD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B137DD1D2B6EC83E007413AD /* IQKeyboardManagerSwift */; };
+		B16E12572B72D0020053ED4E /* EmptyContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16E12562B72D0020053ED4E /* EmptyContentView.xib */; };
+		B16E12592B72D00B0053ED4E /* EmptyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E12582B72D00B0053ED4E /* EmptyContentView.swift */; };
 		B17421852B716375009BF926 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17421842B716375009BF926 /* SettingsViewController.swift */; };
 		B17421882B716E9C009BF926 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17421872B716E9C009BF926 /* SearchViewController.swift */; };
 		B174218E2B717038009BF926 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B174218D2B717038009BF926 /* SearchViewModel.swift */; };
@@ -127,6 +129,8 @@
 		B137DD162B6EAD41007413AD /* AppAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppAlertView.xib; sourceTree = "<group>"; };
 		B137DD182B6EAD52007413AD /* AppAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertView.swift; sourceTree = "<group>"; };
 		B137DD1A2B6EB14D007413AD /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		B16E12562B72D0020053ED4E /* EmptyContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyContentView.xib; sourceTree = "<group>"; };
+		B16E12582B72D00B0053ED4E /* EmptyContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyContentView.swift; sourceTree = "<group>"; };
 		B17421842B716375009BF926 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B17421872B716E9C009BF926 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B174218D2B717038009BF926 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -390,10 +394,20 @@
 		B137DD132B6EAD1A007413AD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B16E12512B72CED20053ED4E /* EmptyContentView */,
 				B197133E2B6FDAD000AA59E7 /* TotalBalanceView */,
 				B197133D2B6FDAC100AA59E7 /* AlertView */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		B16E12512B72CED20053ED4E /* EmptyContentView */ = {
+			isa = PBXGroup;
+			children = (
+				B16E12562B72D0020053ED4E /* EmptyContentView.xib */,
+				B16E12582B72D00B0053ED4E /* EmptyContentView.swift */,
+			);
+			path = EmptyContentView;
 			sourceTree = "<group>";
 		};
 		B17421832B716364009BF926 /* Settings */ = {
@@ -763,6 +777,7 @@
 			files = (
 				B130554F2B6D946D00E89745 /* LaunchScreen.storyboard in Resources */,
 				B19713422B6FDB0500AA59E7 /* TotalBalanceView.xib in Resources */,
+				B16E12572B72D0020053ED4E /* EmptyContentView.xib in Resources */,
 				B130554C2B6D946D00E89745 /* Assets.xcassets in Resources */,
 				B130554A2B6D946C00E89745 /* Authentication.storyboard in Resources */,
 				B13055962B6DBE3400E89745 /* OnboardingCell.xib in Resources */,
@@ -820,6 +835,7 @@
 				B137DD192B6EAD52007413AD /* AppAlertView.swift in Sources */,
 				B1151A712B7104E6007601EC /* NewsCellViewModel.swift in Sources */,
 				B17421962B724B19009BF926 /* SearchCoinModel.swift in Sources */,
+				B16E12592B72D00B0053ED4E /* EmptyContentView.swift in Sources */,
 				B19713382B6FD8D900AA59E7 /* TotalBalanceCell.swift in Sources */,
 				B137DD0C2B6E7EB1007413AD /* GeneralError.swift in Sources */,
 				B19713502B6FFED800AA59E7 /* TopCoinCell.swift in Sources */,

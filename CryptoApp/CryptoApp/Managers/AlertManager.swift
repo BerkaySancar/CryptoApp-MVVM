@@ -23,35 +23,37 @@ final class AlertManager {
     private init() {}
     
     func showAlert(type: AlertType) {
-        if alertView == nil {
-            alertView = AppAlertView()
-        }
-        
-        switch type {
-        case .titleMessageDismiss(let title, let message):
-            alertView?.titleLabel.text = title
-            alertView?.messageLabel.text = message
-            alertView?.actionButton.setTitle("OK", for: .normal)
-            alertView?.alertTextField.isHidden = true
+        DispatchQueue.main.async {
+            if self.alertView == nil {
+                self.alertView = AppAlertView()
+            }
             
-        case .passwordReset:
-            alertView?.titleLabel.text = "Password Reset"
-            alertView?.messageLabel.isHidden = true
-            alertView?.alertTextField.isHidden = false
-            alertView?.alertTextField.placeholder = "Enter your email"
-            alertView?.actionButton.setTitle("Reset", for: .normal)
+            switch type {
+            case .titleMessageDismiss(let title, let message):
+                self.alertView?.titleLabel.text = title
+                self.alertView?.messageLabel.text = message
+                self.alertView?.actionButton.setTitle("OK", for: .normal)
+                self.alertView?.alertTextField.isHidden = true
+                
+            case .passwordReset:
+                self.alertView?.titleLabel.text = "Password Reset"
+                self.alertView?.messageLabel.isHidden = true
+                self.alertView?.alertTextField.isHidden = false
+                self.alertView?.alertTextField.placeholder = "Enter your email"
+                self.alertView?.actionButton.setTitle("Reset", for: .normal)
+                
+            case .signUpSuccess:
+                self.alertView?.titleLabel.text = "Done!"
+                self.alertView?.messageLabel.isHidden = false
+                self.alertView?.messageLabel.text = "Sign up was successful. Please login."
+                self.alertView?.alertTextField.isHidden = true
+                self.alertView?.actionButton.setTitle("Login", for: .normal)
+            }
             
-        case .signUpSuccess:
-            alertView?.titleLabel.text = "Done!"
-            alertView?.messageLabel.isHidden = false
-            alertView?.messageLabel.text = "Sign up was successful. Please login."
-            alertView?.alertTextField.isHidden = true
-            alertView?.actionButton.setTitle("Login", for: .normal)
-        }
-        
-        if let keyWindow,
-           let alertView {
-            keyWindow.addSubview(alertView)
+            if let keyWindow,
+               let alertView = self.alertView {
+                keyWindow.addSubview(alertView)
+            }
         }
     }
     

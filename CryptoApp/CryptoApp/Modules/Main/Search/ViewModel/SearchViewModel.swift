@@ -12,6 +12,7 @@ import APIService
 protocol SearchViewModelOutputs: AnyObject {
     func dataRefreshed()
     func didChangeTrendLabelVisibility(_ isHidden: Bool)
+    func prepareEmptyContentView()
 }
 
 //MARK: View Model Responsibilities
@@ -78,6 +79,7 @@ extension SearchViewModel: SearchViewModelProtocol {
         Task {
             await getSearchTrendings()
         }
+        view?.prepareEmptyContentView()
     }
     
     func getCellViewModel(indexPath: IndexPath) -> BaseCellViewModel {
@@ -99,7 +101,7 @@ extension SearchViewModel: SearchViewModelProtocol {
     func searchTextDidChange(text: String) {
         if text.count > 2 {
             searchTimer?.invalidate()
-            searchTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] _ in
+            searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
                 guard let self else { return }
                 self.view?.didChangeTrendLabelVisibility(true)
                 Task {

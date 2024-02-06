@@ -15,6 +15,7 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet private weak var nextButton: UIButton!
     @IBOutlet private weak var signUpButton: UIButton!
     @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
     
     //MARK: ViewModel
     var viewModel: OnboardingViewModelProtocol?
@@ -39,6 +40,7 @@ final class OnboardingViewController: UIViewController {
         loginButton.isHidden = !isLastItemVisible
         pageControl.isHidden = isLastItemVisible
         nextButton.isHidden = isLastItemVisible
+        skipButton.isHidden = isLastItemVisible
     }
  
     //MARK: Actions
@@ -109,5 +111,10 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        self.setButtonVisibility(currentPage: pageControl.currentPage)
     }
 }

@@ -66,10 +66,10 @@
                                     <action selector="loginTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Apg-HZ-UGo"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GRw-X1-6NE">
-                                <rect key="frame" x="16" y="102" width="361" height="614"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GRw-X1-6NE">
+                                <rect key="frame" x="0.0" y="102" width="393" height="614"/>
                                 <color key="backgroundColor" name="AppBackground"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y6t-x7-zre">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Y6t-x7-zre">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -96,8 +96,8 @@
                         <color key="backgroundColor" name="AppBackground"/>
                         <constraints>
                             <constraint firstItem="ii6-nk-8nd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1lM-Ro-5HU"/>
-                            <constraint firstItem="GRw-X1-6NE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="2DP-ob-zpV"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GRw-X1-6NE" secondAttribute="trailing" constant="16" id="5cx-i9-Ilh"/>
+                            <constraint firstItem="GRw-X1-6NE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2DP-ob-zpV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GRw-X1-6NE" secondAttribute="trailing" id="5cx-i9-Ilh"/>
                             <constraint firstItem="GRw-X1-6NE" firstAttribute="top" secondItem="ii6-nk-8nd" secondAttribute="bottom" constant="8" id="MGQ-Nc-dsL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Wdb-KL-sl6" secondAttribute="trailing" constant="16" id="Mej-hB-TfL"/>
                             <constraint firstItem="D8m-CR-Ge2" firstAttribute="centerY" secondItem="Wdb-KL-sl6" secondAttribute="centerY" id="Xoy-gS-obw"/>
@@ -117,6 +117,7 @@
                         <outlet property="onboardingCollectionView" destination="GRw-X1-6NE" id="RAi-Je-9Dx"/>
                         <outlet property="pageControl" destination="D8m-CR-Ge2" id="VUb-XY-cpo"/>
                         <outlet property="signUpButton" destination="OfH-Hx-zTV" id="YXy-sF-gOB"/>
+                        <outlet property="skipButton" destination="ii6-nk-8nd" id="akj-Og-syP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -49,15 +49,18 @@ final class HomeViewModel {
     
     private var serviceErrorMessage: String?
     
-    init(coordinator: AppCoordinator, view: HomeViewModelOutputs, cryptoService: CryptoServiceProtocol?, newsService: NewsServiceProtocol?, dispatchGroup: DispatchGroup = .init()) {
+    init(
+        coordinator: AppCoordinator,
+        view: HomeViewModelOutputs,
+        cryptoService: CryptoServiceProtocol?,
+        newsService: NewsServiceProtocol?,
+        dispatchGroup: DispatchGroup = .init()
+    ) {
         self.coordinator = coordinator
         self.view = view
         self.cryptoService = cryptoService
         self.newsService = newsService
         self.dispatchGroup = dispatchGroup
-        Task {
-            await getData()
-        }
     }
     
     private func getData() async {
@@ -82,7 +85,7 @@ final class HomeViewModel {
                     }
                 }
             case .failure(let error):
-                self.serviceErrorMessage = "\nCoins are not loaded. \n\n\(error.localizedDescription)"
+                self.serviceErrorMessage = "\n\nCoins are not loaded. \n\(error.localizedDescription)\n"
             }
         }
         
@@ -104,7 +107,7 @@ final class HomeViewModel {
                 }
                 break
             case .failure(let error):
-                self.serviceErrorMessage?.append("\nNews are not loaded.\n\n \(error.localizedDescription)")
+                self.serviceErrorMessage?.append("\nNews are not loaded.\n \(error.localizedDescription)\n")
             }
         }
         
@@ -125,7 +128,9 @@ final class HomeViewModel {
 extension HomeViewModel: HomeViewModelProtocol {
     
     func viewDidLoad() {
-        
+        Task {
+            await getData()
+        }
     }
     
     func numberOfRowsInSection(section: Int) -> Int {

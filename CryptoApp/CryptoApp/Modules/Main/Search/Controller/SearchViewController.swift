@@ -13,6 +13,8 @@ final class SearchViewController: UIViewController {
     @IBOutlet private weak var searchTableView: UITableView!
     @IBOutlet private weak var trendingSearchLabel: UILabel!
     
+    private lazy var emptyContentView = EmptyContentView()
+    
     //MARK: View Model
     var viewModel: SearchViewModelProtocol!
 
@@ -40,6 +42,10 @@ extension SearchViewController: SearchViewModelOutputs {
     func didChangeTrendLabelVisibility(_ isHidden: Bool) {
         self.trendingSearchLabel.isHidden = isHidden
     }
+    
+    func prepareEmptyContentView() {
+        searchTableView.backgroundView = emptyContentView
+    }
 }
 
 //MARK: UISearchBar Delegate
@@ -52,6 +58,7 @@ extension SearchViewController: UISearchBarDelegate {
 //MARK: UITableView Delegate & Data Source
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        searchTableView.backgroundView?.isHidden = viewModel.numberOfRowsInSection(section: section) != 0
         return viewModel.numberOfRowsInSection(section: section)
     }
     
