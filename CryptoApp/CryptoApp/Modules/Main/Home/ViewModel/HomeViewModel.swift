@@ -18,7 +18,7 @@ protocol HomeViewModelProtocol {
     func viewDidLoad()
     func numberOfRowsInSection(section: Int) -> Int
     func heightForRowAt(indexPath: IndexPath) -> CGFloat
-    func getCellVM(indexPath: IndexPath) -> BaseCellVM?
+    func getCellViewModel(indexPath: IndexPath) -> BaseCellViewModel?
 }
 
 //MARK: Cell Types
@@ -143,7 +143,7 @@ extension HomeViewModel: HomeViewModelProtocol {
         }
     }
     
-    func getCellVM(indexPath: IndexPath) -> BaseCellVM? {
+    func getCellViewModel(indexPath: IndexPath) -> BaseCellViewModel? {
         switch HomeViewCellType.getType(index: indexPath.row) {
         case .totalBalance:
             return nil

@@ -42,7 +42,7 @@ final class LoginViewModel: LoginViewModelProtocol {
                 guard let self else { return }
                 switch results {
                 case .success(_):
-                    self.coordinator?.home()
+                    self.coordinator?.tabBar()
                 case .failure(let error):
                     AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error.", message: error.localizedDescription))
                 }

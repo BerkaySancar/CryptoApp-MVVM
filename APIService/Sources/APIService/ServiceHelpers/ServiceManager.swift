@@ -34,9 +34,9 @@ final class ServiceManager {
             if #available(iOS 15.0, *) {
                 guard let (data, response) = try? await URLSession.shared.data(for: request.urlRequest()) else
                 {  completion(.failure(ServiceError.invalidURL))
+                    print("||||||||||||||", "\n", request, "\nINVALID URL", "\n||||||||||||||")
                     return
                 }
-                print(request.urlRequest())
                 if let response = response as? HTTPURLResponse {
                     switch response.statusCode {
                     case 200...299:
@@ -45,9 +45,14 @@ final class ServiceManager {
                         return
                     case 401:
                         completion(.failure(ServiceError.unauthorized))
+                        print("||||||||||||||", "\n", request, "\n401", "\n|||||||||||||")
                         return
+                    case 429:
+                        completion(.failure(.rateLimit))
+                        print("|||||||||||||||", "\n", request, "\n401", "\n||||||||||||||")
                     default:
                         completion(.failure(ServiceError.invalidResponse))
+                        print("||||||||||||||", "\n", request, "\n\(response.statusCode)", "\n||||||||||||||")
                         return
                     }
                 }

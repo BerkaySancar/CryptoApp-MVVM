@@ -17,7 +17,7 @@ final class LoginViewController: UIViewController {
     //MARK: ViewModel
     var viewModel: LoginViewModelProtocol?
     
-    //MARK: LifeCycle
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     

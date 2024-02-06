@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol BaseCellVM { }
+protocol BaseCellViewModel { }
 
 

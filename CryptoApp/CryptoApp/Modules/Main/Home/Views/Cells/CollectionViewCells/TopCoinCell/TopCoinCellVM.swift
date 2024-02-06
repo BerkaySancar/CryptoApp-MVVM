@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class TopCoinCellVM: BaseCellVM {
+final class TopCoinCellVM: BaseCellViewModel {
     
     private var coin: CoinModel?
     

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit.UIScreen
 
-final class NewsCellViewModel: BaseCellVM {
+final class NewsCellViewModel: BaseCellViewModel {
     
     private var articles: [ArticleModel]?
     
@@ -24,7 +24,7 @@ final class NewsCellViewModel: BaseCellVM {
         .init(width: UIScreen.main.bounds.width / 1.15, height: 140)
     }
     
-    func getCellVM(indexPath: IndexPath) -> BaseCellVM {
+    func getCellVM(indexPath: IndexPath) -> BaseCellViewModel {
         return ArticleCellViewModel(model: self.articles?.prefix(8)[indexPath.row])
     }
 }

@@ -4,22 +4,32 @@ import Foundation
 enum CryptoAPI: URLRequestConvertible {
     
     case getCoins(currency: String, perPage: Int, page: Int)
-    
+    case searchCoin(query: String)
+    case searchTrendings
+        
     var baseURL: URL {
-        .init(string: "https://api.coingecko.com/api/v3/coins/")!
+        .init(string: "https://api.coingecko.com/api/v3")!
     }
     
     var path: String {
         switch self {
         case .getCoins:
-            "markets"
+            "coins/markets"
+        case .searchCoin:
+            "search"
+        case .searchTrendings:
+            "search/trending"
         }
     }
     
     var httpMethod: HTTPMethods {
         switch self {
         case .getCoins:
-                .get
+            .get
+        case .searchCoin:
+            .get
+        case .searchTrendings:
+            .get
         }
     }
     
@@ -37,6 +47,10 @@ enum CryptoAPI: URLRequestConvertible {
              "sparkline": false,
              "locale": "en"
             ]
+        case .searchCoin(query: let query):
+            ["query": query]
+        case .searchTrendings:
+            nil
         }
     }
 }

@@ -159,10 +159,139 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75.572519083969468" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="-689" y="-37"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="kHu-K4-ayP">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="H59-AD-ift" customClass="SearchViewController" customModule="CryptoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aaf-hf-Q3t">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="TcN-yv-AsT">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <color key="tintColor" name="AppYellow"/>
+                                <color key="barTintColor" name="AppBackground"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="H59-AD-ift" id="SgG-lq-D74"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trending search coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeG-7T-RTn">
+                                <rect key="frame" x="8" y="115" width="167.33333333333334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="odL-Jc-QUi">
+                                <rect key="frame" x="0.0" y="144" width="393" height="708"/>
+                                <color key="backgroundColor" name="AppBackground"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCoinCell" rowHeight="115" id="LE6-di-2w4" customClass="SearchCoinCell" customModule="CryptoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LE6-di-2w4" id="TOL-5d-RA4">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btcLogo" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-b0-r98">
+                                                    <rect key="frame" x="16" y="27.666666666666671" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="2Uu-vz-cKX"/>
+                                                        <constraint firstAttribute="width" constant="60" id="BpR-kk-MaB"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2N-ph-jIN">
+                                                    <rect key="frame" x="84" y="45" width="140" height="25.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="fHT-qa-vgl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZn-p7-4rq">
+                                                    <rect key="frame" x="308.66666666666669" y="47.333333333333336" width="42.666666666666686" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-39-pnj">
+                                                    <rect key="frame" x="355.33333333333331" y="47" width="7.6666666666666856" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TcC-DU-sO7">
+                                                    <rect key="frame" x="371" y="50.666666666666664" width="18" height="14.333333333333336"/>
+                                                    <color key="tintColor" name="AppYellow"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="DUC-xg-C7q"/>
+                                                        <constraint firstAttribute="height" constant="18" id="TAy-Jf-FxS"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="TcC-DU-sO7" secondAttribute="trailing" constant="4" id="5nh-2R-iyz"/>
+                                                <constraint firstItem="eMO-b0-r98" firstAttribute="leading" secondItem="TOL-5d-RA4" secondAttribute="leading" constant="16" id="Ol0-gD-rxj"/>
+                                                <constraint firstItem="X2N-ph-jIN" firstAttribute="centerY" secondItem="TOL-5d-RA4" secondAttribute="centerY" id="Vna-0N-zcr"/>
+                                                <constraint firstItem="X2N-ph-jIN" firstAttribute="leading" secondItem="eMO-b0-r98" secondAttribute="trailing" constant="8" id="Y3k-Iz-RRR"/>
+                                                <constraint firstItem="TcC-DU-sO7" firstAttribute="centerY" secondItem="TOL-5d-RA4" secondAttribute="centerY" id="ZLv-lc-HPi"/>
+                                                <constraint firstItem="DFN-39-pnj" firstAttribute="leading" secondItem="gZn-p7-4rq" secondAttribute="trailing" constant="4" id="cqU-8f-teZ"/>
+                                                <constraint firstItem="eMO-b0-r98" firstAttribute="centerY" secondItem="TOL-5d-RA4" secondAttribute="centerY" id="oGA-8T-JOX"/>
+                                                <constraint firstItem="DFN-39-pnj" firstAttribute="centerY" secondItem="TOL-5d-RA4" secondAttribute="centerY" id="yqA-S4-qfj"/>
+                                                <constraint firstItem="TcC-DU-sO7" firstAttribute="leading" secondItem="DFN-39-pnj" secondAttribute="trailing" constant="8" id="zC2-ms-aZb"/>
+                                                <constraint firstItem="gZn-p7-4rq" firstAttribute="centerY" secondItem="TOL-5d-RA4" secondAttribute="centerY" id="zej-dm-a4p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="AppBackground"/>
+                                        <connections>
+                                            <outlet property="currencyImageView" destination="eMO-b0-r98" id="LMN-vp-SGz"/>
+                                            <outlet property="currencyNameLabel" destination="X2N-ph-jIN" id="kJi-hS-jVs"/>
+                                            <outlet property="currencyRankLabel" destination="DFN-39-pnj" id="odF-ba-Jh5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="H59-AD-ift" id="yRL-aN-2ZA"/>
+                                    <outlet property="delegate" destination="H59-AD-ift" id="lT7-hC-RxU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NdG-Mz-XJa"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="TcN-yv-AsT" firstAttribute="leading" secondItem="NdG-Mz-XJa" secondAttribute="leading" id="6VS-0f-k2i"/>
+                            <constraint firstItem="odL-Jc-QUi" firstAttribute="trailing" secondItem="NdG-Mz-XJa" secondAttribute="trailing" id="9hQ-li-c64"/>
+                            <constraint firstItem="TcN-yv-AsT" firstAttribute="trailing" secondItem="NdG-Mz-XJa" secondAttribute="trailing" id="Kh7-rI-x5E"/>
+                            <constraint firstAttribute="bottom" secondItem="odL-Jc-QUi" secondAttribute="bottom" id="PyE-dG-H2z"/>
+                            <constraint firstItem="TcN-yv-AsT" firstAttribute="top" secondItem="NdG-Mz-XJa" secondAttribute="top" id="Sbm-cq-u9A"/>
+                            <constraint firstItem="OeG-7T-RTn" firstAttribute="top" secondItem="TcN-yv-AsT" secondAttribute="bottom" id="UeF-wr-YS8"/>
+                            <constraint firstItem="odL-Jc-QUi" firstAttribute="leading" secondItem="NdG-Mz-XJa" secondAttribute="leading" id="cLX-Zy-2XW"/>
+                            <constraint firstItem="odL-Jc-QUi" firstAttribute="top" secondItem="OeG-7T-RTn" secondAttribute="bottom" constant="8" id="mzb-Rk-uBh"/>
+                            <constraint firstItem="OeG-7T-RTn" firstAttribute="leading" secondItem="NdG-Mz-XJa" secondAttribute="leading" constant="8" id="tj6-Td-hrg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="TcN-yv-AsT" id="vuI-FU-4Cd"/>
+                        <outlet property="searchTableView" destination="odL-Jc-QUi" id="5iz-rZ-vTR"/>
+                        <outlet property="trendingSearchLabel" destination="OeG-7T-RTn" id="W1v-H0-Hfy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3HA-bw-QxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287.78625954198475" y="-37.323943661971832"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btcLogo" width="113" height="112"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <namedColor name="AppBackground">
             <color red="0.086274509803921567" green="0.090196078431372548" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

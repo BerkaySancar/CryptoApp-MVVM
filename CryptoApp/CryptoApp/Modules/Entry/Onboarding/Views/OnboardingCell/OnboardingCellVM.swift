@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class OnboardingCellVM: BaseCellVM {
+final class OnboardingCellVM: BaseCellViewModel {
     
     private var model: OnboardModel?
     

@@ -18,7 +18,7 @@ final class SignUpViewController: UIViewController {
     //MARK: ViewModel
     var viewModel: SignUpViewModelProtocol?
 
-    //MARK: LifeCycle
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

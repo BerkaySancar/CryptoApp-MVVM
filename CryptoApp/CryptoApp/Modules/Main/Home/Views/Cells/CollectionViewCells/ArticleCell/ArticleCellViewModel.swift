@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ArticleCellViewModel: BaseCellVM {
+final class ArticleCellViewModel: BaseCellViewModel {
     
     private var model: ArticleModel?
     

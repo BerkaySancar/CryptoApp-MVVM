@@ -12,7 +12,7 @@ protocol OnboardingViewModelProtocol {
     func viewDidLoad()
     func viewWillDisappear()
     func numberOfItemsInSection() -> Int
-    func getCellVM(indexPath: IndexPath) -> BaseCellVM
+    func getCellVM(indexPath: IndexPath) -> BaseCellViewModel
     func nextButtonTapped(currentPage: Int)
     func signUpTapped()
     func loginTapped()
@@ -72,7 +72,7 @@ final class OnboardingViewModel: OnboardingViewModelProtocol {
         return onboardings.count
     }
     
-    func getCellVM(indexPath: IndexPath) -> BaseCellVM {
+    func getCellVM(indexPath: IndexPath) -> BaseCellViewModel {
         return OnboardingCellVM(model: self.onboardings[indexPath.row])
     }
     

@@ -15,13 +15,11 @@ final class HomeViewController: UIViewController {
     //MARK: ViewModel
     var viewModel: HomeViewModelProtocol!
     
-    //MARK: LifeCycle
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Home"
         viewModel.viewDidLoad()
-//        self.navigationItem.rightBarButtonItem = .init(systemItem: .add)
     }
 }
 
@@ -46,11 +44,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .topCoins:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopCoinsCell", for: indexPath) as! TopCoinsCell
-            cell.viewModel = viewModel.getCellVM(indexPath: indexPath) as? TopCoinsCellVM
+            cell.viewModel = viewModel.getCellViewModel(indexPath: indexPath) as? TopCoinsCellVM
             return cell
         case .news:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-            cell.viewModel = viewModel.getCellVM(indexPath: indexPath) as? NewsCellViewModel
+            cell.viewModel = viewModel.getCellViewModel(indexPath: indexPath) as? NewsCellViewModel
             return cell
         }
     }

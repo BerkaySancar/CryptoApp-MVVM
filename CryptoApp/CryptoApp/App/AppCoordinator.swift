@@ -13,20 +13,27 @@ import APIService
 protocol Coordinator {
     var navigationController: UINavigationController { get set }
     
-    func start()
+    func start(isLoggedIn: Bool)
 }
 
 final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
+    private var tabBarController: UITabBarController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
-        home()
+    //MARK: Start
+    func start(isLoggedIn: Bool) {
+        if isLoggedIn {
+            tabBar()
+        } else {
+            onboarding()
+        }
     }
     
+    //MARK: Onboarding
     func onboarding() {
         let onboardingVC = OnboardingViewController.instantiateFromStoryboard("Onboarding")
         let viewModel = OnboardingViewModel(
@@ -37,6 +44,7 @@ final class AppCoordinator: Coordinator {
         self.navigationController.setViewControllers([onboardingVC], animated: true)
     }
     
+    //MARK: Login
     func login() {
         let login = LoginViewController.instantiateFromStoryboard("Authentication")
         let viewModel = LoginViewModel(
@@ -48,6 +56,7 @@ final class AppCoordinator: Coordinator {
         self.navigationController.setViewControllers([login], animated: true)
     }
     
+    //MARK: SignUp
     func signUp() {
         let signUp = SignUpViewController.instantiateFromStoryboard("Authentication")
         let viewModel = SignUpViewModel(
@@ -59,7 +68,41 @@ final class AppCoordinator: Coordinator {
         self.navigationController.setViewControllers([signUp], animated: true)
     }
     
-    func home() {
+    //MARK: TabBar
+    func tabBar() {
+        tabBarController = UITabBarController()
+        tabBarController?.tabBar.tintColor = .appYellow
+        tabBarController?.setViewControllers(
+            [
+                home(),
+                search(),
+                settings()
+            ],
+            animated: true
+        )
+        
+        //MARK: HOME
+        tabBarController?.viewControllers?[0].tabBarItem.image = .init(systemName: "house")
+        tabBarController?.viewControllers?[0].tabBarItem.selectedImage = .init(systemName: "house.fill")
+        tabBarController?.viewControllers?[0].tabBarItem.title = "Home"
+        
+        //MARK: SEARCH
+        tabBarController?.viewControllers?[1].tabBarItem.image = .init(systemName: "magnifyingglass.circle")
+        tabBarController?.viewControllers?[1].tabBarItem.selectedImage = .init(systemName: "magnifyingglass.circle.fill")
+        tabBarController?.viewControllers?[1].tabBarItem.title = "Search"
+        
+        //MARK: Settings
+        tabBarController?.viewControllers?[2].tabBarItem.image = .init(systemName: "gearshape")
+        tabBarController?.viewControllers?[2].tabBarItem.selectedImage = .init(systemName: "gearshape.fill")
+        tabBarController?.viewControllers?[2].tabBarItem.title = "Settings"
+        
+        if let tabBarController {
+            self.navigationController.setViewControllers([tabBarController], animated: true)
+        }
+    }
+        
+    //MARK: Home
+    func home() -> HomeViewController {
         let home = HomeViewController.instantiateFromStoryboard("Main")
         let viewModel = HomeViewModel(
             coordinator: self,
@@ -68,8 +111,25 @@ final class AppCoordinator: Coordinator {
             newsService: NewsService()
         )
         home.viewModel = viewModel
-        self.navigationController.setViewControllers([home], animated: true)
+        return home
+    }
+    
+    //MARK: Search
+    func search() -> SearchViewController {
+        let search = SearchViewController.instantiateFromStoryboard("Main")
+        let viewModel = SearchViewModel(
+            view: search,
+            coordinator: self,
+            cryptoService: CryptoService()
+        )
+        search.viewModel = viewModel
+        return search
+    }
+    
+    //MARK: Settings
+    func settings() -> SettingsViewController {
+        let settings = SettingsViewController()
+        settings.coordinator = self
+        return settings
     }
 }
-
-

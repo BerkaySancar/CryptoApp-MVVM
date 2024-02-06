@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class TopCoinsCellVM: BaseCellVM {
+final class TopCoinsCellVM: BaseCellViewModel {
     
     private var coins: [CoinModel]?
     
@@ -23,7 +23,7 @@ final class TopCoinsCellVM: BaseCellVM {
         .init(width: 160, height: 170)
     }
     
-    func getCellVM(indexPath: IndexPath) -> BaseCellVM {
+    func getCellVM(indexPath: IndexPath) -> BaseCellViewModel {
         return TopCoinCellVM(coin: self.coins?.prefix(8)[indexPath.item])
     }
 }

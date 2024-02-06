@@ -14,6 +14,7 @@ public enum ServiceError: Error {
     case requestFailed
     case noConnection
     case unauthorized
+    case rateLimit
     
     public var localizedDescription: String {
         switch self {
@@ -29,6 +30,8 @@ public enum ServiceError: Error {
             return "No internet connection."
         case .unauthorized:
            return "Unauthorized request."
+        case .rateLimit:
+            return "You've exceeded the Rate Limit."
         }
     }
 }
