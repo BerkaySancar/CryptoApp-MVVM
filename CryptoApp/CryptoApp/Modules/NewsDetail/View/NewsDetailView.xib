@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsDetailViewController" customModule="CryptoApp" customModuleProvider="target">
+            <connections>
+                <outlet property="articleContentLabel" destination="tvs-i9-BDg" id="4Ms-il-naj"/>
+                <outlet property="articleDescriptionLabel" destination="wqz-PJ-yxF" id="36k-4n-5Jm"/>
+                <outlet property="articleImageView" destination="5IU-8o-PYE" id="Vls-fh-FiM"/>
+                <outlet property="articleTitleLabel" destination="dJn-js-kMJ" id="Qxv-SF-OB2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="453" height="1218"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pm-pC-NBp">
+                    <rect key="frame" x="0.0" y="0.0" width="453" height="1218"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tH5-nn-i3m">
+                            <rect key="frame" x="0.0" y="0.0" width="453" height="1218"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5IU-8o-PYE">
+                                    <rect key="frame" x="0.0" y="-2.3333333333333286" width="453" height="202"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="iXw-EY-4AT"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section 1.10.32 of &quot;de Finibus Bonorum et Malorum&quot;, written by Cicero in 45 BC" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-js-kMJ">
+                                    <rect key="frame" x="16" y="220" width="421" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <color key="textColor" name="AppYellow"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvs-i9-BDg">
+                                    <rect key="frame" x="16" y="377.33333333333331" width="421" height="114.66666666666669"/>
+                                    <mutableString key="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpH-7w-dXE">
+                                    <rect key="frame" x="6" y="496" width="431" height="65"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="65" id="4C4-ge-vbU"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.76180472188875559" green="0.60322496345476972" blue="0.22698671305256801" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="👉 Tap to open the full article in  Safari."/>
+                                    <connections>
+                                        <action selector="didTapToReadWebView:" destination="-1" eventType="touchUpInside" id="So9-uA-fOy"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqz-PJ-yxF">
+                                    <rect key="frame" x="16" y="284" width="421" height="81.333333333333314"/>
+                                    <string key="text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="AppBackground"/>
+                            <constraints>
+                                <constraint firstItem="dJn-js-kMJ" firstAttribute="leading" secondItem="tH5-nn-i3m" secondAttribute="leading" constant="16" id="73G-bS-rku"/>
+                                <constraint firstItem="wqz-PJ-yxF" firstAttribute="leading" secondItem="tH5-nn-i3m" secondAttribute="leading" constant="16" id="SRg-X6-ar3"/>
+                                <constraint firstItem="tvs-i9-BDg" firstAttribute="leading" secondItem="tH5-nn-i3m" secondAttribute="leading" constant="16" id="Wpu-Ii-jSo"/>
+                                <constraint firstAttribute="trailing" secondItem="5IU-8o-PYE" secondAttribute="trailing" id="YFm-hI-W4X"/>
+                                <constraint firstItem="gpH-7w-dXE" firstAttribute="leading" secondItem="tH5-nn-i3m" secondAttribute="leading" constant="6" id="YJq-Pi-UOx"/>
+                                <constraint firstAttribute="trailing" secondItem="tvs-i9-BDg" secondAttribute="trailing" constant="16" id="ZdS-9C-yjW"/>
+                                <constraint firstItem="gpH-7w-dXE" firstAttribute="top" secondItem="tvs-i9-BDg" secondAttribute="bottom" constant="4" id="aTP-JV-Y0N"/>
+                                <constraint firstItem="tvs-i9-BDg" firstAttribute="top" secondItem="wqz-PJ-yxF" secondAttribute="bottom" constant="12" id="c4c-vF-Xig"/>
+                                <constraint firstAttribute="trailing" secondItem="wqz-PJ-yxF" secondAttribute="trailing" constant="16" id="iOf-V9-kgm"/>
+                                <constraint firstItem="dJn-js-kMJ" firstAttribute="top" secondItem="5IU-8o-PYE" secondAttribute="bottom" constant="20" id="jS7-Gg-kkJ"/>
+                                <constraint firstItem="5IU-8o-PYE" firstAttribute="top" secondItem="tH5-nn-i3m" secondAttribute="top" id="pr8-g5-wkd"/>
+                                <constraint firstAttribute="trailing" secondItem="dJn-js-kMJ" secondAttribute="trailing" constant="16" id="rvt-RO-mdi"/>
+                                <constraint firstAttribute="trailing" secondItem="gpH-7w-dXE" secondAttribute="trailing" constant="16" id="rwH-fv-Ca4"/>
+                                <constraint firstItem="wqz-PJ-yxF" firstAttribute="top" secondItem="dJn-js-kMJ" secondAttribute="bottom" constant="16" id="xUW-Ww-65r"/>
+                                <constraint firstItem="5IU-8o-PYE" firstAttribute="leading" secondItem="tH5-nn-i3m" secondAttribute="leading" id="yY3-rK-V6d"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="AppBackground"/>
+                    <constraints>
+                        <constraint firstItem="tH5-nn-i3m" firstAttribute="height" secondItem="2pm-pC-NBp" secondAttribute="height" priority="250" id="1zS-87-A0h"/>
+                        <constraint firstItem="tH5-nn-i3m" firstAttribute="top" secondItem="2pm-pC-NBp" secondAttribute="top" id="25J-1D-2Sl"/>
+                        <constraint firstItem="tH5-nn-i3m" firstAttribute="width" secondItem="2pm-pC-NBp" secondAttribute="width" id="Cxw-NI-9c1"/>
+                        <constraint firstItem="tH5-nn-i3m" firstAttribute="leading" secondItem="2pm-pC-NBp" secondAttribute="leading" id="chS-Ch-f33"/>
+                        <constraint firstAttribute="trailing" secondItem="tH5-nn-i3m" secondAttribute="trailing" id="fu1-h6-8Ry"/>
+                        <constraint firstAttribute="bottom" secondItem="tH5-nn-i3m" secondAttribute="bottom" id="wZb-pL-JFV"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="2pm-pC-NBp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2U9-60-4Ag"/>
+                <constraint firstItem="2pm-pC-NBp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5Tk-fc-doo"/>
+                <constraint firstAttribute="bottom" secondItem="2pm-pC-NBp" secondAttribute="bottom" id="TPy-hT-2zV"/>
+                <constraint firstItem="2pm-pC-NBp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="imw-9N-xvK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="176.33587786259542" y="148.59154929577466"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
+        <namedColor name="AppBackground">
+            <color red="0.086274509803921567" green="0.090196078431372548" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppYellow">
+            <color red="0.96078431372549022" green="0.76078431372549016" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

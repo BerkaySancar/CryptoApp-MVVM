@@ -8,7 +8,7 @@
 import Foundation
 import UIKit.UINavigationController
 import APIService
-
+import SafariServices
 
 protocol Coordinator {
     var navigationController: UINavigationController { get set }
@@ -24,7 +24,7 @@ final class AppCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    //MARK: Start
+    //MARK: - App Start
     func start(isLoggedIn: Bool) {
         if isLoggedIn {
             tabBar()
@@ -33,7 +33,7 @@ final class AppCoordinator: Coordinator {
         }
     }
     
-    //MARK: Onboarding
+    //MARK: - Onboarding
     func onboarding() {
         let onboardingVC = OnboardingViewController.instantiateFromStoryboard("Onboarding")
         let viewModel = OnboardingViewModel(
@@ -44,7 +44,7 @@ final class AppCoordinator: Coordinator {
         self.navigationController.setViewControllers([onboardingVC], animated: true)
     }
     
-    //MARK: Login
+    //MARK: - Login
     func login() {
         let login = LoginViewController.instantiateFromStoryboard("Authentication")
         let viewModel = LoginViewModel(
@@ -56,7 +56,7 @@ final class AppCoordinator: Coordinator {
         self.navigationController.setViewControllers([login], animated: true)
     }
     
-    //MARK: SignUp
+    //MARK: - SignUp
     func signUp() {
         let signUp = SignUpViewController.instantiateFromStoryboard("Authentication")
         let viewModel = SignUpViewModel(
@@ -68,7 +68,7 @@ final class AppCoordinator: Coordinator {
         self.navigationController.setViewControllers([signUp], animated: true)
     }
     
-    //MARK: TabBar
+    //MARK: - TabBar
     func tabBar() {
         tabBarController = UITabBarController()
         tabBarController?.tabBar.tintColor = .appYellow
@@ -101,7 +101,7 @@ final class AppCoordinator: Coordinator {
         }
     }
         
-    //MARK: Home
+    //MARK: - Home
     func home() -> HomeViewController {
         let home = HomeViewController.instantiateFromStoryboard("Main")
         let viewModel = HomeViewModel(
@@ -114,7 +114,7 @@ final class AppCoordinator: Coordinator {
         return home
     }
     
-    //MARK: Search
+    //MARK: - Search
     func search() -> SearchViewController {
         let search = SearchViewController.instantiateFromStoryboard("Main")
         let viewModel = SearchViewModel(
@@ -126,10 +126,31 @@ final class AppCoordinator: Coordinator {
         return search
     }
     
-    //MARK: Settings
+    //MARK: -  Settings
     func settings() -> SettingsViewController {
         let settings = SettingsViewController()
         settings.coordinator = self
         return settings
+    }
+    
+    //MARK: - NewsDetail
+    func newsDetail(article: ArticleModel) {
+        let detail = NewsDetailViewController(nibName: "NewsDetailView", bundle: nil)
+        let viewModel = NewsDetailViewModel(
+            coordinator: self,
+            view: detail,
+            article: article
+        )
+        detail.viewModel = viewModel
+        
+        self.navigationController.pushViewController(detail, animated: true)
+    }
+    
+    //MARK: - Safari Controller for NewsDetail
+    func safari(urlString: String) {
+        if let url = URL(string: urlString) {
+            let safariVC = SFSafariViewController(url: url)
+            self.navigationController.present(safariVC, animated: true)
+        }
     }
 }

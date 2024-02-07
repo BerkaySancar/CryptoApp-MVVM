@@ -8,8 +8,13 @@
 import Foundation
 import UIKit.UIScreen
 
+protocol NewsCellViewModelDelegate: AnyObject {
+    func didSelectItem(item: ArticleModel?)
+}
+
 final class NewsCellViewModel: BaseCellViewModel {
     
+    weak var delegate: NewsCellViewModelDelegate?
     private var articles: [ArticleModel]?
     
     init(articles: [ArticleModel]?) {
@@ -26,5 +31,9 @@ final class NewsCellViewModel: BaseCellViewModel {
     
     func getCellVM(indexPath: IndexPath) -> BaseCellViewModel {
         return ArticleCellViewModel(model: self.articles?.prefix(8)[indexPath.row])
+    }
+    
+    func didSelectItemAt(indexPath: IndexPath) {
+        self.delegate?.didSelectItem(item: self.articles?[indexPath.item])
     }
 }

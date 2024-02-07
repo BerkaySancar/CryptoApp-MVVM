@@ -19,7 +19,6 @@ final class NewsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectionStyle = .none
         configure()
     }
     
@@ -53,5 +52,9 @@ extension NewsCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .init(top: 16, left: 16, bottom: 16, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAt(indexPath: indexPath)
     }
 }

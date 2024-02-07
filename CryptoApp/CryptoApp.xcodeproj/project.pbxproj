@@ -76,6 +76,9 @@
 		B17421922B723664009BF926 /* SearchCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17421912B723664009BF926 /* SearchCoinCell.swift */; };
 		B17421942B723FD2009BF926 /* SearchCoinCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17421932B723FD2009BF926 /* SearchCoinCellVM.swift */; };
 		B17421962B724B19009BF926 /* SearchCoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17421952B724B19009BF926 /* SearchCoinModel.swift */; };
+		B17BFDB22B7379AC003CF9A9 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17BFDB02B7379AC003CF9A9 /* NewsDetailViewController.swift */; };
+		B17BFDB32B7379AC003CF9A9 /* NewsDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17BFDB12B7379AC003CF9A9 /* NewsDetailView.xib */; };
+		B17BFDB92B737A29003CF9A9 /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17BFDB82B737A29003CF9A9 /* NewsDetailViewModel.swift */; };
 		B18E6C392B6E2F2E009F3B18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E6C382B6E2F2E009F3B18 /* LoginViewModel.swift */; };
 		B197132A2B6FB54F00AA59E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19713292B6FB54F00AA59E7 /* HomeViewController.swift */; };
 		B197132F2B6FB5C900AA59E7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197132E2B6FB5C900AA59E7 /* HomeViewModel.swift */; };
@@ -138,6 +141,9 @@
 		B17421912B723664009BF926 /* SearchCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinCell.swift; sourceTree = "<group>"; };
 		B17421932B723FD2009BF926 /* SearchCoinCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinCellVM.swift; sourceTree = "<group>"; };
 		B17421952B724B19009BF926 /* SearchCoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinModel.swift; sourceTree = "<group>"; };
+		B17BFDB02B7379AC003CF9A9 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		B17BFDB12B7379AC003CF9A9 /* NewsDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailView.xib; sourceTree = "<group>"; };
+		B17BFDB82B737A29003CF9A9 /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
 		B18E6C382B6E2F2E009F3B18 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B19713292B6FB54F00AA59E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B197132E2B6FB5C900AA59E7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -293,6 +299,7 @@
 				B197134B2B6FFDF300AA59E7 /* Entry */,
 				B197134A2B6FFCBA00AA59E7 /* Authentication */,
 				B106557B2B71585A000CD0FC /* Main */,
+				B17BFDAF2B73798A003CF9A9 /* NewsDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -468,6 +475,40 @@
 				B17421932B723FD2009BF926 /* SearchCoinCellVM.swift */,
 			);
 			path = SearchCoinCell;
+			sourceTree = "<group>";
+		};
+		B17BFDAF2B73798A003CF9A9 /* NewsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B17BFDB42B737A03003CF9A9 /* View */,
+				B17BFDB72B737A10003CF9A9 /* ViewModel */,
+				B17BFDB62B737A0C003CF9A9 /* Controller */,
+			);
+			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		B17BFDB42B737A03003CF9A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B17BFDB12B7379AC003CF9A9 /* NewsDetailView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B17BFDB62B737A0C003CF9A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B17BFDB02B7379AC003CF9A9 /* NewsDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B17BFDB72B737A10003CF9A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B17BFDB82B737A29003CF9A9 /* NewsDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B18E6C362B6E2F00009F3B18 /* Controller */ = {
@@ -782,6 +823,7 @@
 				B130554A2B6D946C00E89745 /* Authentication.storyboard in Resources */,
 				B13055962B6DBE3400E89745 /* OnboardingCell.xib in Resources */,
 				B19713322B6FB94100AA59E7 /* Main.storyboard in Resources */,
+				B17BFDB32B7379AC003CF9A9 /* NewsDetailView.xib in Resources */,
 				B19713512B6FFED800AA59E7 /* TopCoinCell.xib in Resources */,
 				B137DD172B6EAD41007413AD /* AppAlertView.xib in Resources */,
 				B13055842B6D9C6100E89745 /* Onboarding.storyboard in Resources */,
@@ -821,7 +863,9 @@
 				B13055952B6DBE3400E89745 /* OnboardingCell.swift in Sources */,
 				B137DD062B6E6E29007413AD /* FirebaseError.swift in Sources */,
 				B137DD1B2B6EB14D007413AD /* AlertManager.swift in Sources */,
+				B17BFDB22B7379AC003CF9A9 /* NewsDetailViewController.swift in Sources */,
 				B1151A792B712C8C007601EC /* TopCoinsCellVM.swift in Sources */,
+				B17BFDB92B737A29003CF9A9 /* NewsDetailViewModel.swift in Sources */,
 				B18E6C392B6E2F2E009F3B18 /* LoginViewModel.swift in Sources */,
 				B17421922B723664009BF926 /* SearchCoinCell.swift in Sources */,
 				B13055902B6DB6B300E89745 /* OnboardingViewModel.swift in Sources */,

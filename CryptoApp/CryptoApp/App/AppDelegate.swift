@@ -72,7 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .appBackground.withAlphaComponent(0.75)
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.appYellow]
+        UIBarButtonItem.appearance().tintColor = UIColor.appYellow
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance

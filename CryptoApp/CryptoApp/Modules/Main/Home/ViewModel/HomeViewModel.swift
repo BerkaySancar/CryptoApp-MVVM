@@ -101,7 +101,9 @@ final class HomeViewModel {
                             title: $0.title,
                             url: $0.url,
                             urlToImage: $0.urlToImage,
-                            author: $0.author
+                            author: $0.author,
+                            description: $0.description,
+                            content: $0.content
                         )
                     }
                 }
@@ -155,7 +157,19 @@ extension HomeViewModel: HomeViewModelProtocol {
         case .topCoins:
             return TopCoinsCellVM(coins: self.coins)
         case .news:
-            return NewsCellViewModel(articles: self.articles)
+            let viewModel = NewsCellViewModel(articles: self.articles)
+            viewModel.delegate = self
+            return viewModel
+        }
+    }
+}
+
+//MARK: - NewsCell View Model Delegate
+extension HomeViewModel: NewsCellViewModelDelegate {
+    
+    func didSelectItem(item: ArticleModel?) {
+        if let item {
+            self.coordinator?.newsDetail(article: item)
         }
     }
 }

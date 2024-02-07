@@ -12,4 +12,6 @@ struct ArticleModel {
     let url: String?
     let urlToImage: String?
     let author: String?
+    let description: String?
+    let content: String?
 }
