@@ -147,6 +147,15 @@ final class AppCoordinator: Coordinator {
         self.navigationController.pushViewController(detail, animated: true)
     }
     
+    //MARK: ArticleList
+    func articleList() {
+        let articleList = ArticleListTableViewController(nibName: "ArticleListTableView", bundle: nil)
+        let viewModel = ArticleListViewModel(coordinator: self, view: articleList, newsService: NewsService())
+        articleList.viewModel = viewModel
+        
+        self.navigationController.pushViewController(articleList, animated: true)
+    }
+    
     //MARK: - Safari Controller for NewsDetail
     func safari(urlString: String) {
         if let url = URL(string: urlString) {

@@ -113,7 +113,8 @@ final class HomeViewModel {
                             urlToImage: $0.urlToImage,
                             author: $0.author,
                             description: $0.description,
-                            content: $0.content
+                            content: $0.content,
+                            publishedAt: $0.publishedAt
                         )
                     }
                 }
@@ -187,6 +188,10 @@ extension HomeViewModel: TopCoinsCellVMDelegate {
         if let coinId {
             self.coordinator?.coinDetail(coinId: coinId)
         }
+    }
+    
+    func seeAllButtonTapped() {
+        self.coordinator?.articleList()
     }
 }
 

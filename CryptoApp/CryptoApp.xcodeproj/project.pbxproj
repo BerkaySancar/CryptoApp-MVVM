@@ -14,6 +14,12 @@
 		B1151A792B712C8C007601EC /* TopCoinsCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A782B712C8C007601EC /* TopCoinsCellVM.swift */; };
 		B1151A7B2B712F92007601EC /* TopCoinCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1151A7A2B712F92007601EC /* TopCoinCellVM.swift */; };
 		B1151A7E2B7132B1007601EC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1151A7D2B7132B1007601EC /* Kingfisher */; };
+		B11BBF5E2B75585E00E77E5C /* ArticleListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BBF5C2B75585E00E77E5C /* ArticleListTableViewController.swift */; };
+		B11BBF5F2B75585E00E77E5C /* ArticleListTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B11BBF5D2B75585E00E77E5C /* ArticleListTableView.xib */; };
+		B11BBF612B7558EC00E77E5C /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BBF602B7558EC00E77E5C /* ArticleListViewModel.swift */; };
+		B11BBF632B755A0100E77E5C /* ArticleListItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BBF622B755A0100E77E5C /* ArticleListItemVM.swift */; };
+		B11BBF662B75628A00E77E5C /* ArticleListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BBF642B75628A00E77E5C /* ArticleListItemCell.swift */; };
+		B11BBF672B75628A00E77E5C /* ArticleListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B11BBF652B75628A00E77E5C /* ArticleListItemCell.xib */; };
 		B13055432B6D946C00E89745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13055422B6D946C00E89745 /* AppDelegate.swift */; };
 		B13055472B6D946C00E89745 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13055462B6D946C00E89745 /* LoginViewController.swift */; };
 		B130554A2B6D946C00E89745 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13055482B6D946C00E89745 /* Authentication.storyboard */; };
@@ -110,6 +116,12 @@
 		B1151A762B711A25007601EC /* ArticleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModel.swift; sourceTree = "<group>"; };
 		B1151A782B712C8C007601EC /* TopCoinsCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinsCellVM.swift; sourceTree = "<group>"; };
 		B1151A7A2B712F92007601EC /* TopCoinCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinCellVM.swift; sourceTree = "<group>"; };
+		B11BBF5C2B75585E00E77E5C /* ArticleListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewController.swift; sourceTree = "<group>"; };
+		B11BBF5D2B75585E00E77E5C /* ArticleListTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListTableView.xib; sourceTree = "<group>"; };
+		B11BBF602B7558EC00E77E5C /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
+		B11BBF622B755A0100E77E5C /* ArticleListItemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListItemVM.swift; sourceTree = "<group>"; };
+		B11BBF642B75628A00E77E5C /* ArticleListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListItemCell.swift; sourceTree = "<group>"; };
+		B11BBF652B75628A00E77E5C /* ArticleListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListItemCell.xib; sourceTree = "<group>"; };
 		B130553F2B6D946C00E89745 /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13055422B6D946C00E89745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13055462B6D946C00E89745 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +236,59 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		B11BBF4C2B75554100E77E5C /* AllNews */ = {
+			isa = PBXGroup;
+			children = (
+				B11BBF532B75568900E77E5C /* View */,
+				B11BBF542B75569400E77E5C /* ViewModel */,
+				B11BBF552B75569800E77E5C /* Controller */,
+			);
+			path = AllNews;
+			sourceTree = "<group>";
+		};
+		B11BBF532B75568900E77E5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B11BBF562B7556A900E77E5C /* Cells */,
+				B11BBF5D2B75585E00E77E5C /* ArticleListTableView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B11BBF542B75569400E77E5C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B11BBF602B7558EC00E77E5C /* ArticleListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B11BBF552B75569800E77E5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B11BBF5C2B75585E00E77E5C /* ArticleListTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B11BBF562B7556A900E77E5C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B11BBF622B755A0100E77E5C /* ArticleListItemVM.swift */,
+				B11BBF642B75628A00E77E5C /* ArticleListItemCell.swift */,
+				B11BBF652B75628A00E77E5C /* ArticleListItemCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B11BBF682B7570B000E77E5C /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				B11BBF4C2B75554100E77E5C /* AllNews */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		B13055362B6D946C00E89745 = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +375,7 @@
 				B197134A2B6FFCBA00AA59E7 /* Authentication */,
 				B106557B2B71585A000CD0FC /* Main */,
 				B14759C92B74FB6700CCBBC5 /* Details */,
+				B11BBF682B7570B000E77E5C /* Others */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -891,6 +957,8 @@
 				B137DD172B6EAD41007413AD /* AppAlertView.xib in Resources */,
 				B13055842B6D9C6100E89745 /* Onboarding.storyboard in Resources */,
 				B197135E2B701EAD00AA59E7 /* ArticleCell.xib in Resources */,
+				B11BBF5F2B75585E00E77E5C /* ArticleListTableView.xib in Resources */,
+				B11BBF672B75628A00E77E5C /* ArticleListItemCell.xib in Resources */,
 				B137DD012B6E6CB0007413AD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -910,11 +978,14 @@
 				B1151A752B710F0A007601EC /* CoinModel.swift in Sources */,
 				B13055822B6D99FE00E89745 /* AppCoordinator.swift in Sources */,
 				B13055472B6D946C00E89745 /* LoginViewController.swift in Sources */,
+				B11BBF612B7558EC00E77E5C /* ArticleListViewModel.swift in Sources */,
 				B137DD102B6E8521007413AD /* SignUpViewModel.swift in Sources */,
 				B197132A2B6FB54F00AA59E7 /* HomeViewController.swift in Sources */,
+				B11BBF632B755A0100E77E5C /* ArticleListItemVM.swift in Sources */,
 				B199E2C52B740B77003D9FF1 /* ChartView.swift in Sources */,
 				B1151A7B2B712F92007601EC /* TopCoinCellVM.swift in Sources */,
 				B17421942B723FD2009BF926 /* SearchCoinCellVM.swift in Sources */,
+				B11BBF662B75628A00E77E5C /* ArticleListItemCell.swift in Sources */,
 				B1151A772B711A25007601EC /* ArticleCellViewModel.swift in Sources */,
 				B197135D2B701EAD00AA59E7 /* ArticleCell.swift in Sources */,
 				B13055432B6D946C00E89745 /* AppDelegate.swift in Sources */,
@@ -936,6 +1007,7 @@
 				B17421922B723664009BF926 /* SearchCoinCell.swift in Sources */,
 				B13055902B6DB6B300E89745 /* OnboardingViewModel.swift in Sources */,
 				B1E4580B2B6DE97F00D780CA /* BaseCellViewModel.swift in Sources */,
+				B11BBF5E2B75585E00E77E5C /* ArticleListTableViewController.swift in Sources */,
 				B17421852B716375009BF926 /* SettingsViewController.swift in Sources */,
 				B13055862B6D9C8500E89745 /* OnboardingViewController.swift in Sources */,
 				B137DD082B6E6FEA007413AD /* ActivityIndicatorManager.swift in Sources */,

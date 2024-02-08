@@ -10,6 +10,7 @@ import UIKit.UIScreen
 
 protocol NewsCellViewModelDelegate: AnyObject {
     func didSelectItem(item: ArticleModel?)
+    func seeAllButtonTapped()
 }
 
 final class NewsCellViewModel: BaseCellViewModel {
@@ -35,5 +36,9 @@ final class NewsCellViewModel: BaseCellViewModel {
     
     func didSelectItemAt(indexPath: IndexPath) {
         self.delegate?.didSelectItem(item: self.articles?[indexPath.item])
+    }
+    
+    func seeAllButtonTapped() {
+        self.delegate?.seeAllButtonTapped()
     }
 }

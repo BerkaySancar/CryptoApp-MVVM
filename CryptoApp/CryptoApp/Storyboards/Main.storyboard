@@ -107,6 +107,9 @@
                                                     <state key="normal" title="See all">
                                                         <color key="titleColor" name="AppYellow"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="seeAllButtonTapped:" destination="Oma-uD-gJ3" eventType="touchUpInside" id="HeQ-PW-rGf"/>
+                                                    </connections>
                                                 </button>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xs1-dQ-mth">
                                                     <rect key="frame" x="0.0" y="50.333333333333329" width="393" height="172.66666666666669"/>

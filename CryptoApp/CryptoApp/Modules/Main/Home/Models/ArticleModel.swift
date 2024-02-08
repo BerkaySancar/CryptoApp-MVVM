@@ -14,4 +14,5 @@ struct ArticleModel {
     let author: String?
     let description: String?
     let content: String?
+    let publishedAt: String?
 }

@@ -28,10 +28,11 @@ final class NewsCell: UITableViewCell {
         newsCollectionView.register(.init(nibName: "ArticleCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCell")
         newsCollectionView.decelerationRate = .fast
     }
-
-    @IBAction private func seeAllButtonTapped(_ sender: Any) {
-        
+    
+    @IBAction private func seeAllButtonTapped(_ sender: UIButton) {
+        viewModel.seeAllButtonTapped()
     }
+    
 }
 
 extension NewsCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
