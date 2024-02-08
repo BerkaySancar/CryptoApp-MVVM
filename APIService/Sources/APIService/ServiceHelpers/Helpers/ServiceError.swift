@@ -16,7 +16,7 @@ public enum ServiceError: Error {
     case unauthorized
     case rateLimit
     
-    public var localizedDescription: String {
+    public var errorDescription: String {
         switch self {
         case .invalidURL:
             return "Something went wrong. Try again."

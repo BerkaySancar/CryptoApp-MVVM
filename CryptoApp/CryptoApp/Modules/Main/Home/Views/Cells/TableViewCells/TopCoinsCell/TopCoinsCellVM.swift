@@ -7,8 +7,13 @@
 
 import Foundation
 
+protocol TopCoinsCellVMDelegate: AnyObject {
+    func didSelectItem(coinId: String?)
+}
+
 final class TopCoinsCellVM: BaseCellViewModel {
     
+    weak var delegate: TopCoinsCellVMDelegate?
     private var coins: [CoinModel]?
     
     init(coins: [CoinModel]?) {
@@ -25,5 +30,9 @@ final class TopCoinsCellVM: BaseCellViewModel {
     
     func getCellVM(indexPath: IndexPath) -> BaseCellViewModel {
         return TopCoinCellVM(coin: self.coins?.prefix(8)[indexPath.item])
+    }
+    
+    func didSelectItemAt(indexPath: IndexPath) {
+        self.delegate?.didSelectItem(coinId: self.coins?[indexPath.item].id)
     }
 }

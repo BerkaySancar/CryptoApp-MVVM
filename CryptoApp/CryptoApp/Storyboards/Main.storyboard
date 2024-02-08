@@ -85,7 +85,7 @@
                                             <outlet property="topCoinsCollectionView" destination="VSB-SZ-yJc" id="vAY-tc-nGE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" rowHeight="242" id="Oma-uD-gJ3" customClass="NewsCell" customModule="CryptoApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" rowHeight="242" id="Oma-uD-gJ3" customClass="NewsCell" customModule="CryptoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="496.33333206176758" width="393" height="242"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oma-uD-gJ3" id="Q7T-Iq-mpe">

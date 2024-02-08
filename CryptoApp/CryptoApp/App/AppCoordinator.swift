@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit.UINavigationController
+import SwiftUI
 import APIService
 import SafariServices
 
@@ -152,5 +153,17 @@ final class AppCoordinator: Coordinator {
             let safariVC = SFSafariViewController(url: url)
             self.navigationController.present(safariVC, animated: true)
         }
+    }
+    
+    //MARK: - CoinDetail - SwiftUI
+    func coinDetail(coinId: String?) {
+        let viewModel = CoinDetailViewModel(
+            coordinator: self,
+            cryptoService: CryptoService(),
+            coinId: coinId
+        )
+        let view = CoinDetailView(viewModel: viewModel)
+        let hostingVC = UIHostingController(rootView: view)
+        self.navigationController.pushViewController(hostingVC, animated: true)
     }
 }

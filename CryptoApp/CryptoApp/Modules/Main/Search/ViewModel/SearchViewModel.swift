@@ -66,7 +66,7 @@ final class SearchViewModel {
                 }
             case .failure(let error):
                 AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Search trendings are not loaded.",
-                                                                         message: error.localizedDescription))
+                                                                         message: error.errorDescription))
             }
         }
     }
@@ -95,7 +95,8 @@ extension SearchViewModel: SearchViewModelProtocol {
     }
     
     func didSelectItemAt(indexPath: IndexPath) {
-        
+        let selectedCoinId = self.coins?[indexPath.row].id
+        self.coordinator?.coinDetail(coinId: selectedCoinId)
     }
     
     func searchTextDidChange(text: String) {
@@ -124,7 +125,7 @@ extension SearchViewModel: SearchViewModelProtocol {
                             }
                         case .failure(let error):
                             AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Searched coins is not loaded.",
-                                                                                     message: error.localizedDescription))
+                                                                                     message: error.errorDescription))
                         }
                     }
                 }

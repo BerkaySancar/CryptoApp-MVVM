@@ -25,4 +25,18 @@ extension String {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: self)
     }
+    
+    var convertDateFormat: String? {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd/MM/yyyy"
+        
+        if let date = dateFormatterGet.date(from: self) {
+            return dateFormatterPrint.string(from: date)
+        } else {
+            return nil
+        }
+    }
 }

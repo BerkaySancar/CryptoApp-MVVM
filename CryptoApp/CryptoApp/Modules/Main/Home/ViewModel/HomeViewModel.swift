@@ -68,7 +68,7 @@ final class HomeViewModel {
         self.serviceErrorMessage = ""
         
         self.dispatchGroup?.enter()
-        await cryptoService?.getCoins(currency: "usd", perPage: 10, page: 1) { [weak self] results in
+        await cryptoService?.getCoins(coinId: nil, currency: "usd", perPage: 10, page: 1) { [weak self] results in
             guard let self else { return }
             self.dispatchGroup?.leave()
             switch results {
@@ -80,12 +80,20 @@ final class HomeViewModel {
                             name: $0.name,
                             image: $0.image,
                             currentPrice: $0.currentPrice,
-                            priceChangeCPercentage24h: $0.priceChangePercentage24H
+                            priceChangeCPercentage24h: $0.priceChangePercentage24H,
+                            symbol: $0.symbol,
+                            high24h: $0.high24H,
+                            low24h: $0.low24H,
+                            priceChange24h: $0.priceChange24H,
+                            ath: $0.ath,
+                            atl: $0.atl,
+                            athDate: $0.athDate,
+                            atlDate: $0.atlDate
                         )
                     }
                 }
             case .failure(let error):
-                self.serviceErrorMessage = "\n\nCoins are not loaded. \n\(error.localizedDescription)\n"
+                self.serviceErrorMessage = "\n\nCoins are not loaded. \n\(error.errorDescription)\n"
             }
         }
         
@@ -109,7 +117,7 @@ final class HomeViewModel {
                 }
                 break
             case .failure(let error):
-                self.serviceErrorMessage?.append("\nNews are not loaded.\n \(error.localizedDescription)\n")
+                self.serviceErrorMessage?.append("\nNews are not loaded.\n \(error.errorDescription)\n")
             }
         }
         
@@ -155,11 +163,23 @@ extension HomeViewModel: HomeViewModelProtocol {
         case .totalBalance:
             return nil
         case .topCoins:
-            return TopCoinsCellVM(coins: self.coins)
+            let viewModel = TopCoinsCellVM(coins: self.coins)
+            viewModel.delegate = self
+            return viewModel
         case .news:
             let viewModel = NewsCellViewModel(articles: self.articles)
             viewModel.delegate = self
             return viewModel
+        }
+    }
+}
+
+//MARK: - TopCoinsCell View Model Delegate
+extension HomeViewModel: TopCoinsCellVMDelegate {
+    
+    func didSelectItem(coinId: String?) {
+        if let coinId {
+            self.coordinator?.coinDetail(coinId: coinId)
         }
     }
 }
