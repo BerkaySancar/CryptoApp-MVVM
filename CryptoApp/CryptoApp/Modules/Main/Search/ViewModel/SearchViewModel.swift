@@ -10,6 +10,7 @@ import APIService
 
 //MARK: View Model Outputs
 protocol SearchViewModelOutputs: AnyObject {
+    func setNavTitle(title: String)
     func dataRefreshed()
     func didChangeTrendLabelVisibility(_ isHidden: Bool)
     func prepareEmptyContentView()
@@ -18,6 +19,7 @@ protocol SearchViewModelOutputs: AnyObject {
 //MARK: View Model Responsibilities
 protocol SearchViewModelProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func getCellViewModel(indexPath: IndexPath) -> BaseCellViewModel
     func numberOfRowsInSection(section: Int) -> Int
     func heightForRowAt(indexPath: IndexPath) -> CGFloat
@@ -80,6 +82,10 @@ extension SearchViewModel: SearchViewModelProtocol {
             await getSearchTrendings()
         }
         view?.prepareEmptyContentView()
+    }
+    
+    func viewWillAppear() {
+        view?.setNavTitle(title: "Search")
     }
     
     func getCellViewModel(indexPath: IndexPath) -> BaseCellViewModel {

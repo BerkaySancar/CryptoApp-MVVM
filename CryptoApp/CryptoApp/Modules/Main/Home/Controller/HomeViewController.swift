@@ -18,13 +18,23 @@ final class HomeViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         viewModel.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
 }
 
 // MARK: View Model Outputs
 extension HomeViewController: HomeViewModelOutputs {
+    
+    func setNavTitle(title: String) {
+        self.tabBarController?.title = title
+    }
+    
     func dataRefreshed() {
         self.homeTableView.reloadData()
     }

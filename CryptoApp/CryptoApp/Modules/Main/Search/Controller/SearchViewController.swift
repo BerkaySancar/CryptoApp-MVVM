@@ -25,6 +25,11 @@ final class SearchViewController: UIViewController {
         viewModel.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
+    }
+    
     override func viewDidLayoutSubviews() {
         searchBar.setPlaceholderColor(.appYellow.withAlphaComponent(0.90))
         searchBar.setMagnifyingGlassColorTo(color: .appYellow)
@@ -35,6 +40,11 @@ final class SearchViewController: UIViewController {
 
 //MARK: View Model Outputs
 extension SearchViewController: SearchViewModelOutputs {
+    
+    func setNavTitle(title: String) {
+        self.tabBarController?.title = title
+    }
+    
     func dataRefreshed() {
         self.searchTableView.reloadData()
     }

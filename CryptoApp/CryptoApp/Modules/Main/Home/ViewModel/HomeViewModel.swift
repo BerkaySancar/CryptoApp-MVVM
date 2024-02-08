@@ -10,12 +10,14 @@ import APIService
 
 //MARK: ViewModel Outputs
 protocol HomeViewModelOutputs: AnyObject {
+    func setNavTitle(title: String)
     func dataRefreshed()
 }
 
 //MARK: ViewModel Resposibilities
 protocol HomeViewModelProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func numberOfRowsInSection(section: Int) -> Int
     func heightForRowAt(indexPath: IndexPath) -> CGFloat
     func getCellViewModel(indexPath: IndexPath) -> BaseCellViewModel?
@@ -141,6 +143,10 @@ extension HomeViewModel: HomeViewModelProtocol {
         Task {
             await getData()
         }
+    }
+    
+    func viewWillAppear() {
+        view?.setNavTitle(title: "Home")
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
