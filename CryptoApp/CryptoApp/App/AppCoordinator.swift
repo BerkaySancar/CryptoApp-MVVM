@@ -148,9 +148,9 @@ final class AppCoordinator: Coordinator {
     }
     
     //MARK: ArticleList
-    func articleList() {
+    func articleList(articles: [ArticleModel]?) {
         let articleList = ArticleListTableViewController(nibName: "ArticleListTableView", bundle: nil)
-        let viewModel = ArticleListViewModel(coordinator: self, view: articleList, newsService: NewsService())
+        let viewModel = ArticleListViewModel(coordinator: self, view: articleList, articles: articles)
         articleList.viewModel = viewModel
         
         self.navigationController.pushViewController(articleList, animated: true)

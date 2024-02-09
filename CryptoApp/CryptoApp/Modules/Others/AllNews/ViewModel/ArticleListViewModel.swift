@@ -28,23 +28,18 @@ protocol ArticleListViewModelProtocol {
 final class ArticleListViewModel: ArticleListViewModelProtocol {
     private weak var coordinator: AppCoordinator?
     private weak var view: ArticleListViewModelOutputs?
-    private let newsService: NewsServiceProtocol?
     
     private var articles: [ArticleModel]?
     
-    init(coordinator: AppCoordinator, view: ArticleListViewModelOutputs, newsService: NewsServiceProtocol?) {
+    init(coordinator: AppCoordinator, view: ArticleListViewModelOutputs, articles: [ArticleModel]?) {
         self.coordinator = coordinator
         self.view = view
-        self.newsService = newsService
+        self.articles = articles
     }
     
     func viewDidLoad() {
         view?.registerCell()
         view?.prepareBarButtonItem()
-        
-        Task {
-            await self.getData()
-        }
     }
     
     func viewWillAppear() {
@@ -67,35 +62,6 @@ final class ArticleListViewModel: ArticleListViewModelProtocol {
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
         return 280
-    }
-    
-    private func getData() async {
-        ActivityIndicatorManager.shared.startActivity()
-        await newsService?.getCryptoNews { [weak self] results in
-            guard let self else { return }
-            ActivityIndicatorManager.shared.endActivity()
-            switch results {
-            case .success(let data):
-                DispatchQueue.main.async {
-                    if let data {
-                        self.articles = data.map {
-                            ArticleModel(
-                                title: $0.title,
-                                url: $0.url,
-                                urlToImage: $0.urlToImage,
-                                author: $0.author,
-                                description: $0.description,
-                                content: $0.content,
-                                publishedAt: $0.publishedAt
-                            )
-                        }
-                        self.view?.dataRefreshed()
-                    }
-                }
-            case .failure(let error):
-                AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Opps!", message: error.errorDescription))
-            }
-        }
     }
     
     func sortByDate() {

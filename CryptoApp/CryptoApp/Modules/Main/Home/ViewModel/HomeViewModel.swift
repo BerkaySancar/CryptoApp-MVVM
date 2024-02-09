@@ -191,7 +191,7 @@ extension HomeViewModel: TopCoinsCellVMDelegate {
     }
     
     func seeAllButtonTapped() {
-        self.coordinator?.articleList()
+        self.coordinator?.articleList(articles: self.articles)
     }
 }
 
