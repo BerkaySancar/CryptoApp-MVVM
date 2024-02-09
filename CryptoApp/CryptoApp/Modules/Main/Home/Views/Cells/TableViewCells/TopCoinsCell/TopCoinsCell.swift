@@ -30,8 +30,8 @@ final class TopCoinsCell: UITableViewCell {
         topCoinsCollectionView.register(.init(nibName: "TopCoinCell", bundle: nil), forCellWithReuseIdentifier: "TopCoinCell")
     }
     
-    @IBAction private func seeAllButtonTapped(_ sender: UIButton) {
-        
+    @IBAction func seeAllCoinsButtonTapped(_ sender: UIButton) {
+        viewModel.seeAllCoinsButtonTapped()
     }
 }
 

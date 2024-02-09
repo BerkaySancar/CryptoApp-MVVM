@@ -54,18 +54,18 @@
                                                     </collectionViewFlowLayout>
                                                     <cells/>
                                                 </collectionView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FL4-6r-fRp">
-                                                    <rect key="frame" x="325" y="19.666666666666671" width="60" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zf-kN-2ER">
+                                                    <rect key="frame" x="309" y="19.666666666666671" width="80" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="9Cl-48-6HW"/>
-                                                        <constraint firstAttribute="width" constant="60" id="fre-hc-b5w"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Qqu-SP-PXe"/>
+                                                        <constraint firstAttribute="height" constant="30" id="zkK-y9-uQG"/>
                                                     </constraints>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="See all">
-                                                        <color key="titleColor" name="AppYellow"/>
-                                                    </state>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="see all">
+                                                        <color key="baseForegroundColor" name="AppYellow"/>
+                                                    </buttonConfiguration>
                                                     <connections>
-                                                        <action selector="seeAllButtonTapped:" destination="DLQ-Wy-5eh" eventType="touchUpInside" id="4rk-0M-XCs"/>
+                                                        <action selector="seeAllCoinsButtonTapped:" destination="DLQ-Wy-5eh" eventType="touchUpInside" id="r5B-bx-9GW"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -73,8 +73,8 @@
                                                 <constraint firstItem="VSB-SZ-yJc" firstAttribute="top" secondItem="erz-kT-Z8O" secondAttribute="bottom" constant="8" id="0b6-t3-n6e"/>
                                                 <constraint firstAttribute="trailing" secondItem="VSB-SZ-yJc" secondAttribute="trailing" id="5Tn-4R-tn9"/>
                                                 <constraint firstAttribute="bottom" secondItem="VSB-SZ-yJc" secondAttribute="bottom" constant="8" id="Coe-FK-bWe"/>
-                                                <constraint firstItem="FL4-6r-fRp" firstAttribute="centerY" secondItem="erz-kT-Z8O" secondAttribute="centerY" id="bNm-VT-zqK"/>
-                                                <constraint firstAttribute="trailing" secondItem="FL4-6r-fRp" secondAttribute="trailing" constant="8" id="hBX-M2-JhU"/>
+                                                <constraint firstItem="1zf-kN-2ER" firstAttribute="centerY" secondItem="erz-kT-Z8O" secondAttribute="centerY" id="GSU-sF-tpK"/>
+                                                <constraint firstItem="1zf-kN-2ER" firstAttribute="trailing" secondItem="Ss1-mz-ovZ" secondAttribute="trailingMargin" constant="16" id="M0c-pk-OgH"/>
                                                 <constraint firstItem="VSB-SZ-yJc" firstAttribute="leading" secondItem="Ss1-mz-ovZ" secondAttribute="leading" id="uGe-5e-jOk"/>
                                                 <constraint firstItem="erz-kT-Z8O" firstAttribute="leading" secondItem="Ss1-mz-ovZ" secondAttribute="leadingMargin" id="xDU-Pz-Lp7"/>
                                                 <constraint firstItem="erz-kT-Z8O" firstAttribute="top" secondItem="Ss1-mz-ovZ" secondAttribute="topMargin" constant="8" id="xzs-CH-aye"/>
@@ -98,19 +98,6 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fb-bJ-HLx">
-                                                    <rect key="frame" x="325" y="11.666666666666664" width="60" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="zpt-Me-NB0"/>
-                                                    </constraints>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="See all">
-                                                        <color key="titleColor" name="AppYellow"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="seeAllButtonTapped:" destination="Oma-uD-gJ3" eventType="touchUpInside" id="HeQ-PW-rGf"/>
-                                                    </connections>
-                                                </button>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xs1-dQ-mth">
                                                     <rect key="frame" x="0.0" y="50.333333333333329" width="393" height="172.66666666666669"/>
                                                     <color key="backgroundColor" name="AppBackground"/>
@@ -122,14 +109,28 @@
                                                     </collectionViewFlowLayout>
                                                     <cells/>
                                                 </collectionView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6b-1I-s9r">
+                                                    <rect key="frame" x="313" y="11.666666666666664" width="80" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="KcY-eL-LcZ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="fug-WZ-bUv"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="see all">
+                                                        <color key="baseForegroundColor" name="AppYellow"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="seeAllArticlesTapped:" destination="Oma-uD-gJ3" eventType="touchUpInside" id="I1P-c9-24d"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Xs1-dQ-mth" firstAttribute="leading" secondItem="Q7T-Iq-mpe" secondAttribute="leading" id="0yV-ir-AHa"/>
+                                                <constraint firstAttribute="trailing" secondItem="I6b-1I-s9r" secondAttribute="trailing" id="Ehd-lD-tF5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Xs1-dQ-mth" secondAttribute="bottom" constant="8" id="FWF-mB-dVb"/>
                                                 <constraint firstItem="FMr-Gc-Z70" firstAttribute="top" secondItem="Q7T-Iq-mpe" secondAttribute="topMargin" id="LeG-6T-M5h"/>
-                                                <constraint firstItem="1fb-bJ-HLx" firstAttribute="centerY" secondItem="FMr-Gc-Z70" secondAttribute="centerY" id="Nwj-mu-TaG"/>
-                                                <constraint firstAttribute="trailing" secondItem="1fb-bJ-HLx" secondAttribute="trailing" constant="8" id="aD9-Pe-Qmh"/>
                                                 <constraint firstItem="FMr-Gc-Z70" firstAttribute="leading" secondItem="Q7T-Iq-mpe" secondAttribute="leadingMargin" id="cJw-e8-2s0"/>
+                                                <constraint firstItem="I6b-1I-s9r" firstAttribute="centerY" secondItem="FMr-Gc-Z70" secondAttribute="centerY" id="woA-ta-Cbl"/>
                                                 <constraint firstItem="Xs1-dQ-mth" firstAttribute="top" secondItem="FMr-Gc-Z70" secondAttribute="bottom" constant="8" id="xLV-A0-tD4"/>
                                                 <constraint firstAttribute="trailing" secondItem="Xs1-dQ-mth" secondAttribute="trailing" id="yox-TM-rR2"/>
                                             </constraints>

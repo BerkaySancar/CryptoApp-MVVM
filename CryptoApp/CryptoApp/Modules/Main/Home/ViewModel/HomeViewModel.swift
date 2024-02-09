@@ -70,7 +70,7 @@ final class HomeViewModel {
         self.serviceErrorMessage = ""
         
         self.dispatchGroup?.enter()
-        await cryptoService?.getCoins(coinId: nil, currency: "usd", perPage: 10, page: 1) { [weak self] results in
+        await cryptoService?.getCoins(coinId: nil, currency: "usd", perPage: 15, page: 1) { [weak self] results in
             guard let self else { return }
             self.dispatchGroup?.leave()
             switch results {
@@ -159,7 +159,7 @@ extension HomeViewModel: HomeViewModelProtocol {
         case .totalBalance:
             240
         case .topCoins:
-            240
+            270
         case .news:
             220
         }
@@ -190,9 +190,10 @@ extension HomeViewModel: TopCoinsCellVMDelegate {
         }
     }
     
-    func seeAllButtonTapped() {
-        self.coordinator?.articleList(articles: self.articles)
+    func seeAllCoinsButtonTapped() {
+        self.coordinator?.currencies(coins: self.coins)
     }
+
 }
 
 //MARK: - NewsCell View Model Delegate
@@ -202,5 +203,9 @@ extension HomeViewModel: NewsCellViewModelDelegate {
         if let item {
             self.coordinator?.newsDetail(article: item)
         }
+    }
+    
+    func seeAllArticlesTapped() {
+        self.coordinator?.articleList(articles: self.articles)
     }
 }

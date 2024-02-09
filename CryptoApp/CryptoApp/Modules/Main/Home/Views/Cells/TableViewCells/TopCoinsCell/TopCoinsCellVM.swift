@@ -9,6 +9,7 @@ import Foundation
 
 protocol TopCoinsCellVMDelegate: AnyObject {
     func didSelectItem(coinId: String?)
+    func seeAllCoinsButtonTapped()
 }
 
 final class TopCoinsCellVM: BaseCellViewModel {
@@ -21,18 +22,22 @@ final class TopCoinsCellVM: BaseCellViewModel {
     }
     
     func numberOfItemsInSection(section: Int) -> Int {
-        self.coins?.prefix(8).count ?? 0
+        self.coins?.prefix(5).count ?? 0
     }
     
     func sizeForItemAt(indexPath: IndexPath) -> CGSize {
-        .init(width: 160, height: 170)
+        .init(width: 160, height: 190)
     }
     
     func getCellVM(indexPath: IndexPath) -> BaseCellViewModel {
-        return TopCoinCellVM(coin: self.coins?.prefix(8)[indexPath.item])
+        return TopCoinCellVM(coin: self.coins?.prefix(5)[indexPath.item])
     }
     
     func didSelectItemAt(indexPath: IndexPath) {
         self.delegate?.didSelectItem(coinId: self.coins?[indexPath.item].id)
+    }
+    
+    func seeAllCoinsButtonTapped() {
+        self.delegate?.seeAllCoinsButtonTapped()
     }
 }

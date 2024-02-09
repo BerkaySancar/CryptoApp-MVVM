@@ -21,21 +21,21 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvT-JQ-ZfD" userLabel="ContentView">
                         <rect key="frame" x="0.0" y="0.0" width="189" height="208"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2C-bE-r7U">
-                                <rect key="frame" x="62.666666666666671" y="48" width="63.666666666666671" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2C-bE-r7U">
+                                <rect key="frame" x="4" y="60" width="181" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$45.898,16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxk-p3-8nq">
-                                <rect key="frame" x="51" y="80" width="87" height="20.333333333333329"/>
+                                <rect key="frame" x="51" y="92" width="87" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+2,56%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDg-ei-SZ9">
-                                <rect key="frame" x="74" y="108.33333333333333" width="41" height="13.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <rect key="frame" x="71" y="120.33333333333333" width="47.333333333333343" height="15.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -47,10 +47,10 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btcLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oUq-zo-3HU">
-                                <rect key="frame" x="78.666666666666671" y="8" width="32" height="32"/>
+                                <rect key="frame" x="72.666666666666671" y="8" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="ANO-ss-8IQ"/>
-                                    <constraint firstAttribute="width" constant="32" id="gE2-JN-8se"/>
+                                    <constraint firstAttribute="height" constant="44" id="ANO-ss-8IQ"/>
+                                    <constraint firstAttribute="width" constant="44" id="gE2-JN-8se"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -60,6 +60,8 @@
                             <constraint firstItem="E2C-bE-r7U" firstAttribute="top" secondItem="oUq-zo-3HU" secondAttribute="bottom" constant="8" id="DpC-5l-thD"/>
                             <constraint firstItem="oUq-zo-3HU" firstAttribute="centerX" secondItem="hvT-JQ-ZfD" secondAttribute="centerX" id="HVF-nA-RG0"/>
                             <constraint firstItem="qxk-p3-8nq" firstAttribute="top" secondItem="E2C-bE-r7U" secondAttribute="bottom" constant="8" id="JVB-9N-55D"/>
+                            <constraint firstAttribute="trailing" secondItem="E2C-bE-r7U" secondAttribute="trailing" constant="4" id="QxK-nw-NbQ"/>
+                            <constraint firstItem="E2C-bE-r7U" firstAttribute="leading" secondItem="hvT-JQ-ZfD" secondAttribute="leading" constant="4" id="Wu8-s9-RsO"/>
                             <constraint firstItem="oDg-ei-SZ9" firstAttribute="centerX" secondItem="hvT-JQ-ZfD" secondAttribute="centerX" id="bGA-8K-OCd"/>
                             <constraint firstItem="oDg-ei-SZ9" firstAttribute="top" secondItem="qxk-p3-8nq" secondAttribute="bottom" constant="8" id="ddC-ni-GMn"/>
                             <constraint firstAttribute="bottom" secondItem="LgI-vd-Em6" secondAttribute="bottom" id="fOo-BO-7xN"/>

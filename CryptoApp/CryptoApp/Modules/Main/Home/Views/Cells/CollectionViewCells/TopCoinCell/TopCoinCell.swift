@@ -31,8 +31,8 @@ final class TopCoinCell: UICollectionViewCell {
            let image = viewModel.image {
             symbolImageView.kf.setImage(with: URL(string: image))
             currencyNameLabel.text = viewModel.name
-            currencyPriceLabel.text = String(describing: viewModel.currentPrice ?? 0)
-            pricePercantageLabel.text = "%" + String(describing: viewModel.priceChangeCPercentage24h ?? 0)
+            currencyPriceLabel.text = "$" + String(describing: viewModel.currentPrice ?? 0)
+            pricePercantageLabel.text = "%" + String(format: "%.3f", viewModel.priceChangeCPercentage24h ?? "")
             pricePercantageLabel.textColor = viewModel.priceChangeCPercentage24h ?? 0 > 0 ? .systemGreen : .systemRed
         }
     }

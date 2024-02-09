@@ -175,4 +175,12 @@ final class AppCoordinator: Coordinator {
         let hostingVC = UIHostingController(rootView: view)
         self.navigationController.pushViewController(hostingVC, animated: true)
     }
+    
+    func currencies(coins: [CoinModel]?) {
+        let coinList = CurrenciesViewController(nibName: "CurrenciesView", bundle: nil)
+        let viewModel = CurrenciesViewModel(coordinator: self, view: coinList, coins: coins)
+        coinList.viewModel = viewModel
+        
+        self.navigationController.pushViewController(coinList, animated: true)
+    }
 }

@@ -29,10 +29,9 @@ final class NewsCell: UITableViewCell {
         newsCollectionView.decelerationRate = .fast
     }
     
-    @IBAction private func seeAllButtonTapped(_ sender: UIButton) {
-        viewModel.seeAllButtonTapped()
+    @IBAction func seeAllArticlesTapped(_ sender: Any) {
+        viewModel.seeAllArticlesTapped()
     }
-    
 }
 
 extension NewsCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
