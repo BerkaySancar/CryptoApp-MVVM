@@ -12,14 +12,16 @@ final class CoinDetailViewModel: ObservableObject {
     
     private let cryptoService: CryptoServiceProtocol?
     private weak var coorinator: AppCoordinator?
+    private let dispatchGroup = DispatchGroup()
     
-    var coin: CoinModel?
+    @Published var coin: CoinModel?
     private(set) var coinDetailModel: CoinDetailModel?
     private var coinId: String?
     
     @Published var prices: [Price] = []
     @Published var coinDetailDescription = ""
     @Published var homepage = ""
+    private var serviceError = ""
     
     init(coordinator: AppCoordinator?, cryptoService: CryptoServiceProtocol?, coinId: String?) {
         self.cryptoService = cryptoService
@@ -27,9 +29,7 @@ final class CoinDetailViewModel: ObservableObject {
         self.coinId = coinId
         
         Task {
-            await getCoin()
-            await getMarketPrices()
-            await getCoinDetail()
+            await getData()
         }
     }
         
@@ -96,12 +96,15 @@ final class CoinDetailViewModel: ObservableObject {
         return false
     }
     
-    private func getMarketPrices() async {
-        ActivityIndicatorManager.shared.startActivity()
+    private func getData() async {
         if let coinId {
+            ActivityIndicatorManager.shared.startActivity()
+            
+            //MARK: Chart Prices
+            dispatchGroup.enter()
             await cryptoService?.getMarketChartPrices(coinId: coinId, currency: "usd") { [weak self] results in
                 guard let self else { return }
-                ActivityIndicatorManager.shared.endActivity()
+                dispatchGroup.leave()
                 switch results {
                 case .success(let data):
                     DispatchQueue.main.async {
@@ -113,20 +116,15 @@ final class CoinDetailViewModel: ObservableObject {
                         }
                     }
                 case .failure(let error):
-                    AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Opps!", message: error.errorDescription))
+                    serviceError.append("\n Chart data not loaded. " + error.errorDescription)
                 }
             }
-        } else {
-            ActivityIndicatorManager.shared.endActivity()
-        }
-    }
-    
-    private func getCoinDetail() async {
-        if let coinId {
-            ActivityIndicatorManager.shared.startActivity()
+            
+            //MARK: Coin Informations
+            dispatchGroup.enter()
             await cryptoService?.getCoinDetail(coinId: coinId) { [weak self] results in
                 guard let self else { return }
-                ActivityIndicatorManager.shared.endActivity()
+                dispatchGroup.leave()
                 
                 switch results {
                 case .success(let data):
@@ -139,18 +137,15 @@ final class CoinDetailViewModel: ObservableObject {
                         }
                     }
                 case .failure(let error):
-                    AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Opps!", message: error.errorDescription))
+                    serviceError.append("\n Coin informations not loaded. " + error.errorDescription)
                 }
             }
-        }
-    }
-    
-    func getCoin() async {
-        if let coinId {
-            ActivityIndicatorManager.shared.startActivity()
+            
+            //MARK: Coin Detail
+            dispatchGroup.enter()
             await cryptoService?.getCoins(coinId: coinId, currency: "usd", perPage: 1, page: 1) { [weak self] results in
                 guard let self else { return }
-                ActivityIndicatorManager.shared.endActivity()
+                dispatchGroup.leave()
                 switch results {
                 case .success(let data):
                     DispatchQueue.main.async {
@@ -173,12 +168,22 @@ final class CoinDetailViewModel: ObservableObject {
                         }
                     }
                 case .failure(let error):
-                    AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Opps!", message: error.localizedDescription))
+                    serviceError.append("\n Coin detail not loaded. " + error.errorDescription)
+                }
+            }
+            
+            // MARK: Notify
+            dispatchGroup.notify(queue: .main) { [weak self] in
+                guard let self else { return }
+                ActivityIndicatorManager.shared.endActivity()
+                
+                if self.serviceError != "" {
+                    AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error", message: serviceError))
                 }
             }
         }
     }
-    
+  
     func homepageTapped() {
         self.coorinator?.safari(urlString: homepage)
     }
