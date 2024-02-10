@@ -13,6 +13,7 @@ public protocol CryptoServiceProtocol: AnyObject {
     func getSearchedCoins(query: String, completion: @escaping (Result<[ItemDTO]?, ServiceError>) -> Void) async
     func getMarketChartPrices(coinId: String, currency: String, completion: @escaping (Result<MarketChartDTO?, ServiceError>) -> Void) async
     func getCoinDetail(coinId: String, completion: @escaping (Result<CoinDetailDTO?, ServiceError>) -> Void) async
+    func getExchanges(completion: @escaping (Result<ExchangesDTO?, ServiceError>) -> Void) async
 }
 
 public final class CryptoService: CryptoServiceProtocol {
@@ -78,6 +79,18 @@ public final class CryptoService: CryptoServiceProtocol {
     
     public func getCoinDetail(coinId: String, completion: @escaping (Result<CoinDetailDTO?, ServiceError>) -> Void) async {
         await ServiceManager.shared.request(CryptoAPI.getCoinDetail(coinId: coinId), type: CoinDetailDTO.self) { results in
+            
+            switch results {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func getExchanges(completion: @escaping (Result<ExchangesDTO?, ServiceError>) -> Void) async {
+        await ServiceManager.shared.request(CryptoAPI.getExchanges, type: ExchangesDTO.self) { results in
             
             switch results {
             case .success(let data):

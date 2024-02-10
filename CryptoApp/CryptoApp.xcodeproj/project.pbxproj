@@ -94,17 +94,20 @@
 		B197132A2B6FB54F00AA59E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19713292B6FB54F00AA59E7 /* HomeViewController.swift */; };
 		B197132F2B6FB5C900AA59E7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197132E2B6FB5C900AA59E7 /* HomeViewModel.swift */; };
 		B19713322B6FB94100AA59E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19713312B6FB94100AA59E7 /* Main.storyboard */; };
-		B19713382B6FD8D900AA59E7 /* TotalBalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19713372B6FD8D900AA59E7 /* TotalBalanceCell.swift */; };
+		B19713382B6FD8D900AA59E7 /* ExchangesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19713372B6FD8D900AA59E7 /* ExchangesCell.swift */; };
 		B197133A2B6FD8E400AA59E7 /* TopCoinsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19713392B6FD8E400AA59E7 /* TopCoinsCell.swift */; };
 		B197133C2B6FD8FF00AA59E7 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197133B2B6FD8FF00AA59E7 /* NewsCell.swift */; };
-		B19713402B6FDAF000AA59E7 /* TotalBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197133F2B6FDAF000AA59E7 /* TotalBalanceView.swift */; };
-		B19713422B6FDB0500AA59E7 /* TotalBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B19713412B6FDB0500AA59E7 /* TotalBalanceView.xib */; };
 		B19713502B6FFED800AA59E7 /* TopCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197134E2B6FFED800AA59E7 /* TopCoinCell.swift */; };
 		B19713512B6FFED800AA59E7 /* TopCoinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B197134F2B6FFED800AA59E7 /* TopCoinCell.xib */; };
 		B197135D2B701EAD00AA59E7 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197135B2B701EAD00AA59E7 /* ArticleCell.swift */; };
 		B197135E2B701EAD00AA59E7 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B197135C2B701EAD00AA59E7 /* ArticleCell.xib */; };
 		B199E2C52B740B77003D9FF1 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199E2C42B740B77003D9FF1 /* ChartView.swift */; };
 		B199E2C72B7414CA003D9FF1 /* PriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199E2C62B7414CA003D9FF1 /* PriceModel.swift */; };
+		B1B75B1E2B77891C00D3F193 /* ExchangesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B75B1D2B77891C00D3F193 /* ExchangesCellViewModel.swift */; };
+		B1B75B212B7789D400D3F193 /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B75B1F2B7789D400D3F193 /* ExchangeCell.swift */; };
+		B1B75B222B7789D400D3F193 /* ExchangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1B75B202B7789D400D3F193 /* ExchangeCell.xib */; };
+		B1B75B252B7789EA00D3F193 /* ExchangeCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B75B242B7789EA00D3F193 /* ExchangeCellVM.swift */; };
+		B1B75B272B77A72600D3F193 /* ExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B75B262B77A72600D3F193 /* ExchangeModel.swift */; };
 		B1BBD7C22B73A6FA00BC9C8B /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BBD7C12B73A6FA00BC9C8B /* CoinDetailView.swift */; };
 		B1D56CB82B70DD5D00AE104D /* APIService in Frameworks */ = {isa = PBXBuildFile; productRef = B1D56CB72B70DD5D00AE104D /* APIService */; };
 		B1E458052B6DE31500D780CA /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E458042B6DE31500D780CA /* OnboardModel.swift */; };
@@ -173,17 +176,20 @@
 		B19713292B6FB54F00AA59E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B197132E2B6FB5C900AA59E7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B19713312B6FB94100AA59E7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B19713372B6FD8D900AA59E7 /* TotalBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBalanceCell.swift; sourceTree = "<group>"; };
+		B19713372B6FD8D900AA59E7 /* ExchangesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesCell.swift; sourceTree = "<group>"; };
 		B19713392B6FD8E400AA59E7 /* TopCoinsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinsCell.swift; sourceTree = "<group>"; };
 		B197133B2B6FD8FF00AA59E7 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
-		B197133F2B6FDAF000AA59E7 /* TotalBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBalanceView.swift; sourceTree = "<group>"; };
-		B19713412B6FDB0500AA59E7 /* TotalBalanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalBalanceView.xib; sourceTree = "<group>"; };
 		B197134E2B6FFED800AA59E7 /* TopCoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinCell.swift; sourceTree = "<group>"; };
 		B197134F2B6FFED800AA59E7 /* TopCoinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCoinCell.xib; sourceTree = "<group>"; };
 		B197135B2B701EAD00AA59E7 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		B197135C2B701EAD00AA59E7 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		B199E2C42B740B77003D9FF1 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		B199E2C62B7414CA003D9FF1 /* PriceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceModel.swift; sourceTree = "<group>"; };
+		B1B75B1D2B77891C00D3F193 /* ExchangesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesCellViewModel.swift; sourceTree = "<group>"; };
+		B1B75B1F2B7789D400D3F193 /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
+		B1B75B202B7789D400D3F193 /* ExchangeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeCell.xib; sourceTree = "<group>"; };
+		B1B75B242B7789EA00D3F193 /* ExchangeCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCellVM.swift; sourceTree = "<group>"; };
+		B1B75B262B77A72600D3F193 /* ExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeModel.swift; sourceTree = "<group>"; };
 		B1BBD7C12B73A6FA00BC9C8B /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
 		B1D56CB52B70DA7100AE104D /* APIService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = APIService; path = ../APIService; sourceTree = "<group>"; };
 		B1E458042B6DE31500D780CA /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
@@ -519,7 +525,6 @@
 			isa = PBXGroup;
 			children = (
 				B16E12512B72CED20053ED4E /* EmptyContentView */,
-				B197133E2B6FDAD000AA59E7 /* TotalBalanceView */,
 				B197133D2B6FDAC100AA59E7 /* AlertView */,
 			);
 			path = CustomViews;
@@ -674,6 +679,7 @@
 			children = (
 				B1151A722B7107DA007601EC /* ArticleModel.swift */,
 				B1151A742B710F0A007601EC /* CoinModel.swift */,
+				B1B75B262B77A72600D3F193 /* ExchangeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -703,15 +709,6 @@
 			path = AlertView;
 			sourceTree = "<group>";
 		};
-		B197133E2B6FDAD000AA59E7 /* TotalBalanceView */ = {
-			isa = PBXGroup;
-			children = (
-				B197133F2B6FDAF000AA59E7 /* TotalBalanceView.swift */,
-				B19713412B6FDB0500AA59E7 /* TotalBalanceView.xib */,
-			);
-			path = TotalBalanceView;
-			sourceTree = "<group>";
-		};
 		B19713432B6FE55B00AA59E7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,12 +718,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		B19713462B6FFC2600AA59E7 /* TotalBalanceCell */ = {
+		B19713462B6FFC2600AA59E7 /* ExchangesCell */ = {
 			isa = PBXGroup;
 			children = (
-				B19713372B6FD8D900AA59E7 /* TotalBalanceCell.swift */,
+				B19713372B6FD8D900AA59E7 /* ExchangesCell.swift */,
+				B1B75B1D2B77891C00D3F193 /* ExchangesCellViewModel.swift */,
 			);
-			path = TotalBalanceCell;
+			path = ExchangesCell;
 			sourceTree = "<group>";
 		};
 		B19713472B6FFC3000AA59E7 /* TopCoinsCell */ = {
@@ -752,7 +750,7 @@
 			children = (
 				B19713482B6FFC3B00AA59E7 /* NewsCell */,
 				B19713472B6FFC3000AA59E7 /* TopCoinsCell */,
-				B19713462B6FFC2600AA59E7 /* TotalBalanceCell */,
+				B19713462B6FFC2600AA59E7 /* ExchangesCell */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -785,6 +783,7 @@
 		B197134D2B6FFEB300AA59E7 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B1B75B232B7789D700D3F193 /* ExchangeCell */,
 				B197135A2B701E9700AA59E7 /* ArticleCell */,
 				B19713592B701E6700AA59E7 /* TopCoinCell */,
 			);
@@ -818,6 +817,16 @@
 				B14759C62B74DF6D00CCBBC5 /* CoinDetailModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B1B75B232B7789D700D3F193 /* ExchangeCell */ = {
+			isa = PBXGroup;
+			children = (
+				B1B75B202B7789D400D3F193 /* ExchangeCell.xib */,
+				B1B75B1F2B7789D400D3F193 /* ExchangeCell.swift */,
+				B1B75B242B7789EA00D3F193 /* ExchangeCellVM.swift */,
+			);
+			path = ExchangeCell;
 			sourceTree = "<group>";
 		};
 		B1BBD7C32B73A6FF00BC9C8B /* CoinDetail */ = {
@@ -987,10 +996,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B130554F2B6D946D00E89745 /* LaunchScreen.storyboard in Resources */,
-				B19713422B6FDB0500AA59E7 /* TotalBalanceView.xib in Resources */,
 				B16E12572B72D0020053ED4E /* EmptyContentView.xib in Resources */,
 				B130554C2B6D946D00E89745 /* Assets.xcassets in Resources */,
 				B130554A2B6D946C00E89745 /* Authentication.storyboard in Resources */,
+				B1B75B222B7789D400D3F193 /* ExchangeCell.xib in Resources */,
 				B13055962B6DBE3400E89745 /* OnboardingCell.xib in Resources */,
 				B19713322B6FB94100AA59E7 /* Main.storyboard in Resources */,
 				B17BFDB32B7379AC003CF9A9 /* NewsDetailView.xib in Resources */,
@@ -1034,7 +1043,6 @@
 				B197135D2B701EAD00AA59E7 /* ArticleCell.swift in Sources */,
 				B13055432B6D946C00E89745 /* AppDelegate.swift in Sources */,
 				B1E458072B6DE7E200D780CA /* OnboardingCellVM.swift in Sources */,
-				B19713402B6FDAF000AA59E7 /* TotalBalanceView.swift in Sources */,
 				B1151A732B7107DA007601EC /* ArticleModel.swift in Sources */,
 				B14759C72B74DF6D00CCBBC5 /* CoinDetailModel.swift in Sources */,
 				B130558C2B6DB42B00E89745 /* UIViewController+Extension.swift in Sources */,
@@ -1043,11 +1051,14 @@
 				B13055952B6DBE3400E89745 /* OnboardingCell.swift in Sources */,
 				B137DD062B6E6E29007413AD /* FirebaseError.swift in Sources */,
 				B137DD1B2B6EB14D007413AD /* AlertManager.swift in Sources */,
+				B1B75B272B77A72600D3F193 /* ExchangeModel.swift in Sources */,
 				B17291EE2B73C5AA00BE2F6F /* CoinDetailViewModel.swift in Sources */,
 				B17BFDB22B7379AC003CF9A9 /* NewsDetailViewController.swift in Sources */,
 				B1151A792B712C8C007601EC /* TopCoinsCellVM.swift in Sources */,
+				B1B75B1E2B77891C00D3F193 /* ExchangesCellViewModel.swift in Sources */,
 				B17BFDB92B737A29003CF9A9 /* NewsDetailViewModel.swift in Sources */,
 				B18E6C392B6E2F2E009F3B18 /* LoginViewModel.swift in Sources */,
+				B1B75B212B7789D400D3F193 /* ExchangeCell.swift in Sources */,
 				B17421922B723664009BF926 /* SearchCoinCell.swift in Sources */,
 				B13055902B6DB6B300E89745 /* OnboardingViewModel.swift in Sources */,
 				B1E4580B2B6DE97F00D780CA /* BaseCellViewModel.swift in Sources */,
@@ -1058,11 +1069,12 @@
 				B197132F2B6FB5C900AA59E7 /* HomeViewModel.swift in Sources */,
 				B17421902B71794F009BF926 /* UISearchBar+Extension.swift in Sources */,
 				B13055922B6DBA0400E89745 /* UIColor+Extension.swift in Sources */,
+				B1B75B252B7789EA00D3F193 /* ExchangeCellVM.swift in Sources */,
 				B137DD192B6EAD52007413AD /* AppAlertView.swift in Sources */,
 				B1151A712B7104E6007601EC /* NewsCellViewModel.swift in Sources */,
 				B17421962B724B19009BF926 /* SearchCoinModel.swift in Sources */,
 				B16E12592B72D00B0053ED4E /* EmptyContentView.swift in Sources */,
-				B19713382B6FD8D900AA59E7 /* TotalBalanceCell.swift in Sources */,
+				B19713382B6FD8D900AA59E7 /* ExchangesCell.swift in Sources */,
 				B137DD0C2B6E7EB1007413AD /* GeneralError.swift in Sources */,
 				B19713502B6FFED800AA59E7 /* TopCoinCell.swift in Sources */,
 				B197133A2B6FD8E400AA59E7 /* TopCoinsCell.swift in Sources */,

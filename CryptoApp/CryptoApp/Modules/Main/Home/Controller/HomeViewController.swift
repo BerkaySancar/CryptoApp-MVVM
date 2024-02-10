@@ -49,8 +49,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch HomeViewCellType.getType(index: indexPath.row) {
-        case .totalBalance:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TotalBalanceCell", for: indexPath) as! TotalBalanceCell
+        case .exchanges:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExchangesCell", for: indexPath) as! ExchangesCell
+            cell.viewModel = viewModel.getCellViewModel(indexPath: indexPath) as? ExchangesCellViewModel
             return cell
         case .topCoins:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopCoinsCell", for: indexPath) as! TopCoinsCell

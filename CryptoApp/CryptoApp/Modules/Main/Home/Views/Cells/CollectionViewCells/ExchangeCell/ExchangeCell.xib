@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ExchangeCell" customModule="CryptoApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="409" height="230"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyO-Vz-EI4" userLabel="ContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="409" height="230"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7Q-n5-KpV">
+                                <rect key="frame" x="16" y="0.0" width="377" height="214"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Binance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjZ-Qg-ln1">
+                                        <rect key="frame" x="8" y="16" width="110" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPs-Ao-TWh">
+                                        <rect key="frame" x="8" y="55" width="46.333333333333336" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="England" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDE-Pi-Rnw">
+                                        <rect key="frame" x="58.333333333333329" y="55" width="70.999999999999986" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trade Volume (24h): 356554.098 BTC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di5-o0-arQ">
+                                        <rect key="frame" x="7.9999999999999858" y="165" width="247.66666666666663" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="AppYellow"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWI-L5-wsM">
+                                        <rect key="frame" x="311.33333333333331" y="163" width="49.666666666666686" height="21"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-7l-ASr">
+                                        <rect key="frame" x="8" y="87" width="353" height="15.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btcLogo" translatesAutoresizingMaskIntoConstraints="NO" id="tpR-pW-eyt">
+                                        <rect key="frame" x="301" y="16" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Jsa-8Q-6Vp"/>
+                                            <constraint firstAttribute="height" constant="60" id="X5c-Ju-14h"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16013692226432505" green="0.16006685331858525" blue="0.38904246477165605" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="vjZ-Qg-ln1" firstAttribute="top" secondItem="a7Q-n5-KpV" secondAttribute="top" constant="16" id="0Ux-4e-PTM"/>
+                                    <constraint firstItem="tpR-pW-eyt" firstAttribute="top" secondItem="a7Q-n5-KpV" secondAttribute="top" constant="16" id="3pL-Ej-xXN"/>
+                                    <constraint firstAttribute="bottom" secondItem="di5-o0-arQ" secondAttribute="bottom" constant="32" id="4pF-vP-LmH"/>
+                                    <constraint firstItem="di5-o0-arQ" firstAttribute="leading" secondItem="a7Q-n5-KpV" secondAttribute="leading" constant="8" id="LeW-Tr-RYe"/>
+                                    <constraint firstAttribute="trailing" secondItem="tpR-pW-eyt" secondAttribute="trailing" constant="16" id="OiH-sv-fIT"/>
+                                    <constraint firstItem="DPs-Ao-TWh" firstAttribute="top" secondItem="vjZ-Qg-ln1" secondAttribute="bottom" constant="3" id="UtY-Wu-ofo"/>
+                                    <constraint firstAttribute="trailing" secondItem="eWI-L5-wsM" secondAttribute="trailing" constant="16" id="Vyu-pk-fHk"/>
+                                    <constraint firstItem="UDE-Pi-Rnw" firstAttribute="leading" secondItem="DPs-Ao-TWh" secondAttribute="trailing" constant="4" id="WxD-Nf-Wk5"/>
+                                    <constraint firstItem="UDE-Pi-Rnw" firstAttribute="centerY" secondItem="DPs-Ao-TWh" secondAttribute="centerY" id="bsu-vq-57q"/>
+                                    <constraint firstItem="vjZ-Qg-ln1" firstAttribute="leading" secondItem="a7Q-n5-KpV" secondAttribute="leading" constant="8" id="c8W-vi-bob"/>
+                                    <constraint firstAttribute="trailing" secondItem="tpR-pW-eyt" secondAttribute="trailing" constant="16" id="d1a-RX-hPg"/>
+                                    <constraint firstAttribute="trailing" secondItem="VnH-7l-ASr" secondAttribute="trailing" constant="16" id="dxP-JB-MCQ"/>
+                                    <constraint firstItem="VnH-7l-ASr" firstAttribute="leading" secondItem="a7Q-n5-KpV" secondAttribute="leading" constant="8" id="ebW-Zc-u2m"/>
+                                    <constraint firstItem="VnH-7l-ASr" firstAttribute="top" secondItem="DPs-Ao-TWh" secondAttribute="bottom" constant="8" id="lF2-C6-k4e"/>
+                                    <constraint firstItem="DPs-Ao-TWh" firstAttribute="leading" secondItem="a7Q-n5-KpV" secondAttribute="leading" constant="8" id="lya-Og-CIK"/>
+                                    <constraint firstItem="eWI-L5-wsM" firstAttribute="centerY" secondItem="di5-o0-arQ" secondAttribute="centerY" id="yag-fn-yin"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="a7Q-n5-KpV" firstAttribute="top" secondItem="KyO-Vz-EI4" secondAttribute="top" id="010-8o-aV5"/>
+                            <constraint firstAttribute="trailing" secondItem="a7Q-n5-KpV" secondAttribute="trailing" constant="16" id="AbN-RN-EcJ"/>
+                            <constraint firstAttribute="bottom" secondItem="a7Q-n5-KpV" secondAttribute="bottom" constant="16" id="OEM-lD-WhB"/>
+                            <constraint firstItem="a7Q-n5-KpV" firstAttribute="leading" secondItem="KyO-Vz-EI4" secondAttribute="leading" constant="16" id="lX3-TN-1ML"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KyO-Vz-EI4" secondAttribute="trailing" id="NJs-6V-2nJ"/>
+                <constraint firstAttribute="bottom" secondItem="KyO-Vz-EI4" secondAttribute="bottom" id="QH3-o5-VFr"/>
+                <constraint firstItem="KyO-Vz-EI4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WVv-Ie-ZoP"/>
+                <constraint firstItem="KyO-Vz-EI4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="urc-Tr-VK7"/>
+            </constraints>
+            <size key="customSize" width="409" height="230"/>
+            <connections>
+                <outlet property="backView" destination="a7Q-n5-KpV" id="CRi-SL-Xno"/>
+                <outlet property="exchangeCountryLabel" destination="UDE-Pi-Rnw" id="a2s-gD-YQH"/>
+                <outlet property="exchangeDescriptionLabel" destination="VnH-7l-ASr" id="rJw-zC-VH8"/>
+                <outlet property="exchangeImageView" destination="tpR-pW-eyt" id="fcK-KZ-YIm"/>
+                <outlet property="exchangeNameLabel" destination="vjZ-Qg-ln1" id="FMN-8K-d75"/>
+                <outlet property="exchangeRankLabel" destination="eWI-L5-wsM" id="Csk-zm-5QS"/>
+                <outlet property="exchangeVolumeLabel" destination="di5-o0-arQ" id="h9R-MN-c3y"/>
+                <outlet property="exchangeYearLabel" destination="DPs-Ao-TWh" id="Lhz-0A-Sr5"/>
+            </connections>
+            <point key="canvasLocation" x="362.59541984732823" y="73.239436619718319"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="btcLogo" width="113" height="112"/>
+        <namedColor name="AppBackground">
+            <color red="0.086274509803921567" green="0.090196078431372548" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppYellow">
+            <color red="0.96078431372549022" green="0.76078431372549016" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

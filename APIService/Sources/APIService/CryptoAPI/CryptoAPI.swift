@@ -8,6 +8,7 @@ enum CryptoAPI: URLRequestConvertible {
     case searchTrendings
     case getMarketChartPrices(coinId: String, currency: String)
     case getCoinDetail(coinId: String)
+    case getExchanges
         
     var baseURL: URL {
         .init(string: "https://api.coingecko.com/api/v3")!
@@ -25,6 +26,8 @@ enum CryptoAPI: URLRequestConvertible {
             "coins/\(coinId)/market_chart"
         case .getCoinDetail(let coinId):
             "coins/\(coinId)"
+        case .getExchanges:
+            "exchanges"
         }
     }
     
@@ -40,6 +43,8 @@ enum CryptoAPI: URLRequestConvertible {
             .get
         case .getCoinDetail:
             .get
+        case .getExchanges:
+            .get
         }
     }
     
@@ -51,14 +56,14 @@ enum CryptoAPI: URLRequestConvertible {
         switch self {
         case .getCoins(let coinId, let currency, let perPage, let page):
             return [
-                "vs_currency": currency,
-                "order": "market_cap_desc",
-                "per_page": perPage,
-                "page": page,
-                "sparkline": false,
-                "locale": "en",
-                "ids": coinId ?? ""
-            ]
+                    "vs_currency": currency,
+                    "order": "market_cap_desc",
+                    "per_page": perPage,
+                    "page": page,
+                    "sparkline": false,
+                    "locale": "en",
+                    "ids": coinId ?? ""
+                    ]
         case .searchCoin(let query):
             return ["query": query]
         case .searchTrendings:
@@ -70,6 +75,8 @@ enum CryptoAPI: URLRequestConvertible {
                 "days": 440
             ]
         case .getCoinDetail:
+            return nil
+        case .getExchanges:
             return nil
         }
     }

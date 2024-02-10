@@ -25,7 +25,7 @@ protocol HomeViewModelProtocol {
 
 //MARK: Cell Types
 enum HomeViewCellType: CaseIterable {
-    case totalBalance
+    case exchanges
     case topCoins
     case news
     
@@ -48,6 +48,7 @@ final class HomeViewModel {
     
     private var coins: [CoinModel]?
     private var articles: [ArticleModel]?
+    private var exchanges: [ExchangeModel]?
     
     private var serviceErrorMessage: String?
     
@@ -68,6 +69,33 @@ final class HomeViewModel {
     private func getData() async {
         ActivityIndicatorManager.shared.startActivity()
         self.serviceErrorMessage = ""
+
+        self.dispatchGroup?.enter()
+        await cryptoService?.getExchanges { [weak self] results in
+            guard let self else { return }
+            self.dispatchGroup?.leave()
+            switch results {
+            case .success(let data):
+                if let data {
+                    self.exchanges = data.map {
+                        ExchangeModel(
+                            name: $0.name,
+                            yearEstablished: $0.yearEstablished,
+                            country: $0.country,
+                            url: $0.url,
+                            image: $0.image,
+                            trustScoreRank: $0.trustScoreRank,
+                            tradeVolume: $0.tradeVolume24HBtc,
+                            description: $0.description
+                        )
+                    }
+                }
+            case .failure(let error):
+                self.serviceErrorMessage?.append("\n\nExchanges are not loaded. \n\(error.errorDescription)\n")
+            }
+        }
+        
+        
         
         self.dispatchGroup?.enter()
         await cryptoService?.getCoins(coinId: nil, currency: "usd", perPage: 15, page: 1) { [weak self] results in
@@ -95,7 +123,7 @@ final class HomeViewModel {
                     }
                 }
             case .failure(let error):
-                self.serviceErrorMessage = "\n\nCoins are not loaded. \n\(error.errorDescription)\n"
+                self.serviceErrorMessage?.append("\nTop coins are not loaded. \n\(error.errorDescription)\n")
             }
         }
         
@@ -137,7 +165,7 @@ final class HomeViewModel {
     }
 }
 
-//MARK: ViewModelProtocol
+//MARK: ViewModel Resposibilities
 extension HomeViewModel: HomeViewModelProtocol {
     
     func viewDidLoad() {
@@ -156,8 +184,8 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
         switch HomeViewCellType.getType(index: indexPath.row) {
-        case .totalBalance:
-            240
+        case .exchanges:
+            300
         case .topCoins:
             270
         case .news:
@@ -167,8 +195,9 @@ extension HomeViewModel: HomeViewModelProtocol {
     
     func getCellViewModel(indexPath: IndexPath) -> BaseCellViewModel? {
         switch HomeViewCellType.getType(index: indexPath.row) {
-        case .totalBalance:
-            return nil
+        case .exchanges:
+            let viewModel = ExchangesCellViewModel(exchanges: self.exchanges)
+            return viewModel
         case .topCoins:
             let viewModel = TopCoinsCellVM(coins: self.coins)
             viewModel.delegate = self
