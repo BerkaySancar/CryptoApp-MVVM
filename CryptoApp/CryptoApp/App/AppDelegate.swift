@@ -30,11 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //Dependencies
+        //MARK: Third Party Starters
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         
-        //Window settings
+        //MARK: Window settings
         window = UIWindow(frame: UIScreen.main.bounds)
         let navController = UINavigationController()
         appCoordinator = AppCoordinator(navigationController: navController)
@@ -43,29 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
-        //Configuration
+        //MARK: Appearance Configuration
         configureNavBarAppearance()
         tabBarAppearance()
         
         return true
-    }
-    
-    func changeRootViewController(_ viewController: UIViewController, animated: Bool) {
-        guard let window = window else {
-            return
-        }
-        
-        if animated {
-            UIView.transition(
-                with: window,
-                duration: 0.5,
-                options: [.transitionCrossDissolve],
-                animations: nil,
-                completion: nil
-            )
-        }
-        
-        window.rootViewController = viewController
     }
     
     private func configureNavBarAppearance() {
