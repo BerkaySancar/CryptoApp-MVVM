@@ -13,7 +13,12 @@ final class SearchViewController: UIViewController {
     @IBOutlet private weak var searchTableView: UITableView!
     @IBOutlet private weak var trendingSearchLabel: UILabel!
     
-    private lazy var emptyContentView = EmptyContentView()
+    private lazy var emptyContentView: EmptyContentView = {
+        let view = EmptyContentView()
+        view.iconImageView.image = .init(systemName: "exclamationmark.magnifyingglass")
+        view.messageLabel.text = "Searched currency not found!"
+        return view
+    }()
     
     //MARK: View Model
     var viewModel: SearchViewModelProtocol!

@@ -11,6 +11,8 @@ import UIKit.UIView
 final class EmptyContentView: UIView, CustomViewProtocol {
     
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

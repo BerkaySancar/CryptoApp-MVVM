@@ -332,6 +332,95 @@
             </objects>
             <point key="canvasLocation" x="287.78625954198475" y="-37.323943661971832"/>
         </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="K9P-bu-zh5">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesViewController" id="dUi-J9-SSY" customClass="FavoritesViewController" customModule="CryptoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZGd-Fk-RLs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="F8D-jf-O3A">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" name="AppBackground"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavoriteCell" rowHeight="159" id="9wd-FG-FtM" customClass="FavoriteCell" customModule="CryptoApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="159"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wd-FG-FtM" id="JFk-OA-DFj">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btcLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-gT-lSp">
+                                                    <rect key="frame" x="16" y="49.666666666666657" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="FV3-8v-hll"/>
+                                                        <constraint firstAttribute="width" constant="60" id="RXD-p3-Fjf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2e-gS-v3e">
+                                                    <rect key="frame" x="92" y="69" width="53" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(BTC)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-f6-8ZJ">
+                                                    <rect key="frame" x="149" y="69" width="44.666666666666657" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BlD-8E-AZO">
+                                                    <rect key="frame" x="353" y="71.666666666666671" width="20" height="16.333333333333329"/>
+                                                    <color key="tintColor" name="AppYellow"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="IIg-PA-3iB"/>
+                                                        <constraint firstAttribute="height" constant="20" id="zzG-w2-BRw"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="AppBackground"/>
+                                            <constraints>
+                                                <constraint firstItem="Opl-f6-8ZJ" firstAttribute="leading" secondItem="a2e-gS-v3e" secondAttribute="trailing" constant="4" id="1dz-tB-J5e"/>
+                                                <constraint firstItem="a2e-gS-v3e" firstAttribute="leading" secondItem="Ec6-gT-lSp" secondAttribute="trailing" constant="16" id="35d-ix-xp7"/>
+                                                <constraint firstItem="Ec6-gT-lSp" firstAttribute="leading" secondItem="JFk-OA-DFj" secondAttribute="leading" constant="16" id="3E0-Yf-ReF"/>
+                                                <constraint firstItem="Ec6-gT-lSp" firstAttribute="centerY" secondItem="JFk-OA-DFj" secondAttribute="centerY" id="Apw-dU-j9L"/>
+                                                <constraint firstItem="Opl-f6-8ZJ" firstAttribute="centerY" secondItem="a2e-gS-v3e" secondAttribute="centerY" id="CeE-xL-eT6"/>
+                                                <constraint firstItem="a2e-gS-v3e" firstAttribute="centerY" secondItem="Ec6-gT-lSp" secondAttribute="centerY" id="iIV-IB-VVP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BlD-8E-AZO" secondAttribute="trailing" id="lcu-zq-b8w"/>
+                                                <constraint firstItem="BlD-8E-AZO" firstAttribute="centerY" secondItem="Opl-f6-8ZJ" secondAttribute="centerY" id="xYl-W3-t5l"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoriteImageView" destination="Ec6-gT-lSp" id="HG0-o7-CXi"/>
+                                            <outlet property="favoriteNameLabel" destination="a2e-gS-v3e" id="fAA-DW-9f1"/>
+                                            <outlet property="favoriteSymbolLabel" destination="Opl-f6-8ZJ" id="c4u-kL-UUg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dUi-J9-SSY" id="12k-iD-w53"/>
+                                    <outlet property="delegate" destination="dUi-J9-SSY" id="HDl-dL-kd6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cna-1n-GPR"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="F8D-jf-O3A" firstAttribute="top" secondItem="ZGd-Fk-RLs" secondAttribute="top" id="66F-38-K4a"/>
+                            <constraint firstAttribute="bottom" secondItem="F8D-jf-O3A" secondAttribute="bottom" id="Tc9-DS-Fq9"/>
+                            <constraint firstItem="F8D-jf-O3A" firstAttribute="trailing" secondItem="cna-1n-GPR" secondAttribute="trailing" id="tcX-vV-hLL"/>
+                            <constraint firstItem="F8D-jf-O3A" firstAttribute="leading" secondItem="cna-1n-GPR" secondAttribute="leading" id="ziO-F5-0He"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="F8D-jf-O3A" id="heY-Vp-Bbi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYX-Di-gy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212.9770992366412" y="-37.323943661971832"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btcLogo" width="113" height="112"/>

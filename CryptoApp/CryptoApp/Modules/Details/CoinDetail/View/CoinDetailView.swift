@@ -142,9 +142,9 @@ struct CoinDetailView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            print("tapped")
+                            viewModel.favButtonTapped()
                         } label: {
-                            Image(systemName: "heart")
+                            Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
                                 .foregroundStyle(.appYellow)
                         }
                     }

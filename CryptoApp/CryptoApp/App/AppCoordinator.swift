@@ -21,6 +21,10 @@ final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     private var tabBarController: UITabBarController?
     
+    //dependencies
+    private let storageManager: StorageManagerProtocol = StorageManager()
+    
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -77,6 +81,7 @@ final class AppCoordinator: Coordinator {
             [
                 home(),
                 search(),
+                favorites(),
                 settings()
             ],
             animated: true
@@ -92,10 +97,15 @@ final class AppCoordinator: Coordinator {
         tabBarController?.viewControllers?[1].tabBarItem.selectedImage = .init(systemName: "magnifyingglass.circle.fill")
         tabBarController?.viewControllers?[1].tabBarItem.title = "Search"
         
+        //MARK: Favorites
+        tabBarController?.viewControllers?[2].tabBarItem.image = .init(systemName: "heart")
+        tabBarController?.viewControllers?[2].tabBarItem.selectedImage = .init(systemName: "heart.fill")
+        tabBarController?.viewControllers?[2].tabBarItem.title = "Favorites"
+        
         //MARK: Settings
-        tabBarController?.viewControllers?[2].tabBarItem.image = .init(systemName: "gearshape")
-        tabBarController?.viewControllers?[2].tabBarItem.selectedImage = .init(systemName: "gearshape.fill")
-        tabBarController?.viewControllers?[2].tabBarItem.title = "Settings"
+        tabBarController?.viewControllers?[3].tabBarItem.image = .init(systemName: "gearshape")
+        tabBarController?.viewControllers?[3].tabBarItem.selectedImage = .init(systemName: "gearshape.fill")
+        tabBarController?.viewControllers?[3].tabBarItem.title = "Settings"
         
         if let tabBarController {
             self.navigationController.setViewControllers([tabBarController], animated: true)
@@ -125,6 +135,17 @@ final class AppCoordinator: Coordinator {
         )
         search.viewModel = viewModel
         return search
+    }
+    
+    func favorites() -> FavoritesViewController {
+        let favorites = FavoritesViewController.instantiateFromStoryboard("Main")
+        let viewModel = FavoritesViewModel(
+            coordinator: self,
+            view: favorites,
+            storageManager: self.storageManager
+        )
+        favorites.viewModel = viewModel
+        return favorites
     }
     
     //MARK: -  Settings
@@ -169,7 +190,8 @@ final class AppCoordinator: Coordinator {
         let viewModel = CoinDetailViewModel(
             coordinator: self,
             cryptoService: CryptoService(),
-            coinId: coinId
+            coinId: coinId,
+            storageManager: self.storageManager
         )
         let view = CoinDetailView(viewModel: viewModel)
         let hostingVC = UIHostingController(rootView: view)

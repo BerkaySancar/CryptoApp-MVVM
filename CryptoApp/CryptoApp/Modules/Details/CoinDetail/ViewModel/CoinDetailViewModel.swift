@@ -11,8 +11,9 @@ import Foundation
 final class CoinDetailViewModel: ObservableObject {
     
     private let cryptoService: CryptoServiceProtocol?
-    private weak var coorinator: AppCoordinator?
+    private weak var coordinator: AppCoordinator?
     private let dispatchGroup = DispatchGroup()
+    private let storageManager: StorageManagerProtocol?
     
     @Published var coin: CoinModel?
     private(set) var coinDetailModel: CoinDetailModel?
@@ -23,13 +24,23 @@ final class CoinDetailViewModel: ObservableObject {
     @Published var homepage = ""
     private var serviceError = ""
     
-    init(coordinator: AppCoordinator?, cryptoService: CryptoServiceProtocol?, coinId: String?) {
+    @Published var isFavorite = false
+    private var favorites: [FavoriteCoinModel]?
+    
+    init(
+        coordinator: AppCoordinator?,
+        cryptoService: CryptoServiceProtocol?,
+        coinId: String?,
+        storageManager: StorageManagerProtocol?
+    ) {
         self.cryptoService = cryptoService
-        self.coorinator = coordinator
+        self.coordinator = coordinator
         self.coinId = coinId
+        self.storageManager = storageManager
         
         Task {
             await getData()
+            await getFavorites()
         }
     }
         
@@ -185,6 +196,39 @@ final class CoinDetailViewModel: ObservableObject {
     }
   
     func homepageTapped() {
-        self.coorinator?.safari(urlString: homepage)
+        self.coordinator?.safari(urlString: homepage)
+    }
+    
+    @MainActor func getFavorites() {
+        self.favorites = self.storageManager?.getItem(key: .favorites, type: [FavoriteCoinModel].self) ?? []
+        
+        setFavButtonStatus()
+    }
+    
+    @MainActor private func setFavButtonStatus() {
+        if let isFav = favorites?.contains(where: { $0.id == coinId }) {
+            self.isFavorite = isFav
+        }
+    }
+    
+    func favButtonTapped() {
+        if self.isFavorite {
+            if let index = favorites?.firstIndex(where: { $0.id == coinId }) {
+                self.favorites?.remove(at: index)
+            }
+        } else {
+            let newFavorite = FavoriteCoinModel(
+                id: self.coin?.id ?? "",
+                name: self.coin?.name ?? "",
+                symbol: self.coin?.symbol ?? "",
+                image: self.coin?.image ?? ""
+            )
+            self.favorites?.append(newFavorite)
+        }
+
+        self.storageManager?.addItem(key: .favorites, item: self.favorites)
+        
+        self.isFavorite.toggle()
     }
 }
+
