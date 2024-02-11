@@ -144,6 +144,7 @@ final class AppCoordinator: Coordinator {
         return search
     }
     
+    //MARK: - Favorites
     func favorites() -> FavoritesViewController {
         let favorites = FavoritesViewController.instantiateFromStoryboard("Main")
         let viewModel = FavoritesViewModel(
@@ -157,8 +158,13 @@ final class AppCoordinator: Coordinator {
     
     //MARK: -  Settings
     func settings() -> SettingsViewController {
-        let settings = SettingsViewController()
-        settings.coordinator = self
+        let settings = SettingsViewController.instantiateFromStoryboard("Main")
+        let viewModel = SettingsViewModel(
+            coordinator: self,
+            view: settings,
+            authManager: AuthManager.shared
+        )
+        settings.viewModel = viewModel
         return settings
     }
     

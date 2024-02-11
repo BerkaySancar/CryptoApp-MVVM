@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -421,6 +422,36 @@
             </objects>
             <point key="canvasLocation" x="1212.9770992366412" y="-37.323943661971832"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="hjn-a0-o95">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="GJa-1k-t65" customClass="SettingsViewController" customModule="CryptoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Smm-lJ-n8Y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OH-7i-lQf">
+                                <rect key="frame" x="153" y="408.66666666666669" width="87" height="35"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="GJa-1k-t65" eventType="touchUpInside" id="SZt-2N-QNl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wSK-eI-i0b"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="6OH-7i-lQf" firstAttribute="centerX" secondItem="Smm-lJ-n8Y" secondAttribute="centerX" id="G1a-le-OWO"/>
+                            <constraint firstItem="6OH-7i-lQf" firstAttribute="centerY" secondItem="Smm-lJ-n8Y" secondAttribute="centerY" id="xbu-Wh-lcm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ac2-JB-gAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2227" y="-37"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btcLogo" width="113" height="112"/>
@@ -431,5 +462,8 @@
         <namedColor name="AppYellow">
             <color red="0.96078431372549022" green="0.76078431372549016" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
