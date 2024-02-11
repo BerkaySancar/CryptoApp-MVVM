@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func tabBarAppearance() {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
-        tabBarAppearance.backgroundColor = .appBackground.withAlphaComponent(0.75)
+        tabBarAppearance.backgroundColor = .appBackground.withAlphaComponent(0.90)
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
     }
