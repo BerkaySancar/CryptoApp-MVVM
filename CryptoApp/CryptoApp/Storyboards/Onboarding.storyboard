@@ -9,6 +9,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="Nfk-YJ-zTd">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="4Fa-gk-EXB" customClass="SplashViewController" customModule="CryptoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NVY-wO-nBa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-Yd-UdF">
+                                <rect key="frame" x="122.66666666666669" y="408" width="148" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" name="AppYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright Berkay Sancar, 2024" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOt-kP-tFZ">
+                                <rect key="frame" x="81.333333333333329" y="792" width="230.33333333333337" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="AppYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vip-fv-iA9"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="xOt-kP-tFZ" firstAttribute="centerX" secondItem="NVY-wO-nBa" secondAttribute="centerX" id="JN4-Ed-6j9"/>
+                            <constraint firstItem="dB7-Yd-UdF" firstAttribute="centerX" secondItem="NVY-wO-nBa" secondAttribute="centerX" id="Ww3-SZ-hz0"/>
+                            <constraint firstItem="xOt-kP-tFZ" firstAttribute="bottom" secondItem="vip-fv-iA9" secondAttribute="bottom" constant="-8" id="gSv-e4-pZP"/>
+                            <constraint firstItem="dB7-Yd-UdF" firstAttribute="centerY" secondItem="NVY-wO-nBa" secondAttribute="centerY" id="qQh-Rt-cDX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbC-z3-J0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-847" y="-9"/>
+        </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>

@@ -31,11 +31,18 @@ final class AppCoordinator: Coordinator {
     
     //MARK: - App Start
     func start(isLoggedIn: Bool) {
-        if isLoggedIn {
-            tabBar()
-        } else {
-            onboarding()
-        }
+        splash(isLoggedIn: isLoggedIn)
+    }
+    
+    //MARK: - Splash
+    func splash(isLoggedIn: Bool) {
+        let splash = SplashViewController.instantiateFromStoryboard("Onboarding")
+        let viewModel = SplashViewModel(
+            coordinator: self,
+            isUserLoggedIn: isLoggedIn
+        )
+        splash.viewModel = viewModel
+        self.navigationController.setViewControllers([splash], animated: true)
     }
     
     //MARK: - Onboarding
