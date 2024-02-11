@@ -61,7 +61,7 @@ final class ArticleListViewModel: ArticleListViewModelProtocol {
     }
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
-        return 280
+        return 320
     }
     
     func sortByDate() {
