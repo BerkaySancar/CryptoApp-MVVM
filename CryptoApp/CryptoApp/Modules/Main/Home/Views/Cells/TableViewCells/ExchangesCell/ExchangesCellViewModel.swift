@@ -14,7 +14,8 @@ final class ExchangesCellViewModel: BaseCellViewModel {
     
     private var colors: [UIColor] {
         var colors: [UIColor] = []
-        for _ in 0...(exchanges?.count ?? 0) {
+        colors.append(.systemIndigo.withAlphaComponent(0.75))
+        for _ in 1...(exchanges?.count ?? 0) {
             colors.append(.generateRandomCellColor())
         }
         return colors

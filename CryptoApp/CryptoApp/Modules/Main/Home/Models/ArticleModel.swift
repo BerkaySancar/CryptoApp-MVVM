@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArticleModel {
+struct ArticleModel: Codable {
     let title: String?
     let url: String?
     let urlToImage: String?

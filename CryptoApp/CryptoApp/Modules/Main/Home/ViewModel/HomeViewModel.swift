@@ -44,36 +44,60 @@ final class HomeViewModel {
     private weak var view: HomeViewModelOutputs?
     private let cryptoService: CryptoServiceProtocol?
     private let newsService: NewsServiceProtocol?
+    private let storageManager: StorageManagerProtocol?
     private var dispatchGroup: DispatchGroup?
     
     private var coins: [CoinModel]?
     private var articles: [ArticleModel]?
     private var exchanges: [ExchangeModel]?
     
-    private var serviceErrorMessage: String?
+    private var serviceErrorMessage: String = ""
     
     init(
         coordinator: AppCoordinator,
         view: HomeViewModelOutputs,
         cryptoService: CryptoServiceProtocol?,
         newsService: NewsServiceProtocol?,
+        storageManager: StorageManagerProtocol?,
         dispatchGroup: DispatchGroup = .init()
     ) {
         self.coordinator = coordinator
         self.view = view
         self.cryptoService = cryptoService
         self.newsService = newsService
+        self.storageManager = storageManager
         self.dispatchGroup = dispatchGroup
+    }
+    
+    private func getDataFromCache() {
+        self.exchanges = storageManager?.getItem(key: .exchanges, type: [ExchangeModel].self)
+        self.coins = storageManager?.getItem(key: .topCoins, type: [CoinModel].self)
+        self.articles = storageManager?.getItem(key: .news, type: [ArticleModel].self)
     }
     
     private func getData() async {
         ActivityIndicatorManager.shared.startActivity()
-        self.serviceErrorMessage = ""
 
+        await getExchanges()
+        await getCoins()
+        await getNews()
+        
+        dispatchGroup?.notify(queue: .main) { [weak self] in
+            guard let self else { return }
+            ActivityIndicatorManager.shared.endActivity()
+            
+            if serviceErrorMessage != "" {
+                AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error", message: self.serviceErrorMessage))
+            }
+            
+            self.view?.dataRefreshed()
+        }
+    }
+    
+    private func getExchanges() async {
         self.dispatchGroup?.enter()
         await cryptoService?.getExchanges { [weak self] results in
             guard let self else { return }
-            self.dispatchGroup?.leave()
             switch results {
             case .success(let data):
                 if let data {
@@ -89,18 +113,19 @@ final class HomeViewModel {
                             description: $0.description
                         )
                     }
+                    self.storageManager?.addItem(key: .exchanges, item: self.exchanges)
                 }
             case .failure(let error):
-                self.serviceErrorMessage?.append("\n\nExchanges are not loaded. \n\(error.errorDescription)\n")
+                self.serviceErrorMessage.append("\n\nExchanges are not loaded. \n\(error.errorDescription)\n")
             }
         }
-        
-        
-        
+        self.dispatchGroup?.leave()
+    }
+    
+    private func getCoins() async {
         self.dispatchGroup?.enter()
         await cryptoService?.getCoins(coinId: nil, currency: "usd", perPage: 15, page: 1) { [weak self] results in
             guard let self else { return }
-            self.dispatchGroup?.leave()
             switch results {
             case .success(let data):
                 if let data {
@@ -121,16 +146,19 @@ final class HomeViewModel {
                             atlDate: $0.atlDate
                         )
                     }
+                    self.storageManager?.addItem(key: .topCoins, item: self.coins)
                 }
             case .failure(let error):
-                self.serviceErrorMessage?.append("\nTop coins are not loaded. \n\(error.errorDescription)\n")
+                self.serviceErrorMessage.append("\nTop coins are not loaded. \n\(error.errorDescription)\n")
             }
         }
-        
+        self.dispatchGroup?.leave()
+    }
+    
+    private func getNews() async {
         self.dispatchGroup?.enter()
         await newsService?.getCryptoNews { [weak self] results in
             guard let self else { return }
-            self.dispatchGroup?.leave()
             switch results {
             case .success(let data):
                 if let data {
@@ -145,23 +173,14 @@ final class HomeViewModel {
                             publishedAt: $0.publishedAt
                         )
                     }
+                    self.storageManager?.addItem(key: .news, item: self.articles)
                 }
                 break
             case .failure(let error):
-                self.serviceErrorMessage?.append("\nNews are not loaded.\n \(error.errorDescription)\n")
+                self.serviceErrorMessage.append("\nNews are not loaded.\n \(error.errorDescription)\n")
             }
         }
-        
-        dispatchGroup?.notify(queue: .main) { [weak self] in
-            guard let self else { return }
-            ActivityIndicatorManager.shared.endActivity()
-            
-            if serviceErrorMessage != "" {
-                AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error", message: self.serviceErrorMessage ?? ""))
-            }
-            
-            self.view?.dataRefreshed()
-        }
+        self.dispatchGroup?.leave()
     }
 }
 
@@ -169,6 +188,8 @@ final class HomeViewModel {
 extension HomeViewModel: HomeViewModelProtocol {
     
     func viewDidLoad() {
+        getDataFromCache()
+        
         Task {
             await getData()
         }

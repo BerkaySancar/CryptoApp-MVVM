@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExchangeModel {
+struct ExchangeModel: Codable {
     let name: String
     let yearEstablished: Int?
     let country: String?

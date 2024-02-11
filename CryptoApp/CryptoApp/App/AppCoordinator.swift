@@ -126,7 +126,8 @@ final class AppCoordinator: Coordinator {
             coordinator: self,
             view: home,
             cryptoService: CryptoService(),
-            newsService: NewsService()
+            newsService: NewsService(),
+            storageManager: self.storageManager
         )
         home.viewModel = viewModel
         return home
