@@ -28,6 +28,8 @@ final class AppAlertView: UIView, CustomViewProtocol {
     }
     
     private func configure() {
+        alertTextField.textColor = .white
+        alertTextField.attributedPlaceholder = NSAttributedString(string: "Enter your email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
         alertTextField.isHidden = true
         self.backView.backgroundColor = .black.withAlphaComponent(0.5)
         self.translatesAutoresizingMaskIntoConstraints = false

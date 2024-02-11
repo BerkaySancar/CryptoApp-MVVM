@@ -33,7 +33,7 @@
                             <rect key="frame" x="66.666666666666686" y="256" width="260" height="260"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-IB-dJT">
-                                    <rect key="frame" x="60" y="33" width="140" height="24"/>
+                                    <rect key="frame" x="60" y="16" width="140" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -44,9 +44,11 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4f-m3-Ijh">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4f-m3-Ijh">
                                     <rect key="frame" x="16" y="114" width="228" height="34"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="backgroundColor" name="CellBackground"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIv-g2-ZwE">
@@ -93,7 +95,7 @@
                                 <constraint firstAttribute="height" constant="260" id="nxf-9T-bAH"/>
                                 <constraint firstAttribute="bottom" secondItem="ai0-ze-RY1" secondAttribute="bottom" constant="23" id="ryg-Ta-oU4"/>
                                 <constraint firstAttribute="trailing" secondItem="QQd-IB-dJT" secondAttribute="trailing" constant="60" id="uHr-Ws-Q3q"/>
-                                <constraint firstItem="QQd-IB-dJT" firstAttribute="top" secondItem="6xP-OI-uo4" secondAttribute="top" constant="33" id="wZK-k3-Vp8"/>
+                                <constraint firstItem="QQd-IB-dJT" firstAttribute="top" secondItem="6xP-OI-uo4" secondAttribute="top" constant="16" id="wZK-k3-Vp8"/>
                                 <constraint firstItem="QQd-IB-dJT" firstAttribute="leading" secondItem="6xP-OI-uo4" secondAttribute="leading" constant="60" id="x2G-QN-TLK"/>
                                 <constraint firstItem="ai0-ze-RY1" firstAttribute="leading" secondItem="6xP-OI-uo4" secondAttribute="leading" constant="15" id="xrX-sO-Qsr"/>
                             </constraints>
@@ -129,6 +131,9 @@
         </namedColor>
         <namedColor name="AppYellow">
             <color red="0.96078431372549022" green="0.76078431372549016" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CellBackground">
+            <color red="0.15686274509803921" green="0.16862745098039217" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextFieldBackground">
             <color red="0.28627450980392155" green="0.30196078431372547" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
