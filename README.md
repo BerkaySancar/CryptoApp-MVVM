@@ -40,7 +40,7 @@ CryptoApp is an iOS application developed using Swift, UIKit, and SwiftUI. It al
 - Build and run the app on your iOS device or simulator.
 
 ## App Preview
-
+https://github.com/BerkaySancar/CryptoApp-MVVM/assets/97171726/c612df52-4d99-490b-85fe-2b53ab66c7cc
 
 # License
 This project is licensed under the MIT License.
