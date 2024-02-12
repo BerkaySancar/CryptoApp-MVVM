@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgm-IR-sTQ">
-                                <rect key="frame" x="16" y="59" width="361" height="21"/>
+                                <rect key="frame" x="16" y="67" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rCW-yE-8IZ">
-                                <rect key="frame" x="16" y="88" width="361" height="34"/>
+                                <rect key="frame" x="16" y="96" width="361" height="34"/>
                                 <color key="backgroundColor" name="TextFieldBackground"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -37,13 +37,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIA-eS-Ujt">
-                                <rect key="frame" x="16" y="142" width="361" height="21"/>
+                                <rect key="frame" x="16" y="150" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ji-bZ-V3w">
-                                <rect key="frame" x="16" y="171" width="361" height="34"/>
+                                <rect key="frame" x="16" y="179" width="361" height="34"/>
                                 <color key="backgroundColor" name="TextFieldBackground"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -55,7 +55,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeH-QD-vLw">
-                                <rect key="frame" x="319" y="170" width="58" height="35"/>
+                                <rect key="frame" x="319" y="178" width="58" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="58" id="5qx-WC-Jbn"/>
                                     <constraint firstAttribute="height" constant="35" id="yWH-eN-WHG"/>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8v-IN-2H4">
-                                <rect key="frame" x="16" y="213" width="361" height="35"/>
+                                <rect key="frame" x="16" y="221" width="361" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="MPG-Uh-8hG"/>
                                 </constraints>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-CZ-ci1">
-                                <rect key="frame" x="16" y="298" width="361" height="53"/>
+                                <rect key="frame" x="16" y="306" width="361" height="53"/>
                                 <color key="backgroundColor" name="AppYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="rg0-pj-Pxm"/>
@@ -146,11 +146,10 @@
                             <constraint firstItem="Uqw-nG-DBo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WVk-s0-s16"/>
                             <constraint firstItem="Hfw-CZ-ci1" firstAttribute="top" secondItem="d8v-IN-2H4" secondAttribute="bottom" constant="50" id="XCL-H0-ZpU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hfw-CZ-ci1" secondAttribute="trailing" constant="16" id="c4N-8q-bqN"/>
-                            <constraint firstItem="KeH-QD-vLw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="319" id="cN0-eX-tXT"/>
-                            <constraint firstItem="sgm-IR-sTQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cwA-ZF-hnH"/>
+                            <constraint firstItem="sgm-IR-sTQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="cwA-ZF-hnH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d8v-IN-2H4" secondAttribute="trailing" constant="16" id="ecI-Tg-KeP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Ji-bZ-V3w" secondAttribute="trailing" constant="16" id="fQW-by-10x"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KeH-QD-vLw" secondAttribute="trailing" id="gHp-ot-vgr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KeH-QD-vLw" secondAttribute="trailing" constant="16" id="gHp-ot-vgr"/>
                             <constraint firstItem="KeH-QD-vLw" firstAttribute="top" secondItem="oIA-eS-Ujt" secondAttribute="bottom" constant="7" id="ibw-KL-pMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sgm-IR-sTQ" secondAttribute="trailing" constant="16" id="kyr-la-0TJ"/>
                             <constraint firstItem="rCW-yE-8IZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lbm-Mc-Rfb"/>
@@ -181,13 +180,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXQ-kt-kPV">
-                                <rect key="frame" x="16" y="59" width="361" height="21"/>
+                                <rect key="frame" x="16" y="67" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsM-rP-jbV">
-                                <rect key="frame" x="16" y="88" width="361" height="34"/>
+                                <rect key="frame" x="16" y="96" width="361" height="34"/>
                                 <color key="backgroundColor" name="TextFieldBackground"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -199,13 +198,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsG-jj-TEb">
-                                <rect key="frame" x="16" y="142" width="361" height="21"/>
+                                <rect key="frame" x="16" y="150" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6w-yg-URs">
-                                <rect key="frame" x="16" y="171" width="361" height="34"/>
+                                <rect key="frame" x="16" y="179" width="361" height="34"/>
                                 <color key="backgroundColor" name="TextFieldBackground"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -217,7 +216,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tk4-z5-yX0">
-                                <rect key="frame" x="319" y="171" width="58" height="35"/>
+                                <rect key="frame" x="319" y="179" width="58" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="58" id="3mo-U7-AWO"/>
                                     <constraint firstAttribute="width" constant="58" id="dFp-BY-C9J"/>
@@ -236,13 +235,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least 8 characters with letters and numbers and one special character" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-bM-OTb">
-                                <rect key="frame" x="16" y="213" width="361" height="33.666666666666657"/>
+                                <rect key="frame" x="16" y="221" width="361" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ5-mH-2Ug">
-                                <rect key="frame" x="16" y="264.66666666666669" width="28" height="28"/>
+                                <rect key="frame" x="16" y="272.66666666666669" width="28" height="28"/>
                                 <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="6sw-yP-tUC"/>
@@ -254,7 +253,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nA-ft-ilh">
-                                <rect key="frame" x="52" y="269.33333333333331" width="333" height="17"/>
+                                <rect key="frame" x="52" y="277.33333333333331" width="333" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Accept ">
                                         <attributes>
@@ -302,7 +301,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEQ-Qy-uyY">
-                                <rect key="frame" x="16" y="342.66666666666669" width="361" height="53"/>
+                                <rect key="frame" x="16" y="350.66666666666669" width="361" height="53"/>
                                 <color key="backgroundColor" name="AppYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="53" id="6Nq-QU-WaT"/>
@@ -367,7 +366,7 @@
                             <constraint firstItem="zZ5-mH-2Ug" firstAttribute="top" secondItem="e3e-bM-OTb" secondAttribute="bottom" constant="18" id="Eud-Xy-3m7"/>
                             <constraint firstItem="t6w-yg-URs" firstAttribute="leading" secondItem="L4C-6Y-sef" secondAttribute="leading" constant="16" id="H2c-Nu-aft"/>
                             <constraint firstItem="e3e-bM-OTb" firstAttribute="leading" secondItem="L4C-6Y-sef" secondAttribute="leading" constant="16" id="Id6-of-Rpm"/>
-                            <constraint firstItem="MXQ-kt-kPV" firstAttribute="top" secondItem="L4C-6Y-sef" secondAttribute="top" id="Mdq-g3-YPO"/>
+                            <constraint firstItem="MXQ-kt-kPV" firstAttribute="top" secondItem="L4C-6Y-sef" secondAttribute="top" constant="8" id="Mdq-g3-YPO"/>
                             <constraint firstItem="L4C-6Y-sef" firstAttribute="trailing" secondItem="t6w-yg-URs" secondAttribute="trailing" constant="16" id="OSe-0J-FSy"/>
                             <constraint firstItem="L4C-6Y-sef" firstAttribute="trailing" secondItem="rkY-lz-P6J" secondAttribute="trailing" constant="16" id="TGZ-mh-PlS"/>
                             <constraint firstItem="MXQ-kt-kPV" firstAttribute="leading" secondItem="L4C-6Y-sef" secondAttribute="leading" constant="16" id="ToG-BJ-UIg"/>
@@ -400,7 +399,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="eye" catalog="system" width="32" height="32"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <namedColor name="AppBackground">
             <color red="0.086274509803921567" green="0.090196078431372548" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
