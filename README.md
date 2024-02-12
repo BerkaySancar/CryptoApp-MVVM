@@ -1,5 +1,5 @@
 ## CryptoApp -> [App Preview](#app-preview)
-CryptoApp is an iOS application developed using Swift, UIKit, and SwiftUI. It allows users to explore cryptocurrency exchanges, search for specific coins, mark coins as favorites, and stay updated with the latest cryptocurrency news. The app integrates with the [CoinGecko](https://www.coingecko.com/en/api) for cryptocurrency data and the NewsAPI for news articles.
+CryptoApp is an iOS application developed using Swift, UIKit, and SwiftUI. It allows users to explore cryptocurrency exchanges, search for specific coins, mark coins as favorites, and stay updated with the latest cryptocurrency news. The app integrates with the [CoinGeckoAPI](https://www.coingecko.com/en/api) for cryptocurrency data and the NewsAPI for news articles.
 
 ## Features
 - View cryptocurrency exchanges and their details.
