@@ -47,7 +47,7 @@ final class AppAlertView: UIView, CustomViewProtocol {
         } completion: { _ in
             if let text = self.alertTextField.text, text.count > 5 {
                 AlertManager.shared.removeFromSuperview()
-                AuthManager.shared.resetPassword(with: text) { results in
+                AuthManager().resetPassword(with: text) { results in
                     switch results {
                     case .success:
                         AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Done.", message: "Password reset mail was sent."))

@@ -25,6 +25,7 @@ final class AppCoordinator: Coordinator {
     private let storageManager: StorageManagerProtocol = StorageManager()
     private let cryptoService: CryptoServiceProtocol = CryptoService()
     private let newsService: NewsServiceProtocol = NewsService()
+    private let authManager: AuthManagerProtocol = AuthManager()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -63,7 +64,7 @@ final class AppCoordinator: Coordinator {
         let viewModel = LoginViewModel(
             coordinator: self,
             view: login,
-            authManager: AuthManager.shared
+            authManager: self.authManager
         )
         login.viewModel = viewModel
         self.navigationController.setViewControllers([login], animated: true)
@@ -75,7 +76,7 @@ final class AppCoordinator: Coordinator {
         let viewModel = SignUpViewModel(
             coordinator: self,
             view: signUp,
-            authManager: AuthManager.shared
+            authManager: self.authManager
         )
         signUp.viewModel = viewModel
         self.navigationController.setViewControllers([signUp], animated: true)
@@ -164,7 +165,7 @@ final class AppCoordinator: Coordinator {
         let viewModel = SettingsViewModel(
             coordinator: self,
             view: settings,
-            authManager: AuthManager.shared
+            authManager: self.authManager
         )
         settings.viewModel = viewModel
         return settings

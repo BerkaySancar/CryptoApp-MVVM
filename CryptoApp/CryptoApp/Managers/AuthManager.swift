@@ -20,10 +20,7 @@ protocol AuthManagerProtocol {
 
 final class AuthManager: AuthManagerProtocol {
     
-    static let shared = AuthManager()
     private let auth = Auth.auth()
-    
-    private init() {}
     
     func login(email: String, password: String, completion: @escaping (Result<Void, FirebaseError>) -> Void) {
         ActivityIndicatorManager.shared.startActivity()
