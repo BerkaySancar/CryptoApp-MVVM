@@ -849,8 +849,8 @@
 		B197134C2B6FFDFF00AA59E7 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				B1D9977D2B794AB400C099C6 /* SplashViewController.swift */,
-				B1D9977F2B794AD600C099C6 /* SplashViewModel.swift */,
+				B1BDC9EB2B79FEE700115DF0 /* ViewModel */,
+				B1BDC9EC2B79FEEC00115DF0 /* Controller */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -929,6 +929,22 @@
 				B17291ED2B73C5AA00BE2F6F /* CoinDetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1BDC9EB2B79FEE700115DF0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B1D9977F2B794AD600C099C6 /* SplashViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1BDC9EC2B79FEEC00115DF0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1D9977D2B794AB400C099C6 /* SplashViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B1D997812B79598500C099C6 /* ViewModel */ = {

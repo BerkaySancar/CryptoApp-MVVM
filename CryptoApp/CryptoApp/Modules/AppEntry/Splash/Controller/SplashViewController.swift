@@ -9,11 +9,17 @@ import UIKit
 
 final class SplashViewController: UIViewController {
     
-    var viewModel: SplashViewModel?
+    //MARK: ViewModel
+    var viewModel: SplashViewModelProtocol?
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel?.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel?.viewWillAppear()
     }
 }

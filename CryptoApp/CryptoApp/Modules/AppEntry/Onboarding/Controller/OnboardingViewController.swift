@@ -27,6 +27,11 @@ final class OnboardingViewController: UIViewController {
         viewModel?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.viewWillAppear()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         viewModel?.viewWillDisappear()
     }

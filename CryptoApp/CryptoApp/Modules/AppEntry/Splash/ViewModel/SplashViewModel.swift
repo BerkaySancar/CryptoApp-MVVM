@@ -9,6 +9,7 @@ import Foundation
 
 protocol SplashViewModelProtocol {
     func viewDidLoad()
+    func viewWillAppear()
 }
 
 final class SplashViewModel: SplashViewModelProtocol {
@@ -21,6 +22,8 @@ final class SplashViewModel: SplashViewModelProtocol {
     }
     
     func viewDidLoad() {
+        self.coordinator?.navigationController.isNavigationBarHidden = true
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
             guard let self else { return }
             if let isUserLoggedIn, isUserLoggedIn {
@@ -29,5 +32,9 @@ final class SplashViewModel: SplashViewModelProtocol {
                 self.coordinator?.onboarding()
             }
         }
+    }
+    
+    func viewWillAppear() {
+        self.coordinator?.navigationController.isNavigationBarHidden = false
     }
 }

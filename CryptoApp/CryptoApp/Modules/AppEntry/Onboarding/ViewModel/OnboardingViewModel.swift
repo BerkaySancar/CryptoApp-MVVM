@@ -10,6 +10,7 @@ import Foundation
 //MARK: ViewModel Responsibilities
 protocol OnboardingViewModelProtocol {
     func viewDidLoad()
+    func viewWillAppear()
     func viewWillDisappear()
     func numberOfItemsInSection() -> Int
     func getCellVM(indexPath: IndexPath) -> BaseCellViewModel
@@ -58,14 +59,17 @@ final class OnboardingViewModel: OnboardingViewModelProtocol {
     }
         
     func viewDidLoad() {
-        coordinator?.navigationController.setNavigationBarHidden(true, animated: true)
         view?.prepareCollectionView()
         view?.preparePageControl()
         view?.prepareLoginSignUpButtons()
     }
     
+    func viewWillAppear() {
+        coordinator?.navigationController.isNavigationBarHidden = true
+    }
+    
     func viewWillDisappear() {
-        coordinator?.navigationController.setNavigationBarHidden(false, animated: true)
+        coordinator?.navigationController.isNavigationBarHidden = false
     }
     
     func numberOfItemsInSection() -> Int {
