@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let navController = UINavigationController()
         appCoordinator = AppCoordinator(navigationController: navController)
-        let isLoggedIn = Auth.auth().currentUser != nil
+        let isLoggedIn = Auth.auth().currentUser != nil && Auth.auth().currentUser?.isEmailVerified == true
         appCoordinator?.start(isLoggedIn: isLoggedIn)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()

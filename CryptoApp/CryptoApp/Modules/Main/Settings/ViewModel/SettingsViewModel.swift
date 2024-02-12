@@ -47,7 +47,7 @@ final class SettingsViewModel: SettingsvViewModelProtocol {
             case .success:
                 self.coordinator?.login()
             case .failure(let error):
-                AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Sign out failed.", message: error.localizedDescription))
+                AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Sign out failed.", message: error.errorDescription))
             }
         }
     }

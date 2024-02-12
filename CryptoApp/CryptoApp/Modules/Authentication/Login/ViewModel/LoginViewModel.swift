@@ -41,10 +41,10 @@ final class LoginViewModel: LoginViewModelProtocol {
             authManager?.login(email: email, password: password, completion: { [weak self] results in
                 guard let self else { return }
                 switch results {
-                case .success(_):
+                case .success:
                     self.coordinator?.tabBar()
                 case .failure(let error):
-                    AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error.", message: error.localizedDescription))
+                    AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error.", message: error.errorDescription))
                 }
             })
         } else {

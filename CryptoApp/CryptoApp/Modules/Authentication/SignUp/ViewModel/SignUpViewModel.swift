@@ -42,8 +42,9 @@ final class SignUpViewModel: SignUpViewModelProtocol {
                     switch results {
                     case .success:
                         self?.coordinator?.login()
+                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Success!", message: "Email verification was sent. Please verify your email and login."))
                     case .failure(let error):
-                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error!", message: error.localizedDescription))
+                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Error!", message: error.errorDescription))
                     }
                 })
             } else {

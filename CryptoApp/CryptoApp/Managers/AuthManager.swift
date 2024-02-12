@@ -29,13 +29,16 @@ final class AuthManager: AuthManagerProtocol {
         ActivityIndicatorManager.shared.startActivity()
         auth.signIn(withEmail: email, password: password) { (result, error)  in
             ActivityIndicatorManager.shared.endActivity()
-            if let error {
-                print(error)
-                completion(.failure(.loginError))
-            } else {
-                if (result?.user) != nil {
+            if let result {
+                if result.user.isEmailVerified {
                     completion(.success(()))
+                } else {
+                    completion(.failure(.emailNotVerified))
                 }
+            }
+            if let error {
+                print(error.localizedDescription)
+                completion(.failure(.loginError))
             }
         }
     }
@@ -48,7 +51,14 @@ final class AuthManager: AuthManagerProtocol {
                 print(error)
                 completion(.failure(.signUpError))
             } else {
-                completion(.success(()))
+                result?.user.sendEmailVerification { error in
+                    if let error {
+                        debugPrint(error)
+                        completion(.failure(.sendEmailVerificationError))
+                    } else {
+                        completion(.success(()))
+                    }
+                }
             }
         }
     }

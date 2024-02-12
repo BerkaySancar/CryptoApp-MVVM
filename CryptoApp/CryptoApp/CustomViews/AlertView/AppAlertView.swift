@@ -52,7 +52,7 @@ final class AppAlertView: UIView, CustomViewProtocol {
                     case .success:
                         AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Done.", message: "Password reset mail was sent."))
                     case .failure(let error):
-                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Fail.", message: error.localizedDescription))
+                        AlertManager.shared.showAlert(type: .titleMessageDismiss(title: "Fail.", message: error.errorDescription))
                     }
                 }
             } else {
