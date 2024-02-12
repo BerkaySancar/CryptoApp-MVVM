@@ -23,7 +23,8 @@ final class AppCoordinator: Coordinator {
     
     //dependencies
     private let storageManager: StorageManagerProtocol = StorageManager()
-    
+    private let cryptoService: CryptoServiceProtocol = CryptoService()
+    private let newsService: NewsServiceProtocol = NewsService()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -125,8 +126,8 @@ final class AppCoordinator: Coordinator {
         let viewModel = HomeViewModel(
             coordinator: self,
             view: home,
-            cryptoService: CryptoService(),
-            newsService: NewsService(),
+            cryptoService: self.cryptoService,
+            newsService: self.newsService,
             storageManager: self.storageManager
         )
         home.viewModel = viewModel
@@ -139,7 +140,7 @@ final class AppCoordinator: Coordinator {
         let viewModel = SearchViewModel(
             view: search,
             coordinator: self,
-            cryptoService: CryptoService()
+            cryptoService: self.cryptoService
         )
         search.viewModel = viewModel
         return search
@@ -185,7 +186,11 @@ final class AppCoordinator: Coordinator {
     //MARK: ArticleList
     func articleList(articles: [ArticleModel]?) {
         let articleList = ArticleListTableViewController(nibName: "ArticleListTableView", bundle: nil)
-        let viewModel = ArticleListViewModel(coordinator: self, view: articleList, articles: articles)
+        let viewModel = ArticleListViewModel(
+            coordinator: self,
+            view: articleList,
+            articles: articles
+        )
         articleList.viewModel = viewModel
         
         self.navigationController.pushViewController(articleList, animated: true)
@@ -203,7 +208,7 @@ final class AppCoordinator: Coordinator {
     func coinDetail(coinId: String?) {
         let viewModel = CoinDetailViewModel(
             coordinator: self,
-            cryptoService: CryptoService(),
+            cryptoService: self.cryptoService,
             coinId: coinId,
             storageManager: self.storageManager
         )
@@ -212,11 +217,15 @@ final class AppCoordinator: Coordinator {
         self.navigationController.pushViewController(hostingVC, animated: true)
     }
     
+    //MARK: - All Currencies
     func currencies(coins: [CoinModel]?) {
         let coinList = CurrenciesViewController(nibName: "CurrenciesView", bundle: nil)
-        let viewModel = CurrenciesViewModel(coordinator: self, view: coinList, coins: coins)
+        let viewModel = CurrenciesViewModel(
+            coordinator: self,
+            view: coinList,
+            coins: coins
+        )
         coinList.viewModel = viewModel
-        
         self.navigationController.pushViewController(coinList, animated: true)
     }
 }
