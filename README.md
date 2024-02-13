@@ -33,17 +33,20 @@ CryptoApp is an iOS application developed using Swift, UIKit, and SwiftUI. It al
 - DispatchGroup
 - Storyboard
 
-# Setup
+## Setup
 - Clone the repository:
   git clone https://github.com/BerkaySancar/CryptoApp-MVVM.git
 - Open the project in Xcode.
 - Build and run the app on your iOS device or simulator.
 
+## Free Figma UI Design Link 
+- [Nickelfox Design](https://www.figma.com/community/file/1147402245634536123/foxcrypto-crypto-app?searchSessionId=lsknuqfl-j4lwgu1qg)
+
 ## App Preview
 https://github.com/BerkaySancar/CryptoApp-MVVM/assets/97171726/c612df52-4d99-490b-85fe-2b53ab66c7cc
 
-# License
+## License
 This project is licensed under the MIT License.
 
 # Author
-Berkay Sancar. (sancarberkay@gmail.com)
+Berkay Sancar (sancarberkay@gmail.com)
