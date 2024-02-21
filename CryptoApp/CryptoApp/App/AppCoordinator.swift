@@ -26,6 +26,7 @@ final class AppCoordinator: Coordinator {
     private let cryptoService: CryptoServiceProtocol = CryptoService()
     private let newsService: NewsServiceProtocol = NewsService()
     private let authManager: AuthManagerProtocol = AuthManager()
+    private let remoteConfigManager: RemoteConfigManagerProtocol = RemoteConfigManager()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -40,8 +41,10 @@ final class AppCoordinator: Coordinator {
     func splash(isLoggedIn: Bool) {
         let splash = SplashViewController.instantiateFromStoryboard("Onboarding")
         let viewModel = SplashViewModel(
+            view: splash,
             coordinator: self,
-            isUserLoggedIn: isLoggedIn
+            isUserLoggedIn: isLoggedIn,
+            remoteConfigManager: self.remoteConfigManager
         )
         splash.viewModel = viewModel
         self.navigationController.setViewControllers([splash], animated: true)

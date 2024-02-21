@@ -64,7 +64,6 @@
 		B137DCFB2B6E6CA1007413AD /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B137DCFA2B6E6CA1007413AD /* FirebaseRemoteConfigSwift */; };
 		B137DCFD2B6E6CA1007413AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B137DCFC2B6E6CA1007413AD /* FirebaseStorage */; };
 		B137DCFF2B6E6CA1007413AD /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B137DCFE2B6E6CA1007413AD /* FirebaseStorageCombine-Community */; };
-		B137DD012B6E6CB0007413AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B137DD002B6E6CB0007413AD /* GoogleService-Info.plist */; };
 		B137DD032B6E6DBD007413AD /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD022B6E6DBD007413AD /* AuthManager.swift */; };
 		B137DD062B6E6E29007413AD /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD052B6E6E29007413AD /* FirebaseError.swift */; };
 		B137DD082B6E6FEA007413AD /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137DD072B6E6FEA007413AD /* ActivityIndicatorManager.swift */; };
@@ -96,6 +95,9 @@
 		B188A95B2B78F24700B0AB84 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A95A2B78F24700B0AB84 /* StorageManager.swift */; };
 		B188A95F2B78FFFC00B0AB84 /* FavoriteCoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A95E2B78FFFC00B0AB84 /* FavoriteCoinModel.swift */; };
 		B188A9632B79098300B0AB84 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B188A9622B79098300B0AB84 /* FavoritesViewController.swift */; };
+		B18C926F2B86582C00EFB7CB /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C926E2B86582C00EFB7CB /* RemoteConfigManager.swift */; };
+		B18C92712B8658E100EFB7CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B18C92702B8658E100EFB7CB /* GoogleService-Info.plist */; };
+		B18C92732B865A1800EFB7CB /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B18C92722B865A1800EFB7CB /* RemoteConfigDefaults.plist */; };
 		B18E6C392B6E2F2E009F3B18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E6C382B6E2F2E009F3B18 /* LoginViewModel.swift */; };
 		B197132A2B6FB54F00AA59E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19713292B6FB54F00AA59E7 /* HomeViewController.swift */; };
 		B197132F2B6FB5C900AA59E7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197132E2B6FB5C900AA59E7 /* HomeViewModel.swift */; };
@@ -156,7 +158,6 @@
 		B13055912B6DBA0400E89745 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B13055932B6DBE3400E89745 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		B13055942B6DBE3400E89745 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
-		B137DD002B6E6CB0007413AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B137DD022B6E6DBD007413AD /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		B137DD052B6E6E29007413AD /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		B137DD072B6E6FEA007413AD /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
@@ -187,6 +188,9 @@
 		B188A95A2B78F24700B0AB84 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		B188A95E2B78FFFC00B0AB84 /* FavoriteCoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoinModel.swift; sourceTree = "<group>"; };
 		B188A9622B79098300B0AB84 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		B18C926E2B86582C00EFB7CB /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		B18C92702B8658E100EFB7CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B18C92722B865A1800EFB7CB /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		B18E6C382B6E2F2E009F3B18 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B19713292B6FB54F00AA59E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B197132E2B6FB5C900AA59E7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -400,7 +404,8 @@
 			isa = PBXGroup;
 			children = (
 				B13055502B6D946D00E89745 /* Info.plist */,
-				B137DD002B6E6CB0007413AD /* GoogleService-Info.plist */,
+				B18C92702B8658E100EFB7CB /* GoogleService-Info.plist */,
+				B18C92722B865A1800EFB7CB /* RemoteConfigDefaults.plist */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				B137DD072B6E6FEA007413AD /* ActivityIndicatorManager.swift */,
 				B137DD1A2B6EB14D007413AD /* AlertManager.swift */,
 				B188A95A2B78F24700B0AB84 /* StorageManager.swift */,
+				B18C926E2B86582C00EFB7CB /* RemoteConfigManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1109,14 +1115,15 @@
 				B1B75B222B7789D400D3F193 /* ExchangeCell.xib in Resources */,
 				B13055962B6DBE3400E89745 /* OnboardingCell.xib in Resources */,
 				B19713322B6FB94100AA59E7 /* Main.storyboard in Resources */,
+				B18C92732B865A1800EFB7CB /* RemoteConfigDefaults.plist in Resources */,
 				B17BFDB32B7379AC003CF9A9 /* NewsDetailView.xib in Resources */,
 				B19713512B6FFED800AA59E7 /* TopCoinCell.xib in Resources */,
+				B18C92712B8658E100EFB7CB /* GoogleService-Info.plist in Resources */,
 				B137DD172B6EAD41007413AD /* AppAlertView.xib in Resources */,
 				B13055842B6D9C6100E89745 /* Onboarding.storyboard in Resources */,
 				B197135E2B701EAD00AA59E7 /* ArticleCell.xib in Resources */,
 				B11BBF5F2B75585E00E77E5C /* ArticleListTableView.xib in Resources */,
 				B11BBF672B75628A00E77E5C /* ArticleListItemCell.xib in Resources */,
-				B137DD012B6E6CB0007413AD /* GoogleService-Info.plist in Resources */,
 				B1191A522B764FED006CE9D8 /* CurrenciesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1185,6 +1192,7 @@
 				B197132F2B6FB5C900AA59E7 /* HomeViewModel.swift in Sources */,
 				B17421902B71794F009BF926 /* UISearchBar+Extension.swift in Sources */,
 				B13055922B6DBA0400E89745 /* UIColor+Extension.swift in Sources */,
+				B18C926F2B86582C00EFB7CB /* RemoteConfigManager.swift in Sources */,
 				B1B75B252B7789EA00D3F193 /* ExchangeCellVM.swift in Sources */,
 				B137DD192B6EAD52007413AD /* AppAlertView.swift in Sources */,
 				B1151A712B7104E6007601EC /* NewsCellViewModel.swift in Sources */,

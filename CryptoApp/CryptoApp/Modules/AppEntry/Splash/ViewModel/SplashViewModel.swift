@@ -7,21 +7,44 @@
 
 import Foundation
 
+protocol SplashViewModelOutputs: AnyObject {
+    func setSplashTitle(title: String?)
+}
+
 protocol SplashViewModelProtocol {
     func viewDidLoad()
     func viewWillAppear()
 }
 
 final class SplashViewModel: SplashViewModelProtocol {
+    private weak var view: SplashViewModelOutputs?
     private weak var coordinator: AppCoordinator?
     private let isUserLoggedIn: Bool?
+    private let remoteConfigManager: RemoteConfigManagerProtocol?
     
-    init(coordinator: AppCoordinator?, isUserLoggedIn: Bool) {
+    init(
+        view: SplashViewModelOutputs?,
+        coordinator: AppCoordinator?,
+        isUserLoggedIn: Bool,
+        remoteConfigManager: RemoteConfigManagerProtocol?
+    ) {
+        self.view = view
         self.coordinator = coordinator
         self.isUserLoggedIn = isUserLoggedIn
+        self.remoteConfigManager = remoteConfigManager
+    }
+    
+    private func getTitleFromRemoteConfig() {
+        DispatchQueue.main.async {
+            self.remoteConfigManager?.getStringValue(key: .splashTitle) { [weak self] title in
+                guard let self else { return }
+                self.view?.setSplashTitle(title: title)
+            }
+        }
     }
     
     func viewDidLoad() {
+        getTitleFromRemoteConfig()
         self.coordinator?.navigationController.isNavigationBarHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
