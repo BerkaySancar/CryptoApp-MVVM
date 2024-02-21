@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-Yd-UdF">
-                                <rect key="frame" x="122.66666666666669" y="408" width="148" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-Yd-UdF">
+                                <rect key="frame" x="196.66666666666666" y="426" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" name="AppYellow"/>
                                 <nil key="highlightedColor"/>
@@ -39,6 +39,9 @@
                             <constraint firstItem="dB7-Yd-UdF" firstAttribute="centerY" secondItem="NVY-wO-nBa" secondAttribute="centerY" id="qQh-Rt-cDX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="splashTitle" destination="dB7-Yd-UdF" id="qlh-FR-kHg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbC-z3-J0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

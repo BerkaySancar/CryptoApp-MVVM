@@ -9,6 +9,9 @@ import UIKit
 
 final class SplashViewController: UIViewController {
     
+    //MARK: Outlets
+    @IBOutlet private weak var splashTitle: UILabel!
+    
     //MARK: ViewModel
     var viewModel: SplashViewModelProtocol?
     
@@ -21,5 +24,13 @@ final class SplashViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewModel?.viewWillAppear()
+    }
+}
+
+//MARK: View Model Outputs
+extension SplashViewController: SplashViewModelOutputs {
+    
+    func setSplashTitle(title: String?) {
+        self.splashTitle.text = title
     }
 }
