@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkw-mj-UGf" userLabel="ContentView">
                         <rect key="frame" x="0.0" y="0.0" width="447" height="652"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboard1" translatesAutoresizingMaskIntoConstraints="NO" id="sX7-UA-mk3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboard1" translatesAutoresizingMaskIntoConstraints="NO" id="sX7-UA-mk3">
                                 <rect key="frame" x="16" y="0.0" width="415" height="425"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Crypto App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BQ-YU-Ztc">
@@ -36,6 +36,7 @@
                             <constraint firstAttribute="trailing" secondItem="8BQ-YU-Ztc" secondAttribute="trailing" constant="16" id="FkG-k5-EOP"/>
                             <constraint firstItem="8BQ-YU-Ztc" firstAttribute="leading" secondItem="Xkw-mj-UGf" secondAttribute="leading" constant="16" id="NAp-yM-R5f"/>
                             <constraint firstItem="sX7-UA-mk3" firstAttribute="leading" secondItem="Xkw-mj-UGf" secondAttribute="leading" constant="16" id="Reg-tw-7YF"/>
+                            <constraint firstAttribute="bottom" secondItem="sX7-UA-mk3" secondAttribute="bottom" constant="227" id="YVo-9R-5Ca"/>
                             <constraint firstAttribute="bottom" secondItem="8BQ-YU-Ztc" secondAttribute="bottom" constant="40" id="ghj-W2-3ZV"/>
                             <constraint firstItem="sX7-UA-mk3" firstAttribute="top" secondItem="Xkw-mj-UGf" secondAttribute="top" id="pco-6h-8yF"/>
                             <constraint firstAttribute="trailing" secondItem="sX7-UA-mk3" secondAttribute="trailing" constant="16" id="rjY-fI-PnZ"/>
