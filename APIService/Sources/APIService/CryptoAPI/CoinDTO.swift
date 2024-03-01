@@ -7,18 +7,22 @@
 
 import Foundation
 
+// MARK: - CoinDTOElement
 public struct CoinDTO: Codable {
     public let id, symbol, name: String
     public let image: String
     public let currentPrice: Double
-    public let marketCap, marketCapRank, fullyDilutedValuation, totalVolume: Int
+    public let marketCap, marketCapRank: Int
+    public let fullyDilutedValuation: Int?
+    public let totalVolume: Int
     public let high24H, low24H, priceChange24H, priceChangePercentage24H: Double
-    public let marketCapChange24H, marketCapChangePercentage24H, circulatingSupply, totalSupply: Double
-    public let maxSupply: Int?
+    public let marketCapChange24H, marketCapChangePercentage24H, circulatingSupply: Double
+    public let totalSupply, maxSupply: Double?
     public let ath, athChangePercentage: Double
     public let athDate: String
     public let atl, atlChangePercentage: Double
     public let atlDate: String
+    public let roi: Roi?
     public let lastUpdated: String
 
     enum CodingKeys: String, CodingKey {
@@ -43,6 +47,55 @@ public struct CoinDTO: Codable {
         case atl
         case atlChangePercentage = "atl_change_percentage"
         case atlDate = "atl_date"
+        case roi
         case lastUpdated = "last_updated"
     }
+
+    public init(id: String, symbol: String, name: String, image: String, currentPrice: Double, marketCap: Int, marketCapRank: Int, fullyDilutedValuation: Int?, totalVolume: Int, high24H: Double, low24H: Double, priceChange24H: Double, priceChangePercentage24H: Double, marketCapChange24H: Double, marketCapChangePercentage24H: Double, circulatingSupply: Double, totalSupply: Double?, maxSupply: Double?, ath: Double, athChangePercentage: Double, athDate: String, atl: Double, atlChangePercentage: Double, atlDate: String, roi: Roi?, lastUpdated: String) {
+        self.id = id
+        self.symbol = symbol
+        self.name = name
+        self.image = image
+        self.currentPrice = currentPrice
+        self.marketCap = marketCap
+        self.marketCapRank = marketCapRank
+        self.fullyDilutedValuation = fullyDilutedValuation
+        self.totalVolume = totalVolume
+        self.high24H = high24H
+        self.low24H = low24H
+        self.priceChange24H = priceChange24H
+        self.priceChangePercentage24H = priceChangePercentage24H
+        self.marketCapChange24H = marketCapChange24H
+        self.marketCapChangePercentage24H = marketCapChangePercentage24H
+        self.circulatingSupply = circulatingSupply
+        self.totalSupply = totalSupply
+        self.maxSupply = maxSupply
+        self.ath = ath
+        self.athChangePercentage = athChangePercentage
+        self.athDate = athDate
+        self.atl = atl
+        self.atlChangePercentage = atlChangePercentage
+        self.atlDate = atlDate
+        self.roi = roi
+        self.lastUpdated = lastUpdated
+    }
+}
+
+// MARK: - Roi
+public struct Roi: Codable {
+    public let times: Double
+    public let currency: Currency
+    public let percentage: Double
+
+    public init(times: Double, currency: Currency, percentage: Double) {
+        self.times = times
+        self.currency = currency
+        self.percentage = percentage
+    }
+}
+
+public enum Currency: String, Codable {
+    case btc = "btc"
+    case eth = "eth"
+    case usd = "usd"
 }
