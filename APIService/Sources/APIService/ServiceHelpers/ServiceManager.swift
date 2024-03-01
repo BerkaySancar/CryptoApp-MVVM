@@ -34,7 +34,7 @@ final class ServiceManager {
             if #available(iOS 15.0, *) {
                 guard let (data, response) = try? await URLSession.shared.data(for: request.urlRequest()) else
                 {  completion(.failure(ServiceError.invalidURL))
-                    print("||||||||||||||", "\n", request, "\nINVALID URL", "\n||||||||||||||")
+                    print("------INVALID URL------\(request.urlRequest())------INVALID URL------")
                     return
                 }
                 if let response = response as? HTTPURLResponse {
@@ -42,17 +42,26 @@ final class ServiceManager {
                     case 200...299:
                         let decodedData = try? decoder.decode(T.self, from: data)
                         completion(.success(decodedData))
+                        #if DEBUG
+                    print("------\(response.statusCode)------\(request.urlRequest())------\(response.statusCode)------")
+                        #endif
                         return
                     case 401:
                         completion(.failure(ServiceError.unauthorized))
-                        print("||||||||||||||", "\n", request, "\n401", "\n|||||||||||||")
+                        #if DEBUG
+                        print("------\(response.statusCode)------\(request.urlRequest())------\(response.statusCode)------")
+                        #endif
                         return
                     case 429:
                         completion(.failure(.rateLimit))
-                        print("|||||||||||||||", "\n", request, "\n401", "\n||||||||||||||")
+                        #if DEBUG
+                        print("------\(response.statusCode)------\(request.urlRequest())------\(response.statusCode)------")
+                        #endif
                     default:
                         completion(.failure(ServiceError.invalidResponse))
-                        print("||||||||||||||", "\n", request, "\n\(response.statusCode)", "\n||||||||||||||")
+                        #if DEBUG
+                        print("------\(response.statusCode)------\(request.urlRequest())------\(response.statusCode)------")
+                        #endif
                         return
                     }
                 }
